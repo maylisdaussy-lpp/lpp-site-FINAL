@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez nos stickers muraux repositionnables et papiers peints pré-encollés à colorier, conçus pour les espaces professionnels. Fabriqués en France, certifiés Imprim'Vert et Green'R.">
+  <title>Nos supports muraux à colorier : stickers repositionnables et papiers peints - Les Petits Papiers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProductCollection",
+    "name": "Supports muraux à colorier Les Petits Papiers",
+    "description": "Stickers repositionnables et papiers peints pré-encollés à colorier pour professionnels",
+    "brand": { "@type": "Brand", "name": "Les Petits Papiers" },
+    "url": "https://www.lespetitspapierspeints.com/nos-supports"
+  }
+      function submitNewsletter(e) {
+      e.preventDefault();
+      fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
+        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
+    }
+  
+    // Lightbox
+    function openLightbox(src, alt) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt || '';
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target === document.getElementById('lightbox-img')) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Make all product images clickable
+    document.querySelectorAll('.product-img-main, .product-img-thumb').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    });
+</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'GooddogNew';
+      src: url('fonts/gooddognew.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --blue: #5ACAF1;
+      --pink: #EB356F;
+      --blue-light: #e8f8fd;
+      --pink-light: #fde8ef;
+      --cream: #faf8f5;
+      --dark: #1a1a2e;
+      --text: #2d2d3a;
+      --muted: #7a7a8c;
+      --border: #e8e6e0;
+      --white: #ffffff;
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* NAV */
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 7rem 5rem 4rem;
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .page-hero-text .section-tag { color: var(--blue); }
+    .page-hero-text h1 { color: white; }
+    .page-hero-text p { color: rgba(255,255,255,.75); }
+    .certif-badge { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: white; }
+
+    .page-hero-text .section-tag {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--pink); margin-bottom: .75rem;
+    }
+
+    .page-hero-text h1 {
+      font-family: 'GooddogNew', 'Outfit', sans-serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--dark); margin-bottom: 1.25rem;
+    }
+
+    .page-hero-text p {
+      font-size: 17px; color: var(--muted);
+      line-height: 1.65; margin-bottom: 2rem; max-width: 440px;
+    }
+
+    .hero-certifs {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+
+    .certif-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: white; border: 1px solid var(--border);
+      border-radius: 50px; padding: 7px 14px;
+      font-size: 13px; font-weight: 500; color: var(--text);
+    }
+
+    .certif-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+    .certif-dot.green { background: #4caf82; }
+
+    .page-hero-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* TABS NAV */
+    .tabs-wrap {
+      position: sticky; top: 118px; z-index: 50;
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 0 5rem;
+      display: flex; gap: 0;
+    }
+
+    .tab-btn {
+      padding: 1.1rem 1.75rem;
+      font-size: 15px; font-weight: 500;
+      color: var(--muted); cursor: pointer;
+      border: none; background: none;
+      border-bottom: 2.5px solid transparent;
+      transition: color .2s, border-color .2s;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* PRODUCT SECTION */
+    .product-section {
+      padding: 5rem 5rem;
+    }
+
+    .product-section:nth-child(even) { background: var(--cream); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .product-grid.reverse { direction: rtl; }
+    .product-grid.reverse > * { direction: ltr; }
+
+    .product-visual { position: relative; }
+
+    .product-img-main {
+      width: 100%; aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+
+    .product-img-thumb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: .75rem;
+    }
+
+    .product-img-thumb {
+      width: 100%; aspect-ratio: 3/2;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity .2s;
+      border: 2px solid transparent;
+    }
+
+    .product-img-thumb.active { border-color: var(--blue); }
+    .product-img-thumb:hover { opacity: .85; }
+
+    .product-content {}
+
+    .product-content .section-tag {
+      display: inline-block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--pink); margin-bottom: .75rem;
+    }
+
+    .product-content h2 {
+      font-family: 'GooddogNew', 'Outfit', sans-serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 700; line-height: 1.2;
+      color: var(--dark); margin-bottom: 1rem;
+    }
+
+    .product-content > p {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.7; margin-bottom: 1.5rem;
+    }
+
+    /* Feature list */
+    .feature-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+
+    .feature-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .feature-check svg { width: 12px; height: 12px; }
+
+    .feature-item p { font-size: 14px; color: var(--text); line-height: 1.5; }
+    .feature-item p strong { font-weight: 600; color: var(--dark); }
+
+    /* Revêtements */
+    .revetements {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 2rem;
+    }
+
+    .revetement-card {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+
+    .revetement-card:hover { border-color: var(--blue); }
+
+    .revetement-card img {
+      width: 100%; aspect-ratio: 3/2; object-fit: cover;
+    }
+
+    .revetement-body {
+      padding: .85rem 1rem;
+    }
+
+    .revetement-body h4 { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: .35rem; }
+    .revetement-body p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* CTA inline */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: white;
+      text-decoration: none; padding: 13px 26px;
+      border-radius: 50px; font-size: 15px; font-weight: 600;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(90,202,241,.35); }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      text-decoration: none; padding: 13px 26px;
+      border-radius: 50px; font-size: 15px; font-weight: 500;
+      border: 1.5px solid var(--border);
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* LABELS SECTION */
+    .labels-section {
+      padding: 5rem 5rem;
+      background: var(--blue-light);
+    }
+
+    .labels-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 3rem;
+    }
+
+    .label-card {
+      background: white; border-radius: var(--radius);
+      padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;
+      border: 1px solid var(--border);
+    }
+
+    .label-logo {
+      width: 64px; height: 64px; object-fit: contain;
+      flex-shrink: 0; border-radius: 10px;
+    }
+
+    .label-card h3 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: .5rem; }
+    .label-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* VIDEO SECTION */
+    .video-section {
+      padding: 5rem 5rem;
+      background: var(--cream);
+    }
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+
+    .video-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .video-embed {
+      width: 100%; aspect-ratio: 9/16;
+      border: none; display: block;
+    }
+
+    .video-caption {
+      padding: 1rem 1.25rem;
+      font-size: 13px; color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* SECTION TITLE */
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-tag-center { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--pink); margin-bottom: .75rem; }
+    .section-title h2 { font-family: 'GooddogNew', 'Outfit', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: var(--dark); line-height: 1.2; }
+    .section-title p { font-size: 16px; color: var(--muted); max-width: 520px; margin: .75rem auto 0; line-height: 1.65; }
+
+    /* CTA FINAL */
+    .cta-section {
+      padding: 6rem 5rem; background: var(--pink); text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'GooddogNew', 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700; color: white; margin-bottom: 1rem;
+    }
+
+    .cta-section p { font-size: 17px; color: rgba(255,255,255,.8); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--pink);
+      text-decoration: none; padding: 16px 36px;
+      border-radius: 50px; font-size: 15px; font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,.15); }
+
+    /* FOOTER */
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .page-hero, .product-grid { grid-template-columns: 1fr; }
+      .product-grid.reverse { direction: ltr; }
+      .page-hero, .product-section, .labels-section, .video-section, .cta-section, footer { padding-left: 2rem; padding-right: 2rem; }
+      .tabs-wrap { padding: 0 2rem; overflow-x: auto; }
+      .labels-grid { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; }
+      .revetements { grid-template-columns: 1fr; }
+    }
+  
+    /* Max width global */
+    .site-content { max-width: 90%; margin: 0 auto; }
+    section, .page-hero, .hero, .story, .valeurs, .engagements, .presse,
+    .pour-qui, .supports, .offres, .wall-box, .sector-section, .contact-wrap,
+    .blog-grid, .article-wrap, .breadcrumb, .filter-wrap, .tabs-wrap {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .usp-strip, .cta-section, footer, nav > * { max-width: 90%; margin-left: auto; margin-right: auto; }
+    nav { display: flex; justify-content: center; }
+    nav > a, nav > ul { flex-shrink: 0; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: center;
+      padding: .85rem 2rem .5rem;
+      position: relative;
+    }
+    .nav-logo-link { line-height: 0; text-decoration: none; }
+    .nav-logo { height: 44px; display: block; }
+    .nav-cta-top {
+      position: absolute; right: 2rem; top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F; color: white;
+      text-decoration: none; padding: 9px 22px;
+      border-radius: 50px; font-weight: 500; font-size: 14px;
+      white-space: nowrap; transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .65rem;
+      border-top: 1px solid rgba(0,0,0,.04);
+      margin: 0;
+    }
+    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
+    .nav-bottom li::before { display: none !important; }
+    .nav-bottom a {
+      text-decoration: none; color: #2d2d3a;
+      font-size: 14px; font-weight: 400;
+      transition: color .2s;
+    }
+    .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
+  
+    footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
+    .footer-inner { max-width: 90%; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 2rem; }
+    .footer-brand img { height: 40px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+    .footer-brand p { font-size: 14px; line-height: 1.65; max-width: 240px; margin-bottom: 1rem; color: rgba(255,255,255,.85); }
+    .social-links { display: flex; gap: .6rem; }
+    .social-links a { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); transition: all .2s; text-decoration: none; }
+    .social-links a:hover { border-color: white; color: white; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col ul li { margin-bottom: .5rem; list-style: none; }
+    .footer-col ul li::before { display: none; }
+    .footer-col ul li a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .newsletter-row { display: flex; gap: .4rem; margin-bottom: .4rem; }
+    .newsletter-form input[type="email"] { flex: 1; min-width: 0; padding: 9px 14px; border-radius: 50px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.15); color: white; font-size: 13px; font-family: 'Outfit',sans-serif; outline: none; }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.5); }
+    .newsletter-form button { padding: 9px 16px; border-radius: 50px; border: none; background: white; color: #EB356F; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Outfit',sans-serif; }
+    .nl-success { font-size: 12px; color: rgba(255,255,255,.8); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.25); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 1rem; color: rgba(255,255,255,.7); }
+    .footer-bottom a { color: rgba(255,255,255,.7); text-decoration: none; }
+    .footer-bottom a:hover { color: white; }
+    @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } }
+  
+    /* LIGHTBOX */
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.85); align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-img {
+      max-width: 90vw; max-height: 88vh;
+      border-radius: 12px; object-fit: contain;
+      cursor: default; box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: fixed; top: 1.5rem; right: 1.5rem;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(250,248,245,.7);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: none; font-size: 20px;
+      color: #2d2d3a; transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(250,248,245,.95); }
+    .product-img-main, .product-img-thumb { cursor: zoom-in; }
+</style>
+</head>
+<body>
+
+    <nav>
+    <div class="nav-top">
+      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
+      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+    </div>
+    <ul class="nav-bottom">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nos-supports.html" class="active">Nos supports</a></li>
+      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
+      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-text">
+      <span class="section-tag">Nos supports</span>
+      <h1>Stickers repositionnables et papiers peints à colorier</h1>
+      <p>Deux formats, une même promesse : des décorations murales professionnelles, sans travaux, fabriquées en France sur papier 100% recyclé.</p>
+      <div class="hero-certifs">
+        <div class="certif-badge"><span class="certif-dot"></span> Imprim'Vert</div>
+        <div class="certif-badge"><span class="certif-dot green"></span> Green'R</div>
+        <div class="certif-badge"><span class="certif-dot"></span> Papier M1</div>
+        <div class="certif-badge"><span class="certif-dot"></span> Encres non-toxiques</div>
+      </div>
+    </div>
+    <div class="page-hero-img">
+      <img
+        src="images/supports-header.jpg"
+        alt="Sticker mural repositionnable à colorier en fresque"
+      >
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-wrap" id="tabs">
+    <button class="tab-btn active" onclick="scrollToSection('stickers')">Stickers repositionnables</button>
+    <button class="tab-btn" onclick="scrollToSection('papiers-peints')">Papiers peints pré-encollés</button>
+    <button class="tab-btn" onclick="scrollToSection('labels')">Nos engagements</button>
+    <button class="tab-btn" onclick="scrollToSection('videos')">Vidéos</button>
+  </div>
+
+  <!-- STICKERS -->
+  <section class="product-section" id="stickers">
+    <div class="product-grid">
+      <div class="product-visual">
+        <img
+          id="sticker-main"
+          src="images/supports-header.jpg"
+          alt="Sticker mural repositionnable à colorier grand format"
+          class="product-img-main"
+        >
+        <div class="product-img-thumb-grid">
+          <img
+            src="images/sticker-ecole.jpg"
+            alt="Sticker mural revêtement classique"
+            class="product-img-thumb active"
+            onclick="switchImg('sticker-main', this)"
+          >
+          <img
+            src="images/fresque-enfant.jpg"
+            alt="Sticker mural revêtement effaçable chambre enfant"
+            class="product-img-thumb"
+            onclick="switchImg('sticker-main', this)"
+          >
+        </div>
+      </div>
+      <div class="product-content">
+        <span class="section-tag">Support n°1</span>
+        <h2>Les stickers muraux repositionnables</h2>
+        <p>Posés à l'unité ou en fresque, nos stickers s'adaptent à toutes les configurations sans trace sur les murs. Disponibles en version classique ou effaçable pour recommencer le coloriage à l'infini.</p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Repositionnable sans trace</strong> : se déplace et se retire facilement, même après plusieurs mois de pose</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Découpe à la forme disponible</strong> : composition au plus près de vos besoins, fond transparent possible</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Marges de sécurité intégrées</strong> : les enfants ne risquent pas de déborder sur les murs</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>100% recyclé, encres non-toxiques</strong> : respectueux de la qualité de l'air intérieur</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Certifié M1</strong> : norme incendie ERP adaptée aux espaces recevant du public (hors version effaçable)</p>
+          </div>
+        </div>
+
+        <h3 style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:.85rem;">Quel revêtement choisir ?</h3>
+        <div class="revetements">
+          <div class="revetement-card">
+            <img src="images/sticker-ecole.jpg" alt="Sticker revêtement classique mat">
+            <div class="revetement-body">
+              <h4>Classique</h4>
+              <p>Finition matte, résistant aux manipulations. Idéal pour une déco pérenne mais modulable.</p>
+            </div>
+          </div>
+          <div class="revetement-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.5rem;text-align:center;background:var(--blue-light);">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="1.5" style="margin-bottom:.75rem"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <div class="revetement-body">
+              <h4>Effaçable</h4>
+              <p>Finition tableau blanc, s'efface à l'eau. Idéal pour les lieux accueillant du public.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn-primary">Discuter de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAPIERS PEINTS -->
+  <section class="product-section" id="papiers-peints">
+    <div class="product-grid reverse">
+      <div class="product-visual">
+        <img
+          id="pp-main"
+          src="images/supports-pp-1.jpg"
+          alt="Papier peint pré-encollé à colorier personnalisé"
+          class="product-img-main"
+        >
+        <div class="product-img-thumb-grid">
+          <img
+            src="images/sticker-ecole.jpg"
+            alt="Papier peint mural école"
+            class="product-img-thumb active"
+            onclick="switchImg('pp-main', this)"
+          >
+          <img
+            src="images/supports-pp-3.jpg"
+            alt="Papier peint carte du monde à colorier"
+            class="product-img-thumb"
+            onclick="switchImg('pp-main', this)"
+          >
+        </div>
+      </div>
+      <div class="product-content">
+        <span class="section-tag">Support n°2</span>
+        <h2>Les papiers peints pré-encollés</h2>
+        <p>Conçus sur-mesure, nos papiers peints habillent un mur entier avec simplicité. Pré-encollés : un simple "pshit" d'eau au dos et c'est posé. Aucune colle, aucun outil, une décoration immersive et durable.</p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Pose ultra-simple</strong> : pré-encollé, pas besoin de colle ni d'outils particuliers</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Sur-mesure aux dimensions de votre mur</strong> : on s'adapte à n'importe quel espace</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Papier certifié M1</strong> : norme incendie adaptée aux ERP, salles d'attente, établissements scolaires</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p><strong>Décoration immersive et durable</strong> : une œuvre collective qui s'installe pour longtemps</p>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn-primary">Discuter de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LABELS -->
+  <section class="labels-section" id="labels">
+    <div class="section-title">
+      <span class="section-tag-center">Nos engagements</span>
+      <h2>Des supports responsables, du début à la fin</h2>
+      <p>Six mois de tests pour trouver le support idéal : sûr pour les enfants, durable, créatif et respectueux de l'environnement.</p>
+    </div>
+    <div class="labels-grid">
+      <div class="label-card">
+        <img
+          src="images/logos/imprim-vert.jpg"
+          alt="Label Imprim'Vert"
+          class="label-logo"
+        >
+        <div>
+          <h3>Partenaire Imprim'Vert</h3>
+          <p>En faisant imprimer dans une imprimerie labellisée, nous mettons l'engagement environnemental au cœur de nos priorités. Un réseau engagé pour un marché de l'imprimerie plus conscient.</p>
+        </div>
+      </div>
+      <div class="label-card">
+        <img
+          src="images/logos/greenr.png"
+          alt="Label Green R"
+          class="label-logo"
+        >
+        <div>
+          <h3>Partenaire Green'R</h3>
+          <p>Le seul label qui certifie l'ensemble des professionnels du secteur des arts graphiques : agences, enseignistes, marqueurs et imprimeurs. Une certification globale de la chaîne de production.</p>
+        </div>
+      </div>
+        <div class="label-card">
+          <img
+            src="images/logos/impri-france.png"
+            alt="ImpriF rance partenaire fabrication française"
+            class="label-logo"
+          >
+          <div>
+            <h3>Partenaire ImpriF rance</h3>
+            <p>Conçus et imprimés en France par des acteurs locaux engagés. Un choix de proximité qui garantit qualité, traçabilité et réduction de l'empreinte carbone.</p>
+          </div>
+        </div>
+      </div>
+    <div style="margin-top:2rem;text-align:center;">
+      <p style="font-size:14px;color:var(--muted);max-width:560px;margin:0 auto;">Tous nos supports sont fabriqués à la demande, sans sur-stock, pour éviter tout gaspillage inutile.</p>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="video-section" id="videos">
+    <div class="section-title">
+      <span class="section-tag-center">En pratique</span>
+      <h2>Voyez nos supports en action</h2>
+      <p>De la conception à la pose, on vous montre tout.</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe
+          class="video-embed"
+          src="https://www.youtube.com/embed/-ry_KrYGdyk"
+          title="Retour client : pose de papier peint à colorier pré-encollé"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p class="video-caption">Retour client : pose d'un papier peint à colorier pré-encollé</p>
+      </div>
+      <div class="video-card">
+        <iframe
+          class="video-embed"
+          src="https://www.youtube.com/embed/Y1QL5gcBEyw"
+          title="Test : repositionner un sticker à colorier après un an de pose"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p class="video-caption">Test : repositionner un sticker après plus d'un an de pose (gamme effaçable)</p>
+      </div>
+      <div class="video-card">
+        <iframe
+          class="video-embed"
+          src="https://www.youtube.com/embed/uLbox4zlUjM"
+          title="Création d'un papier peint personnalisé Toulouse à colorier"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p class="video-caption">Process : création du papier peint "Toulouse" à colorier</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Quel support est fait pour vous ?</h2>
+    <p>On vous aide à choisir le bon format selon votre espace, votre usage et votre budget.</p>
+    <a href="contact.html" class="btn-white">
+      Demander un devis
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="Les Petits Papiers">
+          <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.instagram.com/lespetitspapierspeints/" target="_blank" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61578989407415" target="_blank" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@les.petits.papierspeints" target="_blank" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.37a8.16 8.16 0 004.77 1.52V7.44a4.85 4.85 0 01-1-.75z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="nos-supports.html">Nos supports</a></li>
+            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
+            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos formules</h4>
+          <ul>
+            <li><a href="la-vignette.html">La Vignette</a></li>
+            <li><a href="le-grand-format.html">Le Grand Format</a></li>
+            <li><a href="le-panorama.html">Le Panorama</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
+            <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
+            <div class="newsletter-row">
+              <input type="email" name="email" placeholder="Votre e-mail" required>
+              <button type="submit">OK</button>
+            </div>
+            <p class="nl-success" style="display:none">Inscription confirmée !</p>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
+        <a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const navH = document.querySelector('nav').offsetHeight;
+      const tabsH = document.querySelector('.tabs-wrap') ? document.querySelector('.tabs-wrap').offsetHeight : 0;
+      const offset = el.getBoundingClientRect().top + window.scrollY - navH - tabsH - 16;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function switchImg(mainId, thumb) {
+      document.getElementById(mainId).src = thumb.src;
+      thumb.closest('.product-visual').querySelectorAll('.product-img-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    // Highlight tab on scroll
+    const sections = ['stickers', 'papiers-peints', 'labels', 'videos'];
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = sections.indexOf(e.target.id);
+          if (idx >= 0) {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabBtns[idx].classList.add('active');
+          }
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  </script>
+
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+  </div>
+</body>
+</html>

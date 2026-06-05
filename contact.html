@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Les Petits Papiers pour votre projet de décoration murale à colorier. Devis gratuit, réponse sous 48h. Basés à Toulouse, on travaille partout en France.">
+  <title>Contact - Démarrez votre projet de fresque murale à colorier - Les Petits Papiers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @font-face { font-family: 'GooddogNew'; src: url('fonts/gooddognew.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+    :root {
+      --blue: #5ACAF1; --pink: #EB356F;
+      --blue-light: #e8f8fd; --pink-light: #fde8ef;
+      --cream: #faf8f5; --dark: #1a1a2e;
+      --text: #2d2d3a; --muted: #7a7a8c;
+      --border: #e8e6e0; --white: #ffffff;
+      --radius: 20px; --radius-sm: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* LAYOUT */
+    .contact-wrap {
+      padding-top: 110px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      min-height: calc(100vh - 68px);
+    }
+
+    /* LEFT PANEL */
+    .contact-left {
+      background: var(--cream);
+      padding: 5rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+
+    .section-tag { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--pink); display: block; margin-bottom: .75rem; }
+
+    .contact-left h1 {
+      font-family: 'GooddogNew', 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+      font-weight: 700; color: var(--dark);
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+
+    .contact-left > p {
+      font-size: 16px; color: var(--muted);
+      line-height: 1.7; margin-bottom: 2.5rem;
+      max-width: 380px;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+
+    .contact-info-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: var(--text);
+    }
+
+    .contact-info-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info-icon svg { width: 16px; height: 16px; }
+
+    .contact-info-item a { color: var(--text); text-decoration: none; transition: color .2s; }
+    .contact-info-item a:hover { color: var(--blue); }
+
+    .reassurance { display: flex; flex-direction: column; gap: .75rem; }
+
+    .reassurance-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; color: var(--muted);
+    }
+
+    .reassurance-item::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0;
+    }
+
+    /* RIGHT PANEL */
+    .contact-right {
+      padding: 5rem 5rem 5rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+
+    .form-title {
+      font-size: 18px; font-weight: 700; color: var(--dark);
+      margin-bottom: 2rem;
+    }
+
+    /* OFFER SELECTOR */
+    .offer-selector {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: .75rem; margin-bottom: 1.75rem;
+    }
+
+    .offer-option { display: none; }
+
+    .offer-label {
+      display: block; padding: .85rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer; text-align: center;
+      transition: all .2s;
+    }
+
+    .offer-label:hover { border-color: var(--blue); }
+    .offer-option:checked + .offer-label { border-color: var(--blue); background: var(--blue-light); }
+
+    .offer-label-name { font-size: 13px; font-weight: 600; color: var(--dark); display: block; }
+    .offer-label-desc { font-size: 11px; color: var(--muted); margin-top: 2px; display: block; }
+
+    /* FORM FIELDS */
+    .form-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 1rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: .4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    label { font-size: 13px; font-weight: 500; color: var(--text); }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px; font-family: 'Outfit', sans-serif;
+      color: var(--text); background: white;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none; width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(90,202,241,.12);
+    }
+
+    textarea { resize: vertical; min-height: 120px; }
+
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7a8c' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    .form-submit {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;
+    }
+
+    .form-note { font-size: 12px; color: var(--muted); }
+
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--pink); color: white;
+      border: none; cursor: pointer;
+      padding: 14px 28px; border-radius: 50px;
+      font-size: 15px; font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(235,53,111,.3); }
+    .btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    .form-success {
+      display: none;
+      background: var(--blue-light);
+      border: 1px solid var(--blue);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 14px; color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .form-error {
+      display: none;
+      background: #fde8ef;
+      border: 1px solid var(--pink);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 14px; color: var(--dark);
+    }
+
+    /* FOOTER */
+
+    @media (max-width: 1024px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .contact-left { padding: 4rem 2rem 3rem; }
+      .contact-right { padding: 3rem 2rem; } footer { padding-left: 2rem; padding-right: 2rem; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .offer-selector { grid-template-columns: 1fr; }
+    }
+  
+    /* Max width global */
+    .site-content { max-width: 90%; margin: 0 auto; }
+    section, .page-hero, .hero, .story, .valeurs, .engagements, .presse,
+    .pour-qui, .supports, .offres, .wall-box, .sector-section, .contact-wrap,
+    .blog-grid, .article-wrap, .breadcrumb, .filter-wrap, .tabs-wrap {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .usp-strip, .cta-section, footer, nav > * { max-width: 90%; margin-left: auto; margin-right: auto; }
+    nav { display: flex; justify-content: center; }
+    nav > a, nav > ul { flex-shrink: 0; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      display: flex; align-items: center; justify-content: center;
+      padding: .85rem 2rem .5rem;
+      position: relative;
+    }
+    .nav-logo-link { line-height: 0; text-decoration: none; }
+    .nav-logo { height: 44px; display: block; }
+    .nav-cta-top {
+      position: absolute; right: 2rem; top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F; color: white;
+      text-decoration: none; padding: 9px 22px;
+      border-radius: 50px; font-weight: 500; font-size: 14px;
+      white-space: nowrap; transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .65rem;
+      border-top: 1px solid rgba(0,0,0,.04);
+      margin: 0;
+    }
+    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
+    .nav-bottom li::before { display: none !important; }
+    .nav-bottom a {
+      text-decoration: none; color: #2d2d3a;
+      font-size: 14px; font-weight: 400;
+      transition: color .2s;
+    }
+    .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
+  
+    footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
+    .footer-inner { max-width: 90%; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 2rem; }
+    .footer-brand img { height: 40px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+    .footer-brand p { font-size: 14px; line-height: 1.65; max-width: 240px; margin-bottom: 1rem; color: rgba(255,255,255,.85); }
+    .social-links { display: flex; gap: .6rem; }
+    .social-links a { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); transition: all .2s; text-decoration: none; }
+    .social-links a:hover { border-color: white; color: white; }
+    .footer-col h4 { font-size: 12px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; }
+    .footer-col ul li { margin-bottom: .5rem; list-style: none; }
+    .footer-col ul li::before { display: none; }
+    .footer-col ul li a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .newsletter-row { display: flex; gap: .4rem; margin-bottom: .4rem; }
+    .newsletter-form input[type="email"] { flex: 1; min-width: 0; padding: 9px 14px; border-radius: 50px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.15); color: white; font-size: 13px; font-family: 'Outfit',sans-serif; outline: none; }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.5); }
+    .newsletter-form button { padding: 9px 16px; border-radius: 50px; border: none; background: white; color: #EB356F; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Outfit',sans-serif; }
+    .nl-success { font-size: 12px; color: rgba(255,255,255,.8); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.25); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 1rem; color: rgba(255,255,255,.7); }
+    .footer-bottom a { color: rgba(255,255,255,.7); text-decoration: none; }
+    .footer-bottom a:hover { color: white; }
+    @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+    <nav>
+    <div class="nav-top">
+      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
+      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+    </div>
+    <ul class="nav-bottom">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nos-supports.html">Nos supports</a></li>
+      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
+      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-wrap">
+
+    <!-- LEFT -->
+    <div class="contact-left">
+      <span class="section-tag">Contact</span>
+      <h1>Parlons de votre projet</h1>
+      <p>Un espace à transformer, une idée à explorer, un devis à obtenir : on vous répond sous 48h.</p>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <a href="mailto:contact@lespetitspapierspeints.com">contact@lespetitspapierspeints.com</a>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>Toulouse, Occitanie, on travaille partout en France</span>
+        </div>
+      </div>
+
+      <div class="reassurance">
+        <div class="reassurance-item">Réponse garantie sous 48h ouvrées</div>
+        <div class="reassurance-item">Devis gratuit et sans engagement</div>
+        <div class="reassurance-item">Fabrication 100% française</div>
+        <div class="reassurance-item">Livraison en France et à l'international</div>
+      </div>
+    </div>
+
+    <!-- RIGHT : FORM -->
+    <div class="contact-right">
+      <p class="form-title">Dites-nous tout sur votre projet</p>
+
+      <!-- IMPORTANT: remplace YOUR_FORM_ID par ton identifiant Formspree (formspree.io) -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau projet - Les Petits Papiers">
+        <input type="hidden" name="_replyto" id="reply-to-field">
+
+        <!-- OFFER SELECTOR -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="font-size:13px;font-weight:500;color:var(--text);display:block;margin-bottom:.6rem;">Quelle formule vous intéresse ?</label>
+          <div class="offer-selector">
+            <div>
+              <input type="radio" name="formule" value="La Vignette (catalogue)" id="o1" class="offer-option">
+              <label for="o1" class="offer-label">
+                <span class="offer-label-name">La Vignette</span>
+                <span class="offer-label-desc">Catalogue, dès 50 €/m²</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="formule" value="Le Grand Format (catalogue + personnalisation)" id="o2" class="offer-option" checked>
+              <label for="o2" class="offer-label">
+                <span class="offer-label-name">Le Grand Format</span>
+                <span class="offer-label-desc">Catalogue + identité, dès 70 €/m²</span>
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="formule" value="Le Panorama (100% sur-mesure)" id="o3" class="offer-option">
+              <label for="o3" class="offer-label">
+                <span class="offer-label-name">Le Panorama</span>
+                <span class="offer-label-desc">100% sur-mesure, sur devis</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Marie" required>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" placeholder="Dupont" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="marie@exemple.fr" required oninput="document.getElementById('reply-to-field').value=this.value">
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="telephone" placeholder="06 00 00 00 00">
+          </div>
+          <div class="form-group">
+            <label for="structure">Votre structure</label>
+            <input type="text" id="structure" name="structure" placeholder="Nom de votre entreprise ou organisation">
+          </div>
+          <div class="form-group">
+            <label for="secteur">Secteur</label>
+            <select id="secteur" name="secteur">
+              <option value="">Choisir...</option>
+              <option>Entreprise / Open space</option>
+              <option>École / Crèche</option>
+              <option>Médical / Santé</option>
+              <option>Restaurant / Hôtel</option>
+              <option>Collectivité</option>
+              <option>EHPAD / Résidence sénior</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="projet">Décrivez votre projet *</label>
+            <textarea id="projet" name="projet" placeholder="Dimensions approximatives du mur, nombre de murs, usage prévu, délai souhaité, inspirations éventuelles..." required></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <p class="form-note">* Champs obligatoires. Vos données ne seront jamais revendues.</p>
+          <button type="submit" class="btn-submit" id="submit-btn">
+            Envoyer ma demande
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div class="form-success" id="form-success">
+          ✅ <strong>Message envoyé !</strong> Merci pour votre projet. On vous répond sous 48h ouvrées à l'adresse indiquée.
+        </div>
+        <div class="form-error" id="form-error">
+          ❌ Une erreur s'est produite. Essayez de nous écrire directement à <a href="mailto:contact@lespetitspapierspeints.com">contact@lespetitspapierspeints.com</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="Les Petits Papiers">
+          <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="https://www.instagram.com/lespetitspapierspeints/" target="_blank" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61578989407415" target="_blank" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@les.petits.papierspeints" target="_blank" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.37a8.16 8.16 0 004.77 1.52V7.44a4.85 4.85 0 01-1-.75z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Liens utiles</h4>
+          <ul>
+            <li><a href="nos-supports.html">Nos supports</a></li>
+            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
+            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Nos formules</h4>
+          <ul>
+            <li><a href="la-vignette.html">La Vignette</a></li>
+            <li><a href="le-grand-format.html">Le Grand Format</a></li>
+            <li><a href="le-panorama.html">Le Panorama</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
+            <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
+            <div class="newsletter-row">
+              <input type="email" name="email" placeholder="Votre e-mail" required>
+              <button type="submit">OK</button>
+            </div>
+            <p class="nl-success" style="display:none">Inscription confirmée !</p>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
+        <a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          document.getElementById('form-error').style.display = 'none';
+          this.reset();
+          btn.textContent = 'Envoyé !';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        document.getElementById('form-error').style.display = 'block';
+        btn.disabled = false;
+        btn.innerHTML = 'Réessayer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+      }
+    }); })
+        .then(r => { if (r.ok) { form.querySelector('.nl-success').style.display = 'block'; form.reset(); } })
+        .catch(() => {});
+    }
+      function submitNewsletter(e) {
+      e.preventDefault();
+      fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
+        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
+    }
+  </script>
+
+</body>
+</html>
