@@ -830,59 +830,20 @@
     
   
     /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-      background: rgba(255,255,255,.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e8e6e0;
-      font-family: 'Outfit', sans-serif;
-    }
-    .nav-row1 {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 24px 6px;
-      min-height: 54px;
-    }
-    .nav-spacer { flex: 1; }
-    .nav-logo-center {
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-    }
-    .nav-logo-link { line-height: 0; text-decoration: none; display: block; }
-    .nav-logo { height: 42px; width: auto; display: block; }
-    .nav-cta-right {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .nav-cta {
-      background: #EB356F; color: white !important;
-      text-decoration: none; padding: 9px 20px;
-      border-radius: 50px; font-size: 13px; font-weight: 500;
-      white-space: nowrap; transition: opacity .2s;
-    }
-    .nav-cta:hover { opacity: .85; }
-    .nav-row2 {
-      display: flex; align-items: center; justify-content: center;
-      gap: 32px; list-style: none; margin: 0;
-      padding: 0 24px 10px;
-      border-top: 1px solid rgba(0,0,0,.06);
-    }
-    .nav-row2 li { list-style: none; margin: 0; padding: 0; }
-    .nav-row2 a { text-decoration: none; color: #2d2d3a; font-size: 14px; font-weight: 400; transition: color .2s; }
-    .nav-row2 a:hover, .nav-row2 a.active { color: #5ACAF1; }
-    @media (max-width: 768px) {
-      .nav-logo { height: 36px; }
-      .nav-cta { font-size: 12px; padding: 7px 12px; }
-      .nav-row2 { gap: 14px; }
-      .nav-row2 a { font-size: 13px; }
-    }
-    @media (max-width: 480px) {
-      .nav-row2 { gap: 8px; flex-wrap: wrap; padding: 0 8px 8px; }
-      .nav-row2 a { font-size: 12px; }
-    }
+  <nav>
+    <div style="display:flex;align-items:center;justify-content:center;padding:10px 24px 6px;min-height:54px;position:relative;">
+      <a href="index.html" style="line-height:0;text-decoration:none;">
+        <img src="logo.svg" alt="Les Petits Papiers" style="height:42px;display:block;">
+      </a>
+      <a href="contact.html" style="position:absolute;right:24px;background:#EB356F;color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;">Discutons de votre projet</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:32px;padding:6px 24px 10px;border-top:1px solid rgba(0,0,0,.06);">
+      <a href="index.html" style="text-decoration:none;color:#2d2d3a;font-size:14px;">Accueil</a>
+      <a href="nos-supports.html" style="text-decoration:none;color:#2d2d3a;font-size:14px;">Nos supports</a>
+      <a href="inspirez-vous.html" style="text-decoration:none;color:#2d2d3a;font-size:14px;">Inspirez-vous</a>
+      <a href="a-propos-de-nous.html" style="text-decoration:none;color:#2d2d3a;font-size:14px;">À propos de nous</a>
+    </div>
+  </nav>
     /* /NAV */
   </style>
 
