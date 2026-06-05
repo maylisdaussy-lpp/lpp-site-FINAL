@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez nos stickers muraux repositionnables et papiers peints pré-encollés à colorier, conçus pour les espaces professionnels. Fabriqués en France, certifiés Imprim'Vert et Green'R.">
   <title>Nos supports muraux à colorier : stickers repositionnables et papiers peints - Les Petits Papiers</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +48,7 @@
 
     @font-face {
       font-family: 'GooddogNew';
-      src: url('fonts/gooddognew.ttf') format('truetype');
+      src: url('../fonts/gooddognew.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -392,44 +393,6 @@
     .usp-strip, .cta-section, footer, nav > * { max-width: 90%; margin-left: auto; margin-right: auto; }
     nav { display: flex; justify-content: center; }
     nav > a, nav > ul { flex-shrink: 0; }
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e8e6e0;
-    }
-    .nav-top {
-      display: flex; align-items: center; justify-content: center;
-      padding: .85rem 2rem .5rem;
-      position: relative;
-    }
-    .nav-logo-link { line-height: 0; text-decoration: none; }
-    .nav-logo { height: 44px; display: block; }
-    .nav-cta-top {
-      position: absolute; right: 2rem; top: 50%;
-      transform: translateY(-50%);
-      background: #EB356F; color: white;
-      text-decoration: none; padding: 9px 22px;
-      border-radius: 50px; font-weight: 500; font-size: 14px;
-      white-space: nowrap; transition: opacity .2s;
-      font-family: 'Outfit', sans-serif;
-    }
-    .nav-cta-top:hover { opacity: .85; }
-    .nav-bottom {
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem;
-      list-style: none !important;
-      padding: 0 2rem .65rem;
-      border-top: 1px solid rgba(0,0,0,.04);
-      margin: 0;
-    }
-    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
-    .nav-bottom li::before { display: none !important; }
-    .nav-bottom a {
-      text-decoration: none; color: #2d2d3a;
-      font-size: 14px; font-weight: 400;
-      transition: color .2s;
-    }
     .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
   
     footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
@@ -479,20 +442,96 @@
     }
     .lightbox-close:hover { background: rgba(250,248,245,.95); }
     .product-img-main, .product-img-thumb { cursor: zoom-in; }
-</style>
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 2rem .4rem;
+    }
+    .nav-logo-link {
+      line-height: 0;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-logo { height: 42px; display: block; }
+    .nav-cta-top {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F;
+      color: white !important;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .6rem;
+      margin: 0;
+      border-top: 1px solid rgba(0,0,0,.05);
+    }
+    .nav-bottom li {
+      list-style: none !important;
+      padding: 0; margin: 0;
+    }
+    .nav-bottom li::before,
+    .nav-bottom li::marker { display: none !important; content: '' !important; }
+    .nav-bottom a {
+      text-decoration: none;
+      color: #2d2d3a;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color .2s;
+      display: block;
+    }
+    .nav-bottom a:hover,
+    .nav-bottom a.active { color: #5ACAF1; }
+    @media (max-width: 768px) {
+      .nav-cta-top { font-size: 12px; padding: 7px 14px; right: 1rem; }
+      .nav-bottom { gap: 1.25rem; flex-wrap: wrap; padding: .4rem 1rem .6rem; }
+      .nav-bottom a { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .nav-bottom { gap: .75rem; }
+      .nav-bottom a { font-size: 12px; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
+      <nav>
     <div class="nav-top">
-      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
-      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+      <a href="/" class="nav-logo-link">
+        <img src="../logo.svg" alt="Les Petits Papiers" class="nav-logo">
+      </a>
+      <a href="/contact/" class="nav-cta-top">Discutons de votre projet</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="nos-supports.html" class="active">Nos supports</a></li>
-      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/nos-supports/" class="active">Nos supports</a></li>
+      <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+      <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
     </ul>
   </nav>
 
@@ -511,7 +550,7 @@
     </div>
     <div class="page-hero-img">
       <img
-        src="images/supports-header.jpg"
+        src="../images/supports-header.jpg"
         alt="Sticker mural repositionnable à colorier en fresque"
       >
     </div>
@@ -531,19 +570,19 @@
       <div class="product-visual">
         <img
           id="sticker-main"
-          src="images/supports-header.jpg"
+          src="../images/supports-sticker-1.jpg"
           alt="Sticker mural repositionnable à colorier grand format"
           class="product-img-main"
         >
         <div class="product-img-thumb-grid">
           <img
-            src="images/sticker-ecole.jpg"
+            src="../images/supports-sticker-2.jpg"
             alt="Sticker mural revêtement classique"
             class="product-img-thumb active"
             onclick="switchImg('sticker-main', this)"
           >
           <img
-            src="images/fresque-enfant.jpg"
+            src="../images/fresque-enfant.jpg"
             alt="Sticker mural revêtement effaçable chambre enfant"
             class="product-img-thumb"
             onclick="switchImg('sticker-main', this)"
@@ -591,7 +630,7 @@
         <h3 style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:.85rem;">Quel revêtement choisir ?</h3>
         <div class="revetements">
           <div class="revetement-card">
-            <img src="images/sticker-ecole.jpg" alt="Sticker revêtement classique mat">
+            <img src="../images/sticker-ecole.jpg" alt="Sticker revêtement classique mat">
             <div class="revetement-body">
               <h4>Classique</h4>
               <p>Finition matte, résistant aux manipulations. Idéal pour une déco pérenne mais modulable.</p>
@@ -606,7 +645,7 @@
           </div>
         </div>
 
-        <a href="contact.html" class="btn-primary">Discuter de votre projet</a>
+        <a href="/contact/" class="btn-primary">Discuter de votre projet</a>
       </div>
     </div>
   </section>
@@ -617,19 +656,19 @@
       <div class="product-visual">
         <img
           id="pp-main"
-          src="images/supports-pp-1.jpg"
+          src="../images/supports-pp-1.jpg"
           alt="Papier peint pré-encollé à colorier personnalisé"
           class="product-img-main"
         >
         <div class="product-img-thumb-grid">
           <img
-            src="images/sticker-ecole.jpg"
+            src="../images/sticker-ecole.jpg"
             alt="Papier peint mural école"
             class="product-img-thumb active"
             onclick="switchImg('pp-main', this)"
           >
           <img
-            src="images/supports-pp-3.jpg"
+            src="../images/supports-pp-3.jpg"
             alt="Papier peint carte du monde à colorier"
             class="product-img-thumb"
             onclick="switchImg('pp-main', this)"
@@ -668,7 +707,7 @@
           </div>
         </div>
 
-        <a href="contact.html" class="btn-primary">Discuter de votre projet</a>
+        <a href="/contact/" class="btn-primary">Discuter de votre projet</a>
       </div>
     </div>
   </section>
@@ -683,7 +722,7 @@
     <div class="labels-grid">
       <div class="label-card">
         <img
-          src="images/logos/imprim-vert.jpg"
+          src="../images/logos/imprim-vert.jpg"
           alt="Label Imprim'Vert"
           class="label-logo"
         >
@@ -694,7 +733,7 @@
       </div>
       <div class="label-card">
         <img
-          src="images/logos/greenr.png"
+          src="../images/logos/greenr.png"
           alt="Label Green R"
           class="label-logo"
         >
@@ -705,7 +744,7 @@
       </div>
         <div class="label-card">
           <img
-            src="images/logos/impri-france.png"
+            src="../images/logos/impri-france.png"
             alt="ImpriF rance partenaire fabrication française"
             class="label-logo"
           >
@@ -765,7 +804,7 @@
   <section class="cta-section">
     <h2>Quel support est fait pour vous ?</h2>
     <p>On vous aide à choisir le bon format selon votre espace, votre usage et votre budget.</p>
-    <a href="contact.html" class="btn-white">
+    <a href="/contact/" class="btn-white">
       Demander un devis
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -776,7 +815,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.svg" alt="Les Petits Papiers">
+          <img src="../logo.svg" alt="Les Petits Papiers">
           <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -788,19 +827,19 @@
         <div class="footer-col">
           <h4>Liens utiles</h4>
           <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/nos-supports/">Nos supports</a></li>
+            <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+            <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Nos formules</h4>
           <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
+            <li><a href="/la-vignette/">La Vignette</a></li>
+            <li><a href="/le-grand-format/">Le Grand Format</a></li>
+            <li><a href="/le-panorama/">Le Panorama</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -824,12 +863,18 @@
 
   <script>
     function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const navH = document.querySelector('nav').offsetHeight;
-      const tabsH = document.querySelector('.tabs-wrap') ? document.querySelector('.tabs-wrap').offsetHeight : 0;
-      const offset = el.getBoundingClientRect().top + window.scrollY - navH - tabsH - 16;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      setTimeout(function() {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var navH = document.querySelector('nav').offsetHeight || 112;
+        var tabsEl = document.querySelector('.tabs-wrap');
+        var tabsH = tabsEl ? tabsEl.offsetHeight : 0;
+        var top = el.getBoundingClientRect().top + window.pageYOffset - navH - tabsH - 8;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }, 10);
+    });
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
     });

@@ -3,44 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Les Petits Papiers · Le Panorama : 100% sur-mesure. Sur devis. Fresques murales à colorier fabriquées en France.">
-  <title>Le Panorama : 100% sur-mesure - Les Petits Papiers</title>
+  <meta name="description" content="Les Petits Papiers · Le Grand Format : Catalogue + votre identité. À partir de 70 €/m². Fresques murales à colorier fabriquées en France.">
+  <title>Le Grand Format : Catalogue + votre identité - Les Petits Papiers</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    @font-face { font-family: 'GooddogNew'; src: url('fonts/gooddognew.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'GooddogNew'; src: url('../fonts/gooddognew.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
     :root { --blue:#5ACAF1;--pink:#EB356F;--blue-light:#e8f8fd;--pink-light:#fde8ef;--cream:#faf8f5;--dark:#1a1a2e;--text:#2d2d3a;--muted:#7a7a8c;--border:#e8e6e0;--white:#ffffff;--radius:20px;--radius-sm:12px; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
     /* HERO */
     .format-hero {
-      padding-top: 110px;
-      background: linear-gradient(135deg, #EB356F 0%, #5ACAF1 100%);
-      padding-bottom: 3rem;
-      text-align: left;
+      padding-top: 112px;
+      background: #faf8f5;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #e8e6e0;
     }
     .format-hero-inner {
       max-width: 90%; margin: 0 auto; padding: 3rem 2rem 0;
     }
     .format-hero-tag {
       display: inline-block;
-      background: rgba(255,255,255,.25); color: white;
+      background: rgba(90,202,241,.12); color: #EB356F;
       font-size: 12px; font-weight: 600;
       text-transform: uppercase; letter-spacing: .08em;
-      padding: 5px 14px; border-radius: 50px;
-      margin-bottom: 1rem; backdrop-filter: blur(4px);
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 1rem;
     }
     .format-hero h1 {
       font-family: 'GooddogNew', 'Outfit', sans-serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 700; color: white;
-      line-height: 1.1; margin-bottom: .6rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: #1a1a2e; line-height: 1.1; margin-bottom: .6rem;
     }
     .format-hero-price {
-      font-size: 1.2rem; font-weight: 500; color: rgba(255,255,255,.85);
+      font-size: 1.1rem; font-weight: 600; color: #EB356F;
     }
 
     /* BREADCRUMB */
@@ -111,44 +110,6 @@
     @media (max-width: 640px) {
       .sidebar { grid-template-columns: 1fr; }
     }
-      nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e8e6e0;
-    }
-    .nav-top {
-      display: flex; align-items: center; justify-content: center;
-      padding: .85rem 2rem .5rem;
-      position: relative;
-    }
-    .nav-logo-link { line-height: 0; text-decoration: none; }
-    .nav-logo { height: 44px; display: block; }
-    .nav-cta-top {
-      position: absolute; right: 2rem; top: 50%;
-      transform: translateY(-50%);
-      background: #EB356F; color: white;
-      text-decoration: none; padding: 9px 22px;
-      border-radius: 50px; font-weight: 500; font-size: 14px;
-      white-space: nowrap; transition: opacity .2s;
-      font-family: 'Outfit', sans-serif;
-    }
-    .nav-cta-top:hover { opacity: .85; }
-    .nav-bottom {
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem;
-      list-style: none !important;
-      padding: 0 2rem .65rem;
-      border-top: 1px solid rgba(0,0,0,.04);
-      margin: 0;
-    }
-    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
-    .nav-bottom li::before { display: none !important; }
-    .nav-bottom a {
-      text-decoration: none; color: #2d2d3a;
-      font-size: 14px; font-weight: 400;
-      transition: color .2s;
-    }
     .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
   
     footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
@@ -176,108 +137,162 @@
     @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } }
   
+    
+  
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 2rem .4rem;
+    }
+    .nav-logo-link {
+      line-height: 0;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-logo { height: 42px; display: block; }
+    .nav-cta-top {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F;
+      color: white !important;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .6rem;
+      margin: 0;
+      border-top: 1px solid rgba(0,0,0,.05);
+    }
+    .nav-bottom li {
+      list-style: none !important;
+      padding: 0; margin: 0;
+    }
+    .nav-bottom li::before,
+    .nav-bottom li::marker { display: none !important; content: '' !important; }
+    .nav-bottom a {
+      text-decoration: none;
+      color: #2d2d3a;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color .2s;
+      display: block;
+    }
+    .nav-bottom a:hover,
+    .nav-bottom a.active { color: #5ACAF1; }
+    @media (max-width: 768px) {
+      .nav-cta-top { font-size: 12px; padding: 7px 14px; right: 1rem; }
+      .nav-bottom { gap: 1.25rem; flex-wrap: wrap; padding: .4rem 1rem .6rem; }
+      .nav-bottom a { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .nav-bottom { gap: .75rem; }
+      .nav-bottom a { font-size: 12px; }
+    }
+  
     .process-steps { margin: 1.5rem 0 2rem; }
-    .process-content {
-      background: var(--blue-light, #e8f8fd);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-      min-height: 90px;
-      border-left: 3px solid var(--blue, #5ACAF1);
-      transition: all .3s ease;
-    }
+    .process-content { background: #e8f8fd; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; min-height: 90px; border-left: 3px solid #5ACAF1; }
     .process-step-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .4rem; flex-wrap: wrap; gap: .5rem; }
-    .process-step-label { font-size: 11px; font-weight: 600; color: var(--blue, #5ACAF1); text-transform: uppercase; letter-spacing: .08em; margin: 0; }
-    .process-step-timing { font-size: 11px; font-weight: 500; color: var(--muted, #7a7a8c); background: white; padding: 2px 10px; border-radius: 50px; }
-    .process-step-text { font-size: 14px; color: var(--text, #2d2d3a); line-height: 1.65; margin: 0; }
-    .process-bubbles {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      position: relative; padding: 0 8px;
-    }
-    .process-line {
-      position: absolute; top: 24px; left: 32px; right: 32px;
-      height: 2px; background: var(--border, #e8e6e0); z-index: 0;
-    }
-    .process-bubble {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; align-items: center; gap: .4rem;
-      cursor: pointer; flex: 1;
-    }
-    .bubble-icon {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: white; border: 2.5px solid var(--border, #e8e6e0);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; transition: all .25s ease;
-    }
-    .process-bubble span { font-size: 11px; color: var(--muted, #7a7a8c); font-weight: 400; transition: all .25s; text-align: center; }
-    .process-bubble.active .bubble-icon { background: var(--blue, #5ACAF1); border-color: var(--blue, #5ACAF1); box-shadow: 0 0 0 4px rgba(90,202,241,.2); }
-    .process-bubble.active span { color: var(--blue, #5ACAF1); font-weight: 600; }
-    .process-bubble.done .bubble-icon { background: var(--blue-light, #e8f8fd); border-color: var(--blue, #5ACAF1); }
-    .process-bubble.done span { color: var(--blue, #5ACAF1); }
-    @media (max-width: 640px) {
-      .process-bubbles { gap: .25rem; }
-      .bubble-icon { width: 38px; height: 38px; font-size: 15px; }
-      .process-bubble span { font-size: 9px; }
-    }
+    .process-step-label { font-size: 11px; font-weight: 600; color: #5ACAF1; text-transform: uppercase; letter-spacing: .08em; margin: 0; }
+    .process-step-timing { font-size: 11px; font-weight: 500; color: #7a7a8c; background: white; padding: 2px 10px; border-radius: 50px; }
+    .process-step-text { font-size: 14px; color: #2d2d3a; line-height: 1.65; margin: 0; }
+    .process-bubbles { display: flex; align-items: flex-start; justify-content: space-between; position: relative; padding: 0 4px; }
+    .process-line { position: absolute; top: 20px; left: 24px; right: 24px; height: 2px; background: #e8e6e0; z-index: 0; }
+    .process-bubble { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: .35rem; cursor: pointer; flex: 1; }
+    .bubble-icon { width: 44px; height: 44px; border-radius: 50%; background: white; border: 2px solid #e8e6e0; display: flex; align-items: center; justify-content: center; transition: all .25s; }
+    .bubble-icon svg { width: 18px; height: 18px; stroke: #7a7a8c; }
+    .process-bubble span { font-size: 10px; color: #7a7a8c; font-weight: 400; transition: all .25s; text-align: center; line-height: 1.3; }
+    .process-bubble.active .bubble-icon { background: #5ACAF1; border-color: #5ACAF1; box-shadow: 0 0 0 4px rgba(90,202,241,.2); }
+    .process-bubble.active .bubble-icon svg { stroke: white; }
+    .process-bubble.active span { color: #5ACAF1; font-weight: 600; }
+    .process-bubble.done .bubble-icon { background: #e8f8fd; border-color: #5ACAF1; }
+    .process-bubble.done .bubble-icon svg { stroke: #5ACAF1; }
+    .process-bubble.done span { color: #5ACAF1; }
+    @media (max-width: 640px) { .bubble-icon { width: 36px; height: 36px; } .bubble-icon svg { width: 14px; height: 14px; } .process-bubble span { font-size: 9px; } }
   </style>
 </head>
 <body>
-    <nav>
+      <nav>
     <div class="nav-top">
-      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
-      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+      <a href="/" class="nav-logo-link">
+        <img src="../logo.svg" alt="Les Petits Papiers" class="nav-logo">
+      </a>
+      <a href="/contact/" class="nav-cta-top">Discutons de votre projet</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="nos-supports.html">Nos supports</a></li>
-      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/nos-supports/">Nos supports</a></li>
+      <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+      <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
     </ul>
   </nav>
 
   <div class="format-hero">
     <div class="format-hero-inner">
-      <span class="format-hero-tag">Formule sur-mesure</span>
-      <h1>Le Panorama</h1>
-      <p class="format-hero-price">100% sur-mesure · Sur devis</p>
+      <span class="format-hero-tag">Le plus choisi</span>
+      <h1>Le Grand Format</h1>
+      <p class="format-hero-price">Catalogue + votre identité · À partir de 70 €/m²</p>
     </div>
   </div>
 
   <nav class="breadcrumb" aria-label="Fil d'ariane">
-    <a href="index.html">Accueil</a><span>/</span>
-    <a href="nos-supports.html">Nos supports</a><span>/</span>
-    <span>Le Panorama</span>
+    <a href="/">Accueil</a><span>/</span>
+    <a href="/nos-supports/">Nos supports</a><span>/</span>
+    <span>Le Grand Format</span>
   </nav>
 
   <div class="format-wrap">
     <article class="format-body">
       
         <h2 id="pour-qui">Pour qui ?</h2>
-        <p>Le Panorama est la bonne formule si vous avez une idée précise que le catalogue ne peut pas couvrir, si votre projet implique des dimensions non standard, ou si vous souhaitez raconter quelque chose d'unique.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem;">
-              <div style="background:linear-gradient(135deg,#fde8ef,#e8f8fd);border-radius:12px;padding:1rem;">
-                <p style="font-size:20px;margin-bottom:.3rem">🏙️</p>
-                <p style="font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.2rem">Panorama urbain</p>
-                <p style="font-size:12px;color:var(--muted);margin:0">Votre ville, vos monuments</p>
+        <p>Le Grand Format est fait pour vous si vous avez une identité visuelle à valoriser, si vous voulez un visuel qui ressemble à votre marque sans partir de zéro, ou si vous avez des contraintes de couleurs incontournables.</p>
+            <div style="background:var(--blue-light);border-radius:12px;padding:1.25rem;margin-top:1rem;border-left:3px solid var(--blue);">
+              <p style="font-size:13px;color:var(--dark);margin:0;line-height:1.65">La structure du visuel reste celle du catalogue, ce qui garantit un résultat graphique solide. Les adaptations se font en dialogue avec vous.</p>
+            </div>
+        <h2 id="ce-quon-adapte">Ce qu'on peut intégrer</h2>
+        <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem;">
+              <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--cream);border-radius:10px;">
+                <span style="font-size:20px">🎨</span>
+                <p style="font-size:14px;color:var(--text);margin:0">Vos couleurs de marque</p>
               </div>
-              <div style="background:linear-gradient(135deg,#e8f8fd,#fde8ef);border-radius:12px;padding:1rem;">
-                <p style="font-size:20px;margin-bottom:.3rem">👥</p>
-                <p style="font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.2rem">Trombinoscope</p>
-                <p style="font-size:12px;color:var(--muted);margin:0">Votre équipe en fresque</p>
+              <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--cream);border-radius:10px;">
+                <span style="font-size:20px">🏷️</span>
+                <p style="font-size:14px;color:var(--text);margin:0">Votre logo ou vos éléments graphiques</p>
               </div>
-              <div style="background:linear-gradient(135deg,#fde8ef,#e8f8fd);border-radius:12px;padding:1rem;">
-                <p style="font-size:20px;margin-bottom:.3rem">🔍</p>
-                <p style="font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.2rem">Cherche et trouve</p>
-                <p style="font-size:12px;color:var(--muted);margin:0">Des détails à l'infini</p>
+              <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--cream);border-radius:10px;">
+                <span style="font-size:20px">✏️</span>
+                <p style="font-size:14px;color:var(--text);margin:0">Un nom, un slogan, un message</p>
               </div>
-              <div style="background:linear-gradient(135deg,#e8f8fd,#fde8ef);border-radius:12px;padding:1rem;">
-                <p style="font-size:20px;margin-bottom:.3rem">🏥</p>
-                <p style="font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.2rem">Médical / pédiatrique</p>
-                <p style="font-size:12px;color:var(--muted);margin:0">Conforme HAS, certifié M1</p>
+              <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--cream);border-radius:10px;">
+                <span style="font-size:20px">📍</span>
+                <p style="font-size:14px;color:var(--text);margin:0">Des détails qui ancrent le visuel dans votre univers</p>
               </div>
             </div>
         <h2 id="process">Le process</h2>
-                        <div class="process-steps">
+                                <div class="process-steps">
           <div class="process-content" id="process-content">
             <div class="process-step-header">
               <p class="process-step-label">Étape 1 · Brief et découverte</p>
@@ -287,51 +302,44 @@
           </div>
           <div class="process-bubbles">
             <div class="process-line"></div>
-            <div class="process-bubble  active" data-idx="0" data-icon="💬" data-label="Brief" data-step="1" data-title="Brief et découverte" data-timing="T0" data-text="Vous nous partagez vos besoins, vos contraintes et l'univers visuel souhaité. Nous collectons les dimensions du ou des murs concernés et établissons un devis." onclick="selectStep(this)">
-              <div class="bubble-icon">💬</div>
+            <div class="process-bubble active" data-idx="0" data-step="1" data-label="Brief" data-title="Brief et découverte" data-timing="T0" data-text="Vous nous partagez vos besoins, vos contraintes et l&#39;univers visuel souhaité. Nous collectons les dimensions du ou des murs concernés et établissons un devis." onclick="selectStep(this)">
+              <div class="bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
               <span>Brief</span>
             </div>
-            <div class="process-bubble" data-idx="1" data-icon="✏️" data-label="Création" data-step="2" data-title="Proposition créative" data-timing="T + 1 à 2 semaines" data-text="Une fois le devis accepté, suivant vos indications, nous élaborons une maquette personnalisée adaptée à vos objectifs et votre espace." onclick="selectStep(this)">
-              <div class="bubble-icon">✏️</div>
+            <div class="process-bubble" data-idx="1" data-step="2" data-label="Création" data-title="Proposition créative" data-timing="T + 1 à 2 semaines" data-text="Une fois le devis accepté, suivant vos indications, nous élaborons une maquette personnalisée adaptée à vos objectifs et votre espace." onclick="selectStep(this)">
+              <div class="bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
               <span>Création</span>
             </div>
-            <div class="process-bubble" data-idx="2" data-icon="✅" data-label="Validation" data-step="3" data-title="Validation finale du visuel" data-timing="T + 3 semaines" data-text="Vous examinez et approuvez le design final avant production." onclick="selectStep(this)">
-              <div class="bubble-icon">✅</div>
+            <div class="process-bubble" data-idx="2" data-step="3" data-label="Validation" data-title="Validation finale du visuel" data-timing="T + 3 semaines" data-text="Vous examinez et approuvez le design final avant production." onclick="selectStep(this)">
+              <div class="bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
               <span>Validation</span>
             </div>
-            <div class="process-bubble" data-idx="3" data-icon="📦" data-label="Livraison" data-step="4" data-title="Livraison et installation" data-timing="T + 5 semaines" data-text="Nous livrons votre projet, prêt à poser ou à installer dans un emballage sécurisé et écologique. Nous livrons en France et à l'international." onclick="selectStep(this)">
-              <div class="bubble-icon">📦</div>
+            <div class="process-bubble" data-idx="3" data-step="4" data-label="Livraison" data-title="Livraison et installation" data-timing="T + 5 semaines" data-text="Nous livrons votre projet, prêt à poser ou à installer dans un emballage sécurisé et écologique. Nous livrons en France et à l&#39;international." onclick="selectStep(this)">
+              <div class="bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
               <span>Livraison</span>
             </div>
-            <div class="process-bubble" data-idx="4" data-icon="🤝" data-label="Suivi" data-step="5" data-title="Suivi et accompagnement" data-timing="" data-text="Nous restons disponibles pour tout ajustement ou question post-installation." onclick="selectStep(this)">
-              <div class="bubble-icon">🤝</div>
+            <div class="process-bubble" data-idx="4" data-step="5" data-label="Suivi" data-title="Suivi et accompagnement" data-timing="" data-text="Nous restons disponibles pour tout ajustement ou question post-installation." onclick="selectStep(this)">
+              <div class="bubble-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
               <span>Suivi</span>
             </div>
           </div>
         </div>
+
         </div>
-        <h2 id="exemples">Ce qu'on peut créer</h2>
-        <p>Les projets Panorama les plus fréquents :</p>
-            <ul>
-              <li>Panorama urbain : votre ville, vos monuments, votre skyline</li>
-              <li>Trombinoscope géant à colorier avec les portraits de votre équipe</li>
-              <li>Cherche et trouve thématisé selon votre univers</li>
-              <li>Fresque historique ou éducative pour une école ou collectivité</li>
-              <li>Déclinaison multi-sites pour une chaîne ou franchise</li>
-            </ul>
+        </div>
       <div class="faq">
         <h2>Questions fréquentes</h2>
           <details class="faq-item">
-            <summary class="faq-q">Quel budget prévoir ?</summary>
-            <p class="faq-a">Le devis dépend des dimensions et de la complexité. On vous répond sous 48h avec une fourchette après échange.</p>
+            <summary class="faq-q">Combien d'allers-retours de validation ?</summary>
+            <p class="faq-a">Une première version, puis jusqu'à deux retours inclus dans la formule.</p>
           </details>
           <details class="faq-item">
-            <summary class="faq-q">Combien de temps prend un Panorama ?</summary>
-            <p class="faq-a">Comptez 3 à 6 semaines : brief, création, validations, impression, livraison.</p>
+            <summary class="faq-q">Fournissez-vous un BAT avant impression ?</summary>
+            <p class="faq-a">Oui, un bon à tirer numérique vous est envoyé pour validation finale.</p>
           </details>
           <details class="faq-item">
-            <summary class="faq-q">Peut-on décliner sur plusieurs sites ?</summary>
-            <p class="faq-a">Oui, on peut adapter un visuel Panorama pour plusieurs espaces ou franchises.</p>
+            <summary class="faq-q">Quelle différence avec Le Panorama ?</summary>
+            <p class="faq-a">Le Grand Format adapte un visuel existant. Le Panorama est une création de A à Z.</p>
           </details>
           <details class="faq-item">
             <summary class="faq-q">Livrez-vous à l'étranger ?</summary>
@@ -341,21 +349,21 @@
     </article>
     <aside class="sidebar">
       <div class="sidebar-price">
-        <p class="sidebar-price-num">Sur devis</p>
-        <p class="sidebar-price-sub">100% sur-mesure</p>
-        <a href="contact.html" class="btn-format-cta">Parler de mon projet</a>
+        <p class="sidebar-price-num">À partir de 70 €/m²</p>
+        <p class="sidebar-price-sub">Catalogue + votre identité</p>
+        <a href="/contact/" class="btn-format-cta">Demander le catalogue</a>
       </div>
       <div class="sidebar-card">
         <h3>Dans cette page</h3>
         <ul class="toc-list">            <li><a href="#pour-qui">Pour qui ?</a></li>
+            <li><a href="#ce-quon-adapte">Ce qu'on peut intégrer</a></li>
             <li><a href="#process">Le process</a></li>
-            <li><a href="#exemples">Ce qu'on peut créer</a></li>
 </ul>
       </div>
       <div class="sidebar-card">
         <h3>Les autres formules</h3>
-        <ul class="related-posts">            <li><a href="la-vignette.html">La Vignette : Catalogue sans retouche</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format : Catalogue + votre identité</a></li>
+        <ul class="related-posts">            <li><a href="/la-vignette/">La Vignette : Catalogue sans retouche</a></li>
+            <li><a href="/le-panorama/">Le Panorama : 100% sur-mesure</a></li>
 </ul>
       </div>
     </aside>
@@ -365,7 +373,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.svg" alt="Les Petits Papiers">
+          <img src="../logo.svg" alt="Les Petits Papiers">
           <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -377,19 +385,19 @@
         <div class="footer-col">
           <h4>Liens utiles</h4>
           <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/nos-supports/">Nos supports</a></li>
+            <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+            <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Nos formules</h4>
           <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
+            <li><a href="/la-vignette/">La Vignette</a></li>
+            <li><a href="/le-grand-format/">Le Grand Format</a></li>
+            <li><a href="/le-panorama/">Le Panorama</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -413,27 +421,21 @@
 
   <script>
     
-    function selectStep(el) {
-      const bubbles = document.querySelectorAll('.process-bubble');
-      const idx = parseInt(el.dataset.idx);
-      bubbles.forEach((b, i) => {
+        function selectStep(el) {
+      var bubbles = document.querySelectorAll('.process-bubble');
+      var idx = parseInt(el.dataset.idx);
+      bubbles.forEach(function(b, i) {
         b.classList.remove('active', 'done');
         if (i < idx) b.classList.add('done');
         else if (i === idx) b.classList.add('active');
       });
-      const content = document.getElementById('process-content');
-      const timing = el.dataset.timing;
+      var content = document.getElementById('process-content');
+      if (!content) return;
       content.querySelector('.process-step-label').textContent = 'Étape ' + el.dataset.step + ' · ' + el.dataset.title;
-      const timingEl = content.querySelector('.process-step-timing');
-      timingEl.textContent = timing;
-      timingEl.style.display = timing ? 'inline-block' : 'none';
+      var timingEl = content.querySelector('.process-step-timing');
+      var timing = el.dataset.timing;
+      if (timingEl) { timingEl.textContent = timing; timingEl.style.display = timing ? 'inline-block' : 'none'; }
       content.querySelector('.process-step-text').textContent = el.dataset.text;
-    });
-      const content = document.getElementById('process-content');
-      content.querySelector('.process-step-label').textContent = 'Étape ' + el.dataset.step + ' · ' + el.dataset.label;
-      content.querySelector('.process-step-text').textContent = el.dataset.text;
-    } })
-        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); } });
     }
       function submitNewsletter(e) {
       e.preventDefault();

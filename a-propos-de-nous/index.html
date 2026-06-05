@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Les Petits Papiers, c'est Maylis Daussy, fondatrice toulousaine. Une marque française de fresques murales à colorier, personnalisables et responsables, née de la conviction qu'un mur n'est jamais neutre.">
   <title>À propos de nous - Les Petits Papiers, fresques murales à colorier made in France</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    @font-face { font-family: 'GooddogNew'; src: url('fonts/gooddognew.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'GooddogNew'; src: url('../fonts/gooddognew.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
     :root {
       --blue: #5ACAF1; --pink: #EB356F;
       --blue-light: #e8f8fd; --pink-light: #fde8ef;
@@ -24,7 +25,7 @@
 
     /* HERO */
     .hero {
-      padding-top: 110px;
+      padding-top: 112px;
       display: grid; grid-template-columns: 1fr 1fr;
       min-height: 70vh;
     }
@@ -63,8 +64,18 @@
       font-style: normal; font-weight: 500;
     }
 
-    .hero-right { position: relative; overflow: hidden; max-height: 600px; }
-    .hero-right img { width: 100%; height: 100%; max-height: 600px; object-fit: cover; object-position: center 30%; display: block; }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      min-height: 400px;
+    }
 
     /* STORY */
     .story {
@@ -187,7 +198,10 @@
 
     @media (max-width: 1024px) {
       .hero, .story { grid-template-columns: 1fr; }
-      .hero-right { min-height: 360px; }
+      .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
       .hero-left { padding: 4rem 2rem 3rem; }
       .story, .valeurs, .engagements, .presse, .cta-section, footer { padding-left: 2rem; padding-right: 2rem; }
       .valeurs-grid { grid-template-columns: 1fr 1fr; }
@@ -210,44 +224,6 @@
     .usp-strip, .cta-section, footer, nav > * { max-width: 90%; margin-left: auto; margin-right: auto; }
     nav { display: flex; justify-content: center; }
     nav > a, nav > ul { flex-shrink: 0; }
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e8e6e0;
-    }
-    .nav-top {
-      display: flex; align-items: center; justify-content: center;
-      padding: .85rem 2rem .5rem;
-      position: relative;
-    }
-    .nav-logo-link { line-height: 0; text-decoration: none; }
-    .nav-logo { height: 44px; display: block; }
-    .nav-cta-top {
-      position: absolute; right: 2rem; top: 50%;
-      transform: translateY(-50%);
-      background: #EB356F; color: white;
-      text-decoration: none; padding: 9px 22px;
-      border-radius: 50px; font-weight: 500; font-size: 14px;
-      white-space: nowrap; transition: opacity .2s;
-      font-family: 'Outfit', sans-serif;
-    }
-    .nav-cta-top:hover { opacity: .85; }
-    .nav-bottom {
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem;
-      list-style: none !important;
-      padding: 0 2rem .65rem;
-      border-top: 1px solid rgba(0,0,0,.04);
-      margin: 0;
-    }
-    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
-    .nav-bottom li::before { display: none !important; }
-    .nav-bottom a {
-      text-decoration: none; color: #2d2d3a;
-      font-size: 14px; font-weight: 400;
-      transition: color .2s;
-    }
     .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
   
     footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
@@ -274,20 +250,96 @@
     .footer-bottom a:hover { color: white; }
     @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } }
+  
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 2rem .4rem;
+    }
+    .nav-logo-link {
+      line-height: 0;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-logo { height: 42px; display: block; }
+    .nav-cta-top {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F;
+      color: white !important;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .6rem;
+      margin: 0;
+      border-top: 1px solid rgba(0,0,0,.05);
+    }
+    .nav-bottom li {
+      list-style: none !important;
+      padding: 0; margin: 0;
+    }
+    .nav-bottom li::before,
+    .nav-bottom li::marker { display: none !important; content: '' !important; }
+    .nav-bottom a {
+      text-decoration: none;
+      color: #2d2d3a;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color .2s;
+      display: block;
+    }
+    .nav-bottom a:hover,
+    .nav-bottom a.active { color: #5ACAF1; }
+    @media (max-width: 768px) {
+      .nav-cta-top { font-size: 12px; padding: 7px 14px; right: 1rem; }
+      .nav-bottom { gap: 1.25rem; flex-wrap: wrap; padding: .4rem 1rem .6rem; }
+      .nav-bottom a { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .nav-bottom { gap: .75rem; }
+      .nav-bottom a { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
 
-    <nav>
+      <nav>
     <div class="nav-top">
-      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
-      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+      <a href="/" class="nav-logo-link">
+        <img src="../logo.svg" alt="Les Petits Papiers" class="nav-logo">
+      </a>
+      <a href="/contact/" class="nav-cta-top">Discutons de votre projet</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="nos-supports.html">Nos supports</a></li>
-      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-      <li><a href="a-propos-de-nous.html" class="active">À propos de nous</a></li>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/nos-supports/">Nos supports</a></li>
+      <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+      <li><a href="/a-propos-de-nous/" class="active">À propos de nous</a></li>
     </ul>
   </nav>
 
@@ -303,14 +355,14 @@
       <p style="font-size:16px;color:var(--muted);line-height:1.7;">Les Petits Papiers est une marque française de fresques murales à colorier, personnalisables et responsables, fondée à Toulouse en 2025.</p>
     </div>
     <div class="hero-right">
-      <img src="images/maylis.jpg" alt="Maylis Daussy, fondatrice des Petits Papiers à Toulouse">
+      <img src="../images/maylis.jpg" alt="Maylis Daussy, fondatrice des Petits Papiers à Toulouse">
     </div>
   </section>
 
   <!-- STORY -->
   <section class="story">
     <div class="story-img">
-      <img src="images/innovatm-apres.jpg" alt="Fresque murale à colorier installée chez Innov'ATM Toulouse, première référence Les Petits Papiers">
+      <img src="../images/innovatm-apres.jpg" alt="Fresque murale à colorier installée chez Innov'ATM Toulouse, première référence Les Petits Papiers">
     </div>
     <div class="story-content">
       <span class="section-tag">Une aventure toulousaine</span>
@@ -364,21 +416,21 @@
     </div>
     <div class="engagements-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
       <div class="engagement-card">
-        <img src="images/logos/imprim-vert.jpg" alt="Label Imprim'Vert partenaire Les Petits Papiers">
+        <img src="../images/logos/imprim-vert.jpg" alt="Label Imprim'Vert partenaire Les Petits Papiers">
         <div>
           <h3>Partenaire Imprim'Vert</h3>
           <p>En faisant imprimer dans une imprimerie labellisée Imprim'Vert, l'engagement environnemental est au cœur de chaque commande. Un réseau engagé pour un marché de l'imprimerie plus conscient.</p>
         </div>
       </div>
       <div class="engagement-card">
-        <img src="images/logos/greenr.png" alt="Label Green'R partenaire Les Petits Papiers">
+        <img src="../images/logos/greenr.png" alt="Label Green'R partenaire Les Petits Papiers">
         <div>
           <h3>Partenaire Green'R</h3>
           <p>Le seul label qui certifie l'ensemble des professionnels du secteur des arts graphiques : agences, enseignistes, marqueurs et imprimeurs. Une certification globale de toute la chaîne.</p>
         </div>
       </div>
       <div class="engagement-card">
-        <img src="images/logos/impri-france.png" alt="Label ImpriF rance partenaire Les Petits Papiers">
+        <img src="../images/logos/impri-france.png" alt="Label ImpriF rance partenaire Les Petits Papiers">
         <div>
           <h3>Partenaire ImpriF rance</h3>
           <p>Nos supports sont conçus et imprimés en France par des acteurs locaux engagés. Un choix de proximité qui garantit qualité, traçabilité et impact environnemental réduit.</p>
@@ -420,7 +472,7 @@
   <section class="cta-section">
     <h2>On crée quelque chose ensemble ?</h2>
     <p>Parlez-nous de votre espace, vos envies, votre budget. On s'occupe du reste.</p>
-    <a href="contact.html" class="btn-white">
+    <a href="/contact/" class="btn-white">
       Démarrer votre projet
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -430,7 +482,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.svg" alt="Les Petits Papiers">
+          <img src="../logo.svg" alt="Les Petits Papiers">
           <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -442,19 +494,19 @@
         <div class="footer-col">
           <h4>Liens utiles</h4>
           <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/nos-supports/">Nos supports</a></li>
+            <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+            <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Nos formules</h4>
           <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
+            <li><a href="/la-vignette/">La Vignette</a></li>
+            <li><a href="/le-grand-format/">Le Grand Format</a></li>
+            <li><a href="/le-panorama/">Le Panorama</a></li>
           </ul>
         </div>
         <div class="footer-col">

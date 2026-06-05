@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Inspirations pour vos décorations murales à colorier : entreprises, écoles, salles d'attente, restaurants et collectivités. Fresques géantes personnalisées, fabriquées en France.">
   <title>Inspirez-vous : fresques murales à colorier pour professionnels - Les Petits Papiers</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,13 +23,29 @@
       fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
         .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
     }
+      function openLightbox(src, alt) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-img').alt = alt||'';
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target && e.target.id === 'lightbox-img') return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+    // Make all idea-card images zoomable
+    document.querySelectorAll('.idea-card img, .gallery-strip .idea-card img').forEach(function(img){
+      img.addEventListener('click', function(e){ e.stopPropagation(); openLightbox(img.src, img.alt); });
+    });
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     @font-face {
       font-family: 'GooddogNew';
-      src: url('fonts/gooddognew.ttf') format('truetype');
+      src: url('../fonts/gooddognew.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -109,6 +126,7 @@
     /* SECTOR SECTIONS */
     .sector-section {
       padding: 5rem 5rem;
+      scroll-margin-top: 160px;
       scroll-margin-top: 140px;
     }
 
@@ -392,44 +410,6 @@
     .usp-strip, .cta-section, footer, nav > * { max-width: 90%; margin-left: auto; margin-right: auto; }
     nav { display: flex; justify-content: center; }
     nav > a, nav > ul { flex-shrink: 0; }
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e8e6e0;
-    }
-    .nav-top {
-      display: flex; align-items: center; justify-content: center;
-      padding: .85rem 2rem .5rem;
-      position: relative;
-    }
-    .nav-logo-link { line-height: 0; text-decoration: none; }
-    .nav-logo { height: 44px; display: block; }
-    .nav-cta-top {
-      position: absolute; right: 2rem; top: 50%;
-      transform: translateY(-50%);
-      background: #EB356F; color: white;
-      text-decoration: none; padding: 9px 22px;
-      border-radius: 50px; font-weight: 500; font-size: 14px;
-      white-space: nowrap; transition: opacity .2s;
-      font-family: 'Outfit', sans-serif;
-    }
-    .nav-cta-top:hover { opacity: .85; }
-    .nav-bottom {
-      display: flex; align-items: center; justify-content: center;
-      gap: 2rem;
-      list-style: none !important;
-      padding: 0 2rem .65rem;
-      border-top: 1px solid rgba(0,0,0,.04);
-      margin: 0;
-    }
-    .nav-bottom li { list-style: none !important; padding: 0; margin: 0; }
-    .nav-bottom li::before { display: none !important; }
-    .nav-bottom a {
-      text-decoration: none; color: #2d2d3a;
-      font-size: 14px; font-weight: 400;
-      transition: color .2s;
-    }
     .nav-bottom a:hover, .nav-bottom a.active { color: #5ACAF1; }
   
     footer { background: var(--pink, #EB356F); padding: 4rem 0 2rem; color: rgba(255,255,255,.9); }
@@ -456,20 +436,104 @@
     .footer-bottom a:hover { color: white; }
     @media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; } }
-  </style>
+  
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e8e6e0;
+    }
+    .nav-top {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem 2rem .4rem;
+    }
+    .nav-logo-link {
+      line-height: 0;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-logo { height: 42px; display: block; }
+    .nav-cta-top {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #EB356F;
+      color: white !important;
+      text-decoration: none;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: opacity .2s;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+    }
+    .nav-cta-top:hover { opacity: .85; }
+    .nav-bottom {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none !important;
+      padding: 0 2rem .6rem;
+      margin: 0;
+      border-top: 1px solid rgba(0,0,0,.05);
+    }
+    .nav-bottom li {
+      list-style: none !important;
+      padding: 0; margin: 0;
+    }
+    .nav-bottom li::before,
+    .nav-bottom li::marker { display: none !important; content: '' !important; }
+    .nav-bottom a {
+      text-decoration: none;
+      color: #2d2d3a;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color .2s;
+      display: block;
+    }
+    .nav-bottom a:hover,
+    .nav-bottom a.active { color: #5ACAF1; }
+    @media (max-width: 768px) {
+      .nav-cta-top { font-size: 12px; padding: 7px 14px; right: 1rem; }
+      .nav-bottom { gap: 1.25rem; flex-wrap: wrap; padding: .4rem 1rem .6rem; }
+      .nav-bottom a { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .nav-bottom { gap: .75rem; }
+      .nav-bottom a { font-size: 12px; }
+    }
+  
+    .lightbox-overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.88); align-items:center; justify-content:center; cursor:pointer; }
+    .lightbox-overlay.open { display:flex; }
+    .lightbox-img { max-width:92vw; max-height:90vh; border-radius:12px; object-fit:contain; cursor:default; }
+    .lightbox-close { position:fixed; top:1.25rem; right:1.25rem; width:40px; height:40px; border-radius:50%; background:rgba(250,248,245,.8); display:flex; align-items:center; justify-content:center; cursor:pointer; border:none; font-size:18px; color:#2d2d3a; z-index:2001; font-family:'Outfit',sans-serif; }
+    .lightbox-close:hover { background:rgba(250,248,245,.97); }
+    .idea-card img { cursor:zoom-in; }
+    .gallery-strip .idea-card { cursor:zoom-in; }
+</style>
 </head>
 <body>
 
-    <nav>
+      <nav>
     <div class="nav-top">
-      <a href="index.html" class="nav-logo-link"><img src="logo.svg" alt="Les Petits Papiers" class="nav-logo"></a>
-      <a href="contact.html" class="nav-cta-top">Discutons de votre projet</a>
+      <a href="/" class="nav-logo-link">
+        <img src="../logo.svg" alt="Les Petits Papiers" class="nav-logo">
+      </a>
+      <a href="/contact/" class="nav-cta-top">Discutons de votre projet</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="nos-supports.html">Nos supports</a></li>
-      <li><a href="inspirez-vous.html" class="active">Inspirez-vous</a></li>
-      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/nos-supports/">Nos supports</a></li>
+      <li><a href="/inspirez-vous/" class="active">Inspirez-vous</a></li>
+      <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
     </ul>
   </nav>
 
@@ -498,40 +562,40 @@
         <h2>Open spaces, salles de pause et couloirs</h2>
         <p>Impliquer vos collaborateurs dans la décoration de leurs espaces, c'est plus qu'une idée originale : c'est un levier d'appartenance et de marque employeur.</p>
       </div>
-      <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
+      <a href="/contact/" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <!-- Paysage: 2 grandes images côte à côte -->
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-1.jpg" alt="Fresque murale à colorier open space entreprise" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
+        <img src="../images/inspirez-vous-entreprise-1.jpg" alt="Fresque murale à colorier open space entreprise" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
         <div class="idea-card-body">
           <h3>Un panorama à colorier en open space</h3>
           <p>Une fresque qui court sur toute la longueur du mur et invite les équipes à contribuer collectivement.</p>
         </div>
       </div>
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-2.jpg" alt="Fresque murale trombinoscope entreprise à colorier" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
+        <img src="../images/inspirez-vous-entreprise-2.jpg" alt="Fresque murale trombinoscope entreprise à colorier" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
         <div class="idea-card-body">
           <h3>Trombinoscope géant à colorier</h3>
           <p>Chaque collaborateur devient un personnage de la fresque. Une œuvre collective qui raconte votre équipe.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise3.jpg" alt="Fresque murale décoration couloir entreprise" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
+        <img src="../images/inspirez-vous-entreprise3.jpg" alt="Fresque murale décoration couloir entreprise" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
         <div class="idea-card-body">
           <h3>Un couloir qui raconte quelque chose</h3>
           <p>Même un couloir devient un espace de marque avec la bonne fresque.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprises-4.jpg" alt="Papier peint panoramique à colorier bureau" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
+        <img src="../images/inspirez-vous-entreprises-4.jpg" alt="Papier peint panoramique à colorier bureau" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
         <div class="idea-card-body">
           <h3>Votre ville en panorama</h3>
           <p>Toulouse, Paris, Lyon : un panorama urbain sur-mesure ancré dans votre territoire.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise5.jpg" alt="Sticker mural à colorier salle de réunion" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
+        <img src="../images/inspirez-vous-entreprise5.jpg" alt="Sticker mural à colorier salle de réunion" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
         <div class="idea-card-body">
           <h3>Salle de réunion différenciante</h3>
           <p>Un visuel fort qui pose le cadre et donne envie d'être créatif.</p>
@@ -542,7 +606,7 @@
           <h3>Votre open space mérite mieux qu'un mur blanc</h3>
           <p>On vous aide à imaginer le visuel idéal selon votre identité et votre espace.</p>
         </div>
-        <a href="contact.html" class="btn-primary">Discuter de votre projet →</a>
+        <a href="/contact/" class="btn-primary">Discuter de votre projet →</a>
       </div>
     </div>
   </section>
@@ -555,39 +619,39 @@
         <h2>Crèches, écoles et espaces éducatifs</h2>
         <p>Un mur qui évolue au rythme de la classe : repositionnable sans trace, il se change aussi facilement qu'une affiche, en suivant les thèmes et les saisons.</p>
       </div>
-      <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
+      <a href="/contact/" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <div class="idea-card col-7">
-        <img src="images/inspirez-vous-ecole-1.jpg" alt="Sticker mural à colorier salle de classe école" class="img-wide">
+        <img src="../images/inspirez-vous-ecole-1.jpg" alt="Sticker mural à colorier salle de classe école" class="img-wide">
         <div class="idea-card-body">
           <h3>Un mur qui donne envie de venir le matin</h3>
           <p>Conçu avec eux, pour eux, avec des marges de sécurité intégrées pour ne pas déborder sur les murs.</p>
         </div>
       </div>
       <div class="idea-card col-5">
-        <img src="images/inspirez-vous-ecole-2.jpg" alt="Fresque murale jungle à colorier pour enfants" class="img-wide">
+        <img src="../images/inspirez-vous-ecole-2.jpg" alt="Fresque murale jungle à colorier pour enfants" class="img-wide">
         <div class="idea-card-body">
           <h3>La jungle, les animaux, l'espace...</h3>
           <p>Chaque thème de l'année scolaire devient une nouvelle fresque.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-3.jpg" alt="Système solaire éducatif à colorier mural" class="img-tall">
+        <img src="../images/inspirez-vous-ecole-3.jpg" alt="Système solaire éducatif à colorier mural" class="img-tall">
         <div class="idea-card-body">
           <h3>Visuels éducatifs</h3>
           <p>Système solaire, alphabet, carte du monde : les apprentissages intégrés au décor.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole4.jpg" alt="Papier peint à colorier crèche école" class="img-tall">
+        <img src="../images/inspirez-vous-ecole4.jpg" alt="Papier peint à colorier crèche école" class="img-tall">
         <div class="idea-card-body">
           <h3>Un mur immersif</h3>
           <p>Le papier peint pré-encollé transforme toute une paroi en espace créatif.</p>
         </div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative collectivité école" class="img-tall">
+        <img src="../images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative collectivité école" class="img-tall">
         <div class="idea-card-body">
           <h3>Pour les collectivités</h3>
           <p>Médiathèques, gymnases, centres de loisirs : un espace créatif pour tous.</p>
@@ -604,18 +668,18 @@
         <h2>Salles d'attente, cabinets et cliniques</h2>
         <p>Personne n'aime attendre. Avec un mur à colorier, le temps d'attente devient un temps créatif : les enfants sont captivés, les adultes aussi.</p>
       </div>
-      <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
+      <a href="/contact/" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <div class="idea-card col-7">
-        <img src="images/inspirez-vous-medical-1.jpg" alt="Salle d'attente médecin avec fresque murale à colorier" class="img-wide">
+        <img src="../images/inspirez-vous-medical-1.jpg" alt="Salle d'attente médecin avec fresque murale à colorier" class="img-wide">
         <div class="idea-card-body">
           <h3>Une salle d'attente apaisante</h3>
           <p>Un mur à colorier réduit le stress et détourne l'attention de l'attente, pour les enfants comme pour les adultes.</p>
         </div>
       </div>
       <div class="idea-card col-5">
-        <img src="images/inspirez-vous-medical2.jpg" alt="Fresque murale à colorier cabinet médical" class="img-wide">
+        <img src="../images/inspirez-vous-medical2.jpg" alt="Fresque murale à colorier cabinet médical" class="img-wide">
         <div class="idea-card-body">
           <h3>Un jardin à colorier</h3>
           <p>Repositionnable et sans travaux, il s'adapte à n'importe quel espace.</p>
@@ -625,14 +689,14 @@
         <span class="idea-tag">Médical</span>
         <h3>Compatible certification HAS</h3>
         <p>Encres non-toxiques, papier M1, pose sans travaux. Nos solutions répondent aux exigences des établissements de santé et ERP.</p>
-        <a href="amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants.html" class="btn-outline" style="width:fit-content;margin-top:.5rem">Lire notre guide HAS →</a>
+        <a href="/amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants/" class="btn-outline" style="width:fit-content;margin-top:.5rem">Lire notre guide HAS →</a>
       </div>
       <div class="cta-inline col-7">
         <div>
           <h3>Votre salle d'attente mérite mieux</h3>
           <p>Devis gratuit sous 48h. Livraison partout en France.</p>
         </div>
-        <a href="contact.html" class="btn-primary">Demander un devis →</a>
+        <a href="/contact/" class="btn-primary">Demander un devis →</a>
       </div>
     </div>
   </section>
@@ -645,13 +709,13 @@
         <h2>Restaurants, hôtels et espaces kids friendly</h2>
         <p>Un espace kids friendly différenciant, modulable et sans travaux. L'attente devient un moment agréable : les parents respirent, le service se fait plus sereinement.</p>
       </div>
-      <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
+      <a href="/contact/" class="btn-outline">Démarrer un projet →</a>
     </div>
 
     <div class="ideas-grid">
 
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-1.jpg" alt="Fresque murale à colorier restaurant adulte" class="img-wide">
+        <img src="../images/inspirez-vous-restaurant-1.jpg" alt="Fresque murale à colorier restaurant adulte" class="img-wide">
         <div class="idea-card-body">
           <h3>Une fresque qui crée l'ambiance</h3>
           <p>Un visuel qui s'intègre à votre direction artistique et devient un point d'attention naturel pour vos clients.</p>
@@ -659,7 +723,7 @@
       </div>
 
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-2.jpg" alt="Fresque murale Maroc à colorier décoration restaurant" class="img-wide">
+        <img src="../images/inspirez-vous-restaurant-2.jpg" alt="Fresque murale Maroc à colorier décoration restaurant" class="img-wide">
         <div class="idea-card-body">
           <h3>Un voyage à colorier sur vos murs</h3>
           <p>Maroc, Polynésie, Venise, la jungle : des visuels dépaysants qui racontent l'univers de votre établissement.</p>
@@ -672,7 +736,7 @@
           <h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--dark);margin-bottom:.5rem;">Vous êtes une franchise ?</h3>
           <p style="font-size:14px;color:var(--muted);max-width:520px;line-height:1.65;">On crée une fresque adaptée à votre direction artistique et on la décline selon les régions et thèmes de chaque franchise. Un concept cohérent, personnalisé par site.</p>
         </div>
-        <a href="contact.html" class="btn-primary">Parler de votre projet →</a>
+        <a href="/contact/" class="btn-primary">Parler de votre projet →</a>
       </div>
 
     </div>
@@ -686,23 +750,23 @@
         <h2>Médiathèques, mairies et espaces publics</h2>
         <p>Un papier peint coloriage géant sur-mesure, c'est une décoration murale participative qui s'installe sans chantier, sans colle, sans contrainte. On répond à vos briefs éducatifs.</p>
       </div>
-      <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
+      <a href="/contact/" class="btn-outline">Démarrer un projet →</a>
     </div>
 
     <div class="ideas-grid">
 
       <div class="gallery-strip">
         <div class="idea-card">
-          <img src="images/inspirez-vous-communes1.jpg" alt="Fresque murale Polynésie à colorier collectivité" class="img-tall">
+          <img src="../images/inspirez-vous-communes1.jpg" alt="Fresque murale Polynésie à colorier collectivité" class="img-tall">
         </div>
         <div class="idea-card">
-          <img src="images/inspirez-vous-communes-2.jpg" alt="Papier peint jardin d'hiver à colorier espace public" class="img-tall">
+          <img src="../images/inspirez-vous-communes-2.jpg" alt="Papier peint jardin d'hiver à colorier espace public" class="img-tall">
         </div>
         <div class="idea-card">
-          <img src="images/inspirez-vous-commune3.jpg" alt="Coloriage mural géant école collectivité" class="img-tall">
+          <img src="../images/inspirez-vous-commune3.jpg" alt="Coloriage mural géant école collectivité" class="img-tall">
         </div>
         <div class="idea-card">
-          <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative école" class="img-tall">
+          <img src="../images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative école" class="img-tall">
         </div>
       </div>
 
@@ -711,7 +775,7 @@
           <h3>Un mur qui appartient à tout le monde</h3>
           <p>Médiathèque, mairie, office de tourisme, gymnase : on représente le patrimoine local et on invite les habitants à contribuer.</p>
         </div>
-        <a href="contact.html" class="btn-primary">Discuter de votre projet →</a>
+        <a href="/contact/" class="btn-primary">Discuter de votre projet →</a>
       </div>
 
     </div>
@@ -721,7 +785,7 @@
   <section class="cta-section">
     <h2>Vous avez une idée en tête ?</h2>
     <p>On adore les projets un peu fous. Parlez-nous de votre espace et on imagine la fresque idéale.</p>
-    <a href="contact.html" class="btn-white">
+    <a href="/contact/" class="btn-white">
       Lancer mon projet
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -732,7 +796,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.svg" alt="Les Petits Papiers">
+          <img src="../logo.svg" alt="Les Petits Papiers">
           <p>Décorations murales à colorier, personnalisables et responsables pour les professionnels.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/107440620/" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -744,19 +808,19 @@
         <div class="footer-col">
           <h4>Liens utiles</h4>
           <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/nos-supports/">Nos supports</a></li>
+            <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+            <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Nos formules</h4>
           <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
+            <li><a href="/la-vignette/">La Vignette</a></li>
+            <li><a href="/le-grand-format/">Le Grand Format</a></li>
+            <li><a href="/le-panorama/">Le Panorama</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -795,13 +859,16 @@
       });
 
       if (sector !== 'all') {
-        setTimeout(() => {
-          const target = document.getElementById(sector);
-          if (target) {
-            const navH = document.querySelector('nav').offsetHeight;
-            const filterH = document.querySelector('.filter-wrap').offsetHeight;
-            const offset = target.getBoundingClientRect().top + window.scrollY - navH - filterH - 16;
-            window.scrollTo({ top: offset, behavior: 'smooth' });
+        setTimeout(function() {
+          var target = document.getElementById(sector);
+          if (!target) return;
+          var navH = document.querySelector('nav').offsetHeight || 112;
+          var filterEl = document.querySelector('.filter-wrap');
+          var filterH = filterEl ? filterEl.offsetHeight : 0;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - navH - filterH - 8;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }, 80);
+      });
           }
         }, 80);
       });
@@ -828,5 +895,9 @@
     });
   </script>
 
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+  </div>
 </body>
 </html>
