@@ -5,190 +5,179 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Découvrez nos stickers muraux repositionnables et papiers peints pré-encollés à colorier, conçus pour les espaces professionnels. Fabriqués en France, certifiés Imprim'Vert et Green'R.">
   <title>Nos supports muraux à colorier : stickers repositionnables et papiers peints - Les Petits Papiers</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProductCollection",
-    "name": "Supports muraux à colorier Les Petits Papiers",
-    "description": "Stickers repositionnables et papiers peints pré-encollés à colorier pour professionnels",
-    "brand": { "@type": "Brand", "name": "Les Petits Papiers" },
-    "url": "https://www.lespetitspapierspeints.com/nos-supports"
-  }
-      function submitNewsletter(e) {
-      e.preventDefault();
-      fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
-        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
-    }
-  
-    // Lightbox
-          document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-img').alt = alt || '';
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-          if (e && e.target === document.getElementById('lightbox-img')) return;
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-    // Make all product images clickable
-    document.querySelectorAll('.product-img-main, .product-img-thumb').forEach(img => {
-      img.addEventListener('click', () => openLightbox(img.src, img.alt));
-    });
-          document.getElementById('lightbox-img').src=src;
-      document.getElementById('lightbox-img').alt=alt||'';
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow='hidden';
-    }
-          if(e&&e.target&&e.target.id==='lightbox-img') return;
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow='';
-    }
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
-    document.querySelectorAll('.product-img-main,.product-img-thumb').forEach(function(img){
-      img.classList.add('zoomable');
-      img.addEventListener('click',function(){openLightbox(img.src,img.alt);});
-    });
-    function selectRevChoice(el,type){
-      document.querySelectorAll('.revetement-card').forEach(function(c){c.style.borderColor='transparent';});
-      el.style.borderColor='#5ACAF1';
-    }
-  
-    function lbOpen(src,alt){
-      document.getElementById('lbox-img').src=src;
-      document.getElementById('lbox-img').alt=alt||'';
-      document.getElementById('lbox').classList.add('on');
-      document.body.style.overflow='hidden';
-    }
-    function lbClose(){
-      document.getElementById('lbox').classList.remove('on');
-      document.body.style.overflow='';
-    }
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
-      document.querySelectorAll('.product-img-main,.product-img-thumb').forEach(function(img){
-      img.style.cursor='zoom-in';
-      img.addEventListener('click',function(){lbOpen(img.src,img.alt);});
-    });
+  {"@context":"https://schema.org","@type":"ProductCollection","name":"Supports muraux à colorier Les Petits Papiers","description":"Stickers repositionnables et papiers peints pré-encollés à colorier pour professionnels","brand":{"@type":"Brand","name":"Les Petits Papiers"},"url":"https://www.lespetitspapierspeints.com/nos-supports"}
   </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    @font-face{font-family:'GooddogNew';src:url('fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+    :root{
+      --blue:#5ACAF1;--pink:#EB356F;
+      --blue-light:#e8f8fd;--pink-light:#fde8ef;
+      --cream:#faf8f5;--dark:#1a1a2e;
+      --text:#2d2d3a;--muted:#7a7a8c;
+      --border:#e8e6e0;--white:#ffffff;
+      --radius:20px;--radius-sm:12px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
 
-    @font-face {
-      font-family: 'GooddogNew';
-      src: url('fonts/gooddognew.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-row1{display:flex;align-items:center;justify-content:center;position:relative;padding:12px 24px 6px;min-height:56px}
+    .nav-logo-link{line-height:0;text-decoration:none}
+    .nav-logo{height:42px;width:auto;display:block}
+    .nav-cta{position:absolute;right:24px;top:50%;transform:translateY(-50%);background:var(--pink);color:#fff!important;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
+    .nav-cta:hover{opacity:.85}
+    .nav-row2{display:flex;align-items:center;justify-content:center;gap:32px;padding:0 24px 10px;margin:0;list-style:none;border-top:1px solid rgba(0,0,0,.06)}
+    .nav-row2 li{list-style:none;margin:0;padding:0}
+    .nav-row2 a{text-decoration:none;color:var(--text);font-size:14px;font-weight:400;transition:color .2s}
+    .nav-row2 a:hover,.nav-row2 a.active{color:var(--blue)}
 
-    :root {
-      --blue: #5ACAF1;
-      --pink: #EB356F;
-      --blue-light: #e8f8fd;
-      --pink-light: #fde8ef;
-      --cream: #faf8f5;
-      --dark: #1a1a2e;
-      --text: #2d2d3a;
-      --muted: #7a7a8c;
-      --border: #e8e6e0;
-      --white: #ffffff;
-      --radius: 20px;
-      --radius-sm: 12px;
-    }
+    /* ── PAGE HERO ── */
+    .page-hero{padding:7rem 5% 4rem;background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .section-tag{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:.75rem}
+    .page-hero-text h1{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,2.5vw,2.5rem);font-weight:700;color:var(--dark);line-height:1.15;margin-bottom:1.25rem}
+    .page-hero-text p{font-size:17px;color:var(--muted);line-height:1.65;margin-bottom:2rem;max-width:440px}
+    .hero-certifs{display:flex;gap:.75rem;flex-wrap:wrap}
+    .certif-badge{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--border);border-radius:50px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--text)}
+    .certif-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0}
+    .certif-dot.green{background:#4caf82}
+    .page-hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
+    .page-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    /* ── TABS ── */
+    .tabs-wrap{position:sticky;top:112px;z-index:50;background:white;border-bottom:1px solid var(--border);padding:0 5%;display:flex;gap:0}
+    .tab-btn{padding:1rem 1.5rem;font-size:15px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2.5px solid transparent;transition:color .2s,border-color .2s;font-family:'Outfit',sans-serif;white-space:nowrap}
+    .tab-btn:hover{color:var(--text)}
+    .tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
 
-    
-  
-    
-    
-    img.zoomable{cursor:zoom-in;}
+    /* ── PRODUCT SECTIONS ── */
+    .product-section{padding:5rem 5%}
+    .product-section:nth-child(even){background:var(--cream)}
+    .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .product-grid.reverse{direction:rtl}
+    .product-grid.reverse>*{direction:ltr}
 
-    /* NAV-START */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e8e6e0;
-      font-family: 'Outfit', sans-serif;
+    /* Gallery */
+    .gallery-main{width:100%;aspect-ratio:4/3;border-radius:var(--radius);object-fit:cover;cursor:zoom-in;display:block;transition:opacity .2s}
+    .gallery-main:hover{opacity:.92}
+    .gallery-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem}
+    .gallery-thumb{width:100%;aspect-ratio:3/2;border-radius:var(--radius-sm);object-fit:cover;cursor:zoom-in;border:2px solid transparent;transition:border-color .2s,opacity .2s;display:block}
+    .gallery-thumb:hover{border-color:var(--blue);opacity:.9}
+
+    /* Content */
+    .product-content{}
+    .product-content h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:1rem}
+    .product-content>p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+    .feature-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem}
+    .feature-item{display:flex;align-items:flex-start;gap:12px}
+    .feature-check{width:22px;height:22px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .feature-check svg{width:12px;height:12px}
+    .feature-item p{font-size:14px;color:var(--text);line-height:1.55;margin:0}
+    .feature-item p strong{font-weight:600;color:var(--dark)}
+
+    /* Revêtements */
+    .revetements{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.75rem}
+    .rev-card{display:flex;flex-direction:column;align-items:center;padding:1.5rem 1rem;text-align:center;border-radius:var(--radius-sm);border:1.5px solid transparent;cursor:pointer;transition:border-color .2s}
+    .rev-card.blue{background:var(--blue-light)}
+    .rev-card.green{background:#f0fdf7}
+    .rev-card:hover{border-color:var(--blue)}
+    .rev-card.selected-blue{border-color:var(--blue)}
+    .rev-card.selected-green{border-color:#4caf82}
+    .rev-card svg{margin-bottom:.65rem;display:block}
+    .rev-card h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:.35rem}
+    .rev-card p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+
+    /* CTA button */
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;text-decoration:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;transition:transform .2s,box-shadow .2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(90,202,241,.35)}
+
+    /* ── LABELS ── */
+    .labels-section{padding:5rem 5%;background:var(--blue-light)}
+    .section-title{text-align:center;margin-bottom:3rem}
+    .section-title h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:var(--dark)}
+    .section-title p{font-size:16px;color:var(--muted);max-width:520px;margin:.75rem auto 0;line-height:1.65}
+    .labels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .label-card{background:white;border-radius:var(--radius);padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;border:1px solid var(--border)}
+    .label-logo{width:64px;height:64px;object-fit:contain;flex-shrink:0;border-radius:10px}
+    .label-card h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+    .label-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+    /* ── VIDEOS ── */
+    .video-section{padding:5rem 5%;background:var(--cream)}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .video-card{border-radius:var(--radius);overflow:hidden;background:white;border:1px solid var(--border)}
+    .video-embed{width:100%;aspect-ratio:9/16;border:none;display:block}
+    .video-caption{padding:1rem 1.25rem;font-size:13px;color:var(--muted);line-height:1.5}
+
+    /* ── CTA FINAL ── */
+    .cta-section{padding:6rem 5%;background:var(--pink);text-align:center}
+    .cta-section h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:white;margin-bottom:1rem}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--pink);text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:700;transition:transform .2s}
+    .btn-white:hover{transform:translateY(-2px)}
+
+    /* ── LIGHTBOX ── */
+    #lbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);align-items:center;justify-content:center;cursor:pointer}
+    #lbox.on{display:flex}
+    #lbox-img{max-width:90vw;max-height:88vh;border-radius:10px;object-fit:contain;display:block;cursor:default}
+    #lbox-x{position:fixed;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(250,248,245,.82);border:none;font-size:20px;cursor:pointer;z-index:100000;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif}
+
+    /* ── FOOTER ── */
+    footer{background:var(--pink);padding:4rem 0 2rem;color:rgba(255,255,255,.9)}
+    .footer-inner{max-width:90%;margin:0 auto}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:3rem;margin-bottom:2rem}
+    .footer-brand img{height:40px;margin-bottom:1rem;filter:brightness(0) invert(1)}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:240px;margin-bottom:1rem;color:rgba(255,255,255,.85)}
+    .social-links{display:flex;gap:.6rem}
+    .social-links a{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);transition:all .2s;text-decoration:none}
+    .social-links a:hover{border-color:white;color:white}
+    .footer-col h4{font-size:12px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+    .footer-col ul{list-style:none;margin:0;padding:0}
+    .footer-col ul li{margin-bottom:.5rem}
+    .footer-col ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;transition:color .2s}
+    .footer-col ul li a:hover{color:white}
+    .newsletter-row{display:flex;gap:.4rem;margin-bottom:.4rem}
+    .newsletter-form input[type="email"]{flex:1;min-width:0;padding:9px 14px;border-radius:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.15);color:white;font-size:13px;font-family:'Outfit',sans-serif;outline:none}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.5)}
+    .newsletter-form button{padding:9px 16px;border-radius:50px;border:none;background:white;color:var(--pink);font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif}
+    .nl-success{font-size:12px;color:rgba(255,255,255,.8)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.7)}
+    .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:none}
+    .footer-bottom a:hover{color:white}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .page-hero,.product-grid{grid-template-columns:1fr}
+      .product-grid.reverse{direction:ltr}
+      .labels-grid{grid-template-columns:1fr 1fr}
+      .video-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}
+      .footer-top{grid-template-columns:1fr 1fr}
+      .tabs-wrap{overflow-x:auto;top:108px}
     }
-    .nav-row1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 12px 24px 6px;
-      min-height: 58px;
+    @media(max-width:768px){
+      .nav-row1{padding:10px 16px 5px;min-height:50px}
+      .nav-cta{right:14px;font-size:12px;padding:7px 14px}
+      .nav-row2{gap:16px;padding:0 12px 8px}
+      .nav-row2 a{font-size:13px}
+      .labels-grid{grid-template-columns:1fr}
+      .footer-top{grid-template-columns:1fr}
     }
-    .nav-logo-link { line-height: 0; text-decoration: none; }
-    .nav-logo { height: 44px; width: auto; display: block; }
-    .nav-cta {
-      position: absolute;
-      right: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #EB356F;
-      color: #fff !important;
-      text-decoration: none;
-      padding: 9px 20px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 500;
-      white-space: nowrap;
+    @media(max-width:420px){
+      .nav-row2{gap:10px;flex-wrap:wrap}
+      .nav-row2 a{font-size:12px}
+      .revetements{grid-template-columns:1fr}
     }
-    .nav-cta:hover { opacity: .85; }
-    .nav-row2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      padding: 0 24px 10px;
-      margin: 0;
-      list-style: none;
-      border-top: 1px solid rgba(0,0,0,.06);
-    }
-    .nav-row2 li { list-style: none; margin: 0; padding: 0; }
-    .nav-row2 a {
-      text-decoration: none;
-      color: #2d2d3a;
-      font-size: 14px;
-      font-weight: 400;
-    }
-    .nav-row2 a:hover, .nav-row2 a.active { color: #5ACAF1; }
-    @media (max-width: 768px) {
-      .nav-row1 { padding: 10px 16px 5px; min-height: 50px; }
-      .nav-cta { right: 14px; font-size: 12px; padding: 7px 14px; }
-      .nav-row2 { gap: 16px; padding: 0 12px 8px; }
-      .nav-row2 a { font-size: 13px; }
-    }
-    @media (max-width: 420px) {
-      .nav-row2 { gap: 10px; flex-wrap: wrap; }
-      .nav-row2 a { font-size: 12px; }
-    }
-    /* NAV-END */
-  
-    /* LB-START */
-    #lbox { display:none; position:fixed; inset:0; z-index:99999;
-      background:rgba(0,0,0,.9); align-items:center; justify-content:center; }
-    #lbox.on { display:flex; }
-    #lbox-img { max-width:90vw; max-height:88vh; border-radius:10px;
-      object-fit:contain; display:block; }
-    #lbox-x { position:fixed; top:14px; right:14px; width:38px; height:38px;
-      border-radius:50%; background:rgba(250,248,245,.82); border:none;
-      font-size:20px; line-height:38px; text-align:center; cursor:pointer;
-      z-index:100000; padding:0; }
-    /* LB-END */
   </style>
 </head>
 <body>
 
-            <nav>
+  <nav>
     <div class="nav-row1">
       <a href="index.html" class="nav-logo-link">
         <img src="logo.svg" alt="Les Petits Papiers" class="nav-logo">
@@ -203,8 +192,8 @@
     </ul>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="page-hero" style="padding-top:7rem">
     <div class="page-hero-text">
       <span class="section-tag">Nos supports</span>
       <h1>Stickers repositionnables et papiers peints à colorier</h1>
@@ -217,46 +206,30 @@
       </div>
     </div>
     <div class="page-hero-img">
-      <img
-        src="images/supports-header.jpg"
-        alt="Sticker mural repositionnable à colorier en fresque"
-      >
+      <img src="images/supports-header.jpg" alt="Sticker mural repositionnable à colorier en fresque">
     </div>
   </section>
 
   <!-- TABS -->
   <div class="tabs-wrap" id="tabs">
-    <button class="tab-btn active" onclick="scrollToSection('stickers',event)">Stickers repositionnables</button>
-    <button class="tab-btn" onclick="scrollToSection('papiers-peints',event)">Papiers peints pré-encollés</button>
-    <button class="tab-btn" onclick="scrollToSection('labels',event)">Nos engagements</button>
-    <button class="tab-btn" onclick="scrollToSection('videos',event)">Vidéos</button>
+    <button class="tab-btn active" onclick="goTo('stickers',this)">Stickers repositionnables</button>
+    <button class="tab-btn" onclick="goTo('papiers-peints',this)">Papiers peints pré-encollés</button>
+    <button class="tab-btn" onclick="goTo('labels',this)">Nos engagements</button>
+    <button class="tab-btn" onclick="goTo('videos',this)">Vidéos</button>
   </div>
 
   <!-- STICKERS -->
-  <section class="product-section" id="stickers" style="scroll-margin-top:160px">
+  <section class="product-section" id="stickers" style="scroll-margin-top:170px">
     <div class="product-grid">
+
       <div class="product-visual">
-        <img
-          id="sticker-main"
-          src="images/supports-sticker-1.jpg"
-          alt="Sticker mural repositionnable à colorier grand format"
-          class="product-img-main"
-        >
-        <div class="product-img-thumb-grid">
-          <img
-            src="images/supports-sticker-2.jpg"
-            alt="Sticker mural format 2"
-            class="product-img-thumb active"
-            onclick="switchImg('sticker-main', this)"
-          >
-          <img
-            src="images/supports-sticker-3.jpg"
-            alt="Sticker mural vue installation"
-            class="product-img-thumb"
-            onclick="switchImg('sticker-main', this)"
-          >
+        <img src="images/supports-sticker-1.jpg" alt="Sticker mural repositionnable à colorier" class="gallery-main" id="sticker-main" onclick="lbOpen(this.src,this.alt)">
+        <div class="gallery-thumbs">
+          <img src="images/supports-sticker-2.jpg" alt="Sticker mural format 2" class="gallery-thumb" onclick="switchMain('sticker-main',this)">
+          <img src="images/supports-sticker-3.jpg" alt="Sticker mural format 3" class="gallery-thumb" onclick="switchMain('sticker-main',this)">
         </div>
       </div>
+
       <div class="product-content">
         <span class="section-tag">Support n°1</span>
         <h2>Les stickers muraux repositionnables</h2>
@@ -264,80 +237,58 @@
 
         <div class="feature-list">
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Repositionnable sans trace</strong> : se déplace et se retire facilement, même après plusieurs mois de pose</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Découpe à la forme disponible</strong> : composition au plus près de vos besoins, fond transparent possible</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Marges de sécurité intégrées</strong> : les enfants ne risquent pas de déborder sur les murs</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <p><strong>100% recyclé, encres non-toxiques</strong> : respectueux de la qualité de l'air intérieur</p>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>Certifié M1</strong> : norme incendie ERP adaptée aux espaces recevant du public (hors version effaçable)</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <p><strong>Certifié M1</strong> : norme incendie ERP adaptée aux espaces recevant du public (hors version effaçable)</p>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>100% recyclé, encres non-toxiques</strong> : respectueux de la qualité de l'air intérieur</p>
           </div>
         </div>
 
-        <h3 style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:.85rem;">Quel revêtement choisir ?</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;">
-          <div style="display:flex;flex-direction:column;align-items:center;padding:1.5rem;text-align:center;background:#e8f8fd;border-radius:12px;border:1.5px solid transparent;cursor:pointer;" onclick="this.style.borderColor='#5ACAF1';document.querySelectorAll('.rev-card').forEach(function(x){x.style.borderColor='transparent';});this.style.borderColor='#5ACAF1';" class="rev-card">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="1.5" style="margin-bottom:.6rem"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-            <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 .3rem">Classique</p>
-            <p style="font-size:12px;color:#7a7a8c;margin:0;line-height:1.5">Finition matte, certifié M1. Déco pérenne et modulable.</p>
+        <h3 style="font-size:15px;font-weight:600;color:var(--dark);margin-bottom:.85rem">Quel revêtement choisir ?</h3>
+        <div class="revetements">
+          <div class="rev-card blue" onclick="selectRev(this,'blue')">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+            <h4>Classique</h4>
+            <p>Finition matte, certifié M1. Déco pérenne et modulable.</p>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;padding:1.5rem;text-align:center;background:#f0fdf7;border-radius:12px;border:1.5px solid transparent;cursor:pointer;" onclick="document.querySelectorAll('.rev-card').forEach(function(x){x.style.borderColor='transparent';});this.style.borderColor='#4caf82';" class="rev-card">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4caf82" stroke-width="1.5" style="margin-bottom:.6rem"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            <p style="font-size:14px;font-weight:600;color:#1a1a2e;margin:0 0 .3rem">Effaçable</p>
-            <p style="font-size:12px;color:#7a7a8c;margin:0;line-height:1.5">Finition tableau blanc. Recommencez à l'infini.</p>
+          <div class="rev-card green" onclick="selectRev(this,'green')">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4caf82" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <h4>Effaçable</h4>
+            <p>Finition tableau blanc. Recommencez à l'infini.</p>
           </div>
         </div>
+
         <a href="contact.html" class="btn-primary">Discuter de votre projet</a>
       </div>
     </div>
   </section>
 
   <!-- PAPIERS PEINTS -->
-  <section class="product-section" id="papiers-peints" style="scroll-margin-top:160px">
+  <section class="product-section" id="papiers-peints" style="scroll-margin-top:170px">
     <div class="product-grid reverse">
+
       <div class="product-visual">
-        <img
-          id="pp-main"
-          src="images/supports-pp-1.jpg"
-          alt="Papier peint pré-encollé à colorier personnalisé"
-          class="product-img-main"
-        >
-        <div class="product-img-thumb-grid">
-          <img
-            src="images/supports-pp-2.jpg"
-            alt="Papier peint mural école"
-            class="product-img-thumb active"
-            onclick="switchImg('pp-main', this)"
-          >
-          <img
-            src="images/supports-pp-3.jpg"
-            alt="Papier peint carte du monde à colorier"
-            class="product-img-thumb"
-            onclick="switchImg('pp-main', this)"
-          >
+        <img src="images/supports-pp-1.jpg" alt="Papier peint pré-encollé à colorier" class="gallery-main" id="pp-main" onclick="lbOpen(this.src,this.alt)">
+        <div class="gallery-thumbs">
+          <img src="images/supports-pp-2.jpg" alt="Papier peint format 2" class="gallery-thumb" onclick="switchMain('pp-main',this)">
+          <img src="images/supports-pp-3.jpg" alt="Papier peint format 3" class="gallery-thumb" onclick="switchMain('pp-main',this)">
         </div>
       </div>
+
       <div class="product-content">
         <span class="section-tag">Support n°2</span>
         <h2>Les papiers peints pré-encollés</h2>
@@ -345,27 +296,19 @@
 
         <div class="feature-list">
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Pose ultra-simple</strong> : pré-encollé, pas besoin de colle ni d'outils particuliers</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Sur-mesure aux dimensions de votre mur</strong> : on s'adapte à n'importe quel espace</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Papier certifié M1</strong> : norme incendie adaptée aux ERP, salles d'attente, établissements scolaires</p>
           </div>
           <div class="feature-item">
-            <div class="feature-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+            <div class="feature-check"><svg viewBox="0 0 24 24" fill="none" stroke="#5ACAF1" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p><strong>Décoration immersive et durable</strong> : une œuvre collective qui s'installe pour longtemps</p>
           </div>
         </div>
@@ -376,88 +319,56 @@
   </section>
 
   <!-- LABELS -->
-  <section class="labels-section" id="labels" style="scroll-margin-top:160px">
+  <section class="labels-section" id="labels" style="scroll-margin-top:170px">
     <div class="section-title">
-      <span class="section-tag-center">Nos engagements</span>
+      <span class="section-tag" style="display:block;text-align:center">Nos engagements</span>
       <h2>Des supports responsables, du début à la fin</h2>
       <p>Six mois de tests pour trouver le support idéal : sûr pour les enfants, durable, créatif et respectueux de l'environnement.</p>
     </div>
     <div class="labels-grid">
       <div class="label-card">
-        <img
-          src="images/logos/imprim-vert.jpg"
-          alt="Label Imprim'Vert"
-          class="label-logo"
-        >
+        <img src="images/logos/imprim-vert.jpg" alt="Label Imprim'Vert" class="label-logo">
         <div>
           <h3>Partenaire Imprim'Vert</h3>
           <p>En faisant imprimer dans une imprimerie labellisée, nous mettons l'engagement environnemental au cœur de nos priorités. Un réseau engagé pour un marché de l'imprimerie plus conscient.</p>
         </div>
       </div>
       <div class="label-card">
-        <img
-          src="images/logos/greenr.png"
-          alt="Label Green R"
-          class="label-logo"
-        >
+        <img src="images/logos/greenr.png" alt="Label Green'R" class="label-logo">
         <div>
           <h3>Partenaire Green'R</h3>
-          <p>Le seul label qui certifie l'ensemble des professionnels du secteur des arts graphiques : agences, enseignistes, marqueurs et imprimeurs. Une certification globale de la chaîne de production.</p>
+          <p>Le seul label qui certifie l'ensemble des professionnels du secteur des arts graphiques : agences, enseignistes, marqueurs et imprimeurs. Une certification globale de toute la chaîne.</p>
         </div>
       </div>
-        <div class="label-card">
-          <img
-            src="images/logos/impri-france.png"
-            alt="ImpriF rance partenaire fabrication française"
-            class="label-logo"
-          >
-          <div>
-            <h3>Partenaire ImpriF rance</h3>
-            <p>Conçus et imprimés en France par des acteurs locaux engagés. Un choix de proximité qui garantit qualité, traçabilité et réduction de l'empreinte carbone.</p>
-          </div>
+      <div class="label-card">
+        <img src="images/logos/impri-france.png" alt="ImpriF rance partenaire" class="label-logo">
+        <div>
+          <h3>Partenaire ImpriF rance</h3>
+          <p>Conçus et imprimés en France par des acteurs locaux engagés. Un choix de proximité qui garantit qualité, traçabilité et réduction de l'empreinte carbone.</p>
         </div>
       </div>
-    <div style="margin-top:2rem;text-align:center;">
-      <p style="font-size:14px;color:var(--muted);max-width:560px;margin:0 auto;">Tous nos supports sont fabriqués à la demande, sans sur-stock, pour éviter tout gaspillage inutile.</p>
     </div>
+    <p style="margin-top:2rem;text-align:center;font-size:14px;color:var(--muted);max-width:560px;margin-left:auto;margin-right:auto">Tous nos supports sont fabriqués à la demande, sans sur-stock, pour éviter tout gaspillage inutile.</p>
   </section>
 
   <!-- VIDEOS -->
-  <section class="video-section" id="videos" style="scroll-margin-top:160px">
+  <section class="video-section" id="videos" style="scroll-margin-top:170px">
     <div class="section-title">
-      <span class="section-tag-center">En pratique</span>
+      <span class="section-tag" style="display:block;text-align:center">En pratique</span>
       <h2>Voyez nos supports en action</h2>
       <p>De la conception à la pose, on vous montre tout.</p>
     </div>
     <div class="video-grid">
       <div class="video-card">
-        <iframe
-          class="video-embed"
-          src="https://www.youtube.com/embed/-ry_KrYGdyk"
-          title="Retour client : pose de papier peint à colorier pré-encollé"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe class="video-embed" src="https://www.youtube.com/embed/-ry_KrYGdyk" title="Retour client pose papier peint" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
         <p class="video-caption">Retour client : pose d'un papier peint à colorier pré-encollé</p>
       </div>
       <div class="video-card">
-        <iframe
-          class="video-embed"
-          src="https://www.youtube.com/embed/Y1QL5gcBEyw"
-          title="Test : repositionner un sticker à colorier après un an de pose"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe class="video-embed" src="https://www.youtube.com/embed/Y1QL5gcBEyw" title="Test repositionner sticker" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
         <p class="video-caption">Test : repositionner un sticker après plus d'un an de pose (gamme effaçable)</p>
       </div>
       <div class="video-card">
-        <iframe
-          class="video-embed"
-          src="https://www.youtube.com/embed/uLbox4zlUjM"
-          title="Création d'un papier peint personnalisé Toulouse à colorier"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <iframe class="video-embed" src="https://www.youtube.com/embed/uLbox4zlUjM" title="Création papier peint Toulouse" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
         <p class="video-caption">Process : création du papier peint "Toulouse" à colorier</p>
       </div>
     </div>
@@ -467,14 +378,11 @@
   <section class="cta-section">
     <h2>Quel support est fait pour vous ?</h2>
     <p>On vous aide à choisir le bon format selon votre espace, votre usage et votre budget.</p>
-    <a href="contact.html" class="btn-white">
-      Demander un devis
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <a href="contact.html" class="btn-white">Demander un devis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </section>
 
   <!-- FOOTER -->
-    <footer>
+  <footer>
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
@@ -507,7 +415,7 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="newsletter-form" onsubmit="submitNL(event)">
             <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
             <div class="newsletter-row">
               <input type="email" name="email" placeholder="Votre e-mail" required>
@@ -524,80 +432,70 @@
     </div>
   </footer>
 
-  <script>
-    function scrollToSection(id, evt) {
-      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
-      if(evt&&evt.target)evt.target.classList.add('active');
-      setTimeout(function(){
-        var el=document.getElementById(id);
-        if(!el)return;
-        var nH=(document.querySelector('nav')||{offsetHeight:115}).offsetHeight;
-        var tH=(document.querySelector('.tabs-wrap')||{offsetHeight:48}).offsetHeight;
-        window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-nH-tH-8,behavior:'smooth'});
-      },30);
-    });
-      if(event&&event.target)event.target.classList.add('active');
-      setTimeout(function(){
-        var el=document.getElementById(id);
-        if(!el)return;
-        var nH=(document.querySelector('nav')||{offsetHeight:115}).offsetHeight;
-        var tH=(document.querySelector('.tabs-wrap')||{offsetHeight:48}).offsetHeight;
-        window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-nH-tH-8,behavior:'smooth'});
-      },30);
-    });
-      if(event && event.target) event.target.classList.add('active');
-      setTimeout(function(){
-        var el = document.getElementById(id);
-        if(!el) return;
-        var navEl = document.querySelector('nav');
-        var navH = navEl ? navEl.offsetHeight : 112;
-        var tabsEl = document.querySelector('.tabs-wrap');
-        var tabsH = tabsEl ? tabsEl.offsetHeight : 48;
-        var top = el.getBoundingClientRect().top + window.pageYOffset - navH - tabsH - 8;
-        window.scrollTo({top: top, behavior: 'smooth'});
-      }, 20);
-    });
-      }, 10);
-    });
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-    });
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-    }
-
-    function switchImg(mainId, thumb) {
-      document.getElementById(mainId).src = thumb.src;
-      thumb.closest('.product-visual').querySelectorAll('.product-img-thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-    }
-
-    // Highlight tab on scroll
-    const sections = ['stickers', 'papiers-peints', 'labels', 'videos'];
-    const tabBtns = document.querySelectorAll('.tab-btn');
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const idx = sections.indexOf(e.target.id);
-          if (idx >= 0) {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabBtns[idx].classList.add('active');
-          }
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) io.observe(el);
-    });
-  </script>
-
-  
+  <!-- LIGHTBOX -->
   <div id="lbox" onclick="if(event.target===this)lbClose()">
     <button id="lbox-x" onclick="lbClose()">✕</button>
     <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
   </div>
+
+  <script>
+    function goTo(id, btn) {
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var el = document.getElementById(id);
+      if (!el) return;
+      var nH = (document.querySelector('nav')||{offsetHeight:112}).offsetHeight;
+      var tH = (document.querySelector('.tabs-wrap')||{offsetHeight:50}).offsetHeight;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - nH - tH - 8;
+      window.scrollTo({top: top, behavior: 'smooth'});
+    }
+
+    function switchMain(mainId, thumb) {
+      var main = document.getElementById(mainId);
+      if (main) main.src = thumb.src;
+      var parent = thumb.closest('.product-visual');
+      if (parent) parent.querySelectorAll('.gallery-thumb').forEach(function(t){t.style.borderColor='transparent';});
+      thumb.style.borderColor = '#5ACAF1';
+    }
+
+    function selectRev(el, type) {
+      document.querySelectorAll('.rev-card').forEach(function(c){
+        c.style.borderColor = 'transparent';
+      });
+      el.style.borderColor = type === 'blue' ? '#5ACAF1' : '#4caf82';
+    }
+
+    function lbOpen(src, alt) {
+      document.getElementById('lbox-img').src = src;
+      document.getElementById('lbox-img').alt = alt || '';
+      document.getElementById('lbox').classList.add('on');
+      document.body.style.overflow = 'hidden';
+    }
+    function lbClose() {
+      document.getElementById('lbox').classList.remove('on');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') lbClose(); });
+
+    function submitNL(e) {
+      e.preventDefault();
+      fetch(e.target.action, {method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}})
+        .then(function(r){ if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
+    }
+
+    // Highlight active tab on scroll
+    var sections = ['stickers','papiers-peints','labels','videos'];
+    var tabs = document.querySelectorAll('.tab-btn');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          var idx = sections.indexOf(e.target.id);
+          if (idx >= 0) { tabs.forEach(function(b){b.classList.remove('active');}); tabs[idx].classList.add('active'); }
+        }
+      });
+    }, {threshold: 0.3});
+    sections.forEach(function(id){ var el=document.getElementById(id); if(el) observer.observe(el); });
+  </script>
+
 </body>
 </html>
