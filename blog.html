@@ -119,31 +119,35 @@
   
     
   
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0}
-    .nav-top{display:flex;align-items:center;padding:10px 24px 6px;min-height:54px}
+    
+  /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-top{display:flex;align-items:center;padding:14px 24px 14px;min-height:70px}
     .nav-top-spacer{flex:1}
+    .nav-top-logo{flex:0 0 auto}
     .nav-top-logo a{line-height:0;text-decoration:none;display:block}
     .nav-top-logo img{height:42px;width:auto;display:block}
     .nav-top-cta{flex:1;display:flex;justify-content:flex-end}
-    .nav-top-cta a{background:#EB356F;color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
+    .nav-top-cta a{background:var(--pink);color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
     .nav-top-cta a:hover{opacity:.85}
-    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:0 24px 10px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
+    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:12px 24px 12px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
     .nav-menu li{list-style:none}
-    .nav-menu a{text-decoration:none;color:#2d2d3a;font-size:14px;font-weight:400;transition:color .2s}
-    .nav-menu a:hover,.nav-menu a.active{color:#5ACAF1}
-    @media(max-width:768px){.nav-top-logo img{height:36px}.nav-top-cta a{font-size:12px;padding:7px 13px}.nav-menu{gap:16px}.nav-menu a{font-size:13px}}
-    @media(max-width:480px){.nav-menu{gap:8px;flex-wrap:wrap;padding:0 8px 8px}.nav-menu a{font-size:12px}}
+    .nav-menu a{text-decoration:none;color:var(--text);font-size:14px;font-weight:400;transition:color .2s}
+    .nav-menu a:hover,.nav-menu a.active{color:var(--blue)}
     /* /NAV */
   </style>
 </head>
 <body>
 
-                  <nav>
+                    <nav>
     <div class="nav-top">
       <div class="nav-top-spacer"></div>
-      <div class="nav-top-logo"><a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
-      <div class="nav-top-cta"><a href="contact.html">Discutons de votre projet</a></div>
+      <div class="nav-top-logo">
+        <a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a>
+      </div>
+      <div class="nav-top-cta">
+        <a href="contact.html">Discutons de votre projet</a>
+      </div>
     </div>
     <ul class="nav-menu">
       <li><a href="index.html">Accueil</a></li>
@@ -262,7 +266,7 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
+          <form action="https://formspree.io/f/mdavaonj" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
             <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
             <div class="newsletter-row">
               <input type="email" name="email" placeholder="Votre e-mail" required>
