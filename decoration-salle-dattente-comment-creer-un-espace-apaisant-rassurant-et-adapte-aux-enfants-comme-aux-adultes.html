@@ -314,6 +314,24 @@
       .nav-top-logo img{height:36px}
     }
     /* /NAV */
+  
+    /* MailerLite */
+    #mlb2-42332261.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
+    #mlb2-42332261.ml-form-embedContainer .ml-form-embedWrapper{background-color:transparent;border-width:0;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
+    #mlb2-42332261.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:100%;width:100%}
+    #mlb2-42332261 .ml-form-embedBody{padding:0}
+    #mlb2-42332261 .ml-form-horizontalRow{display:flex;gap:.4rem;width:100%}
+    #mlb2-42332261 .ml-input-horizontal{flex:1;min-width:0}
+    #mlb2-42332261 .ml-input-horizontal .horizontal-fields{width:100%}
+    #mlb2-42332261 .ml-field-group input[type="email"]{width:100%!important;padding:9px 14px!important;border-radius:50px!important;border:1px solid rgba(255,255,255,.3)!important;background:rgba(255,255,255,.15)!important;color:white!important;font-size:13px!important;font-family:'Outfit',sans-serif!important;outline:none!important;box-sizing:border-box!important}
+    #mlb2-42332261 .ml-field-group input::placeholder{color:rgba(255,255,255,.5)!important}
+    #mlb2-42332261 .ml-button-horizontal button.primary{padding:9px 16px!important;border-radius:50px!important;border:none!important;background:white!important;color:#EB356F!important;font-size:13px!important;font-weight:600!important;cursor:pointer!important;font-family:'Outfit',sans-serif!important;white-space:nowrap}
+    #mlb2-42332261 .ml-button-horizontal button.loading{display:none}
+    #mlb2-42332261 .ml-form-embedSubmitLoad{display:inline-block;width:16px;height:16px}
+    #mlb2-42332261 .ml-form-successBody p{color:rgba(255,255,255,.9)!important;font-size:13px!important;font-family:'Outfit',sans-serif!important}
+    #mlb2-42332261 .ml-mobileButton-horizontal{display:none}
+    .ml-form-formContent.horozintalForm{float:none!important}
+    @media(max-width:400px){#mlb2-42332261 .ml-form-horizontalRow{flex-direction:column}.ml-mobileButton-horizontal{display:block!important;margin-top:.5rem;width:100%}.ml-button-horizontal.primary{display:none}}
   </style>
 </head>
 <body>
@@ -483,14 +501,42 @@
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <form action="https://formspree.io/f/mdavaonj" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
-            <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
-            <div class="newsletter-row">
-              <input type="email" name="email" placeholder="Votre e-mail" required>
-              <button type="submit">OK</button>
+            <div id="mlb2-42332261" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42332261">
+              <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                  <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/subscribe" data-code="" method="post" target="_blank">
+                      <div class="ml-form-formContent horozintalForm">
+                        <div class="ml-form-horizontalRow">
+                          <div class="ml-input-horizontal">
+                            <div style="width:100%" class="horizontal-fields">
+                              <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                <input type="email" class="form-control" name="fields[email]" placeholder="Votre e-mail" autocomplete="email">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ml-button-horizontal primary">
+                            <button type="submit" class="primary">OK</button>
+                            <button disabled="disabled" style="display:none" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="ml-submit" value="1">
+                      <div class="ml-mobileButton-horizontal">
+                        <button type="submit" class="primary">OK</button>
+                        <button disabled="disabled" style="display:none" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+                      </div>
+                      <input type="hidden" name="anticsrf" value="true">
+                    </form>
+                  </div>
+                  <div class="ml-form-successBody row-success" style="display:none">
+                    <div class="ml-form-successContent">
+                      <p style="color:white;font-size:13px;margin:0">Inscription confirmée !</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="nl-success" style="display:none">Inscription confirmée !</p>
-          </form>
         </div>
       </div>
       <div class="footer-bottom">
@@ -526,5 +572,14 @@
     <button id="lbox-x" onclick="lbClose()">✕</button>
     <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
   </div>
+  <script>
+    function ml_webform_success_42332261() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-42332261 .row-success').show();
+      $('.ml-subscribe-form-42332261 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/takel")</script>
 </body>
 </html>
