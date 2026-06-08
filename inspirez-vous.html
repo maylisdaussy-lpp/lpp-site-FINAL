@@ -3,135 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Inspirations pour vos décorations murales à colorier : entreprises, écoles, salles d'attente, restaurants et collectivités. Fresques géantes personnalisées, fabriquées en France.">
-  <title>Inspirez-vous : fresques murales à colorier pour professionnels - Les Petits Papiers</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Découvrez nos réalisations pour entreprises, crèches, salles d'attente et restaurants.">
+  <title>Inspirez-vous - Fresques murales à colorier pour professionnels - Les Petits Papiers</title>
+  <meta property="og:title" content="Inspirez-vous - Fresques murales à colorier pour professionnels - Les Petits Papiers">
+  <meta property="og:description" content="Découvrez nos réalisations pour entreprises, crèches, salles d'attente et restaurants.">
+  <meta property="og:image" content="https://maylisdaussy-lpp.github.io/lpp-site-FINAL/images/inspirez-vous-entreprise-1.jpg">
+  <meta property="og:url" content="https://www.lespetitspapierspeints.com/inspirez-vous">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Petits Papiers">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Inspirations décorations murales à colorier",
-    "description": "Galerie d'inspirations pour fresques murales à colorier : entreprises, écoles, salles d'attente, restaurants, collectivités",
-    "url": "https://www.lespetitspapierspeints.com/inspirez-vous",
-    "provider": { "@type": "Organization", "name": "Les Petits Papiers" }
-  }
-    function submitNewsletter(e) {
-      e.preventDefault();
-      fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
-        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
-    }
-            document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-img').alt = alt||'';
-      document.getElementById('lightbox').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-          if (e && e.target && e.target.id === 'lightbox-img') return;
-      document.getElementById('lightbox').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
-    // Make all idea-card images zoomable
-    document.querySelectorAll('.idea-card img, .gallery-strip .idea-card img').forEach(function(img){
-      img.addEventListener('click', function(e){ e.stopPropagation(); openLightbox(img.src, img.alt); });
-    });
-  
-    function lbOpen(src,alt){
-      document.getElementById('lbox-img').src=src;
-      document.getElementById('lbox-img').alt=alt||'';
-      document.getElementById('lbox').classList.add('on');
-      document.body.style.overflow='hidden';
-    }
-    function lbClose(){
-      document.getElementById('lbox').classList.remove('on');
-      document.body.style.overflow='';
-    }
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
-      document.querySelectorAll('.idea-card img').forEach(function(img){
-      img.style.cursor='zoom-in';
-      img.addEventListener('click',function(e){e.stopPropagation();lbOpen(img.src,img.alt);});
-    });
-  </script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    @font-face {
-      font-family: 'GooddogNew';
-      src: url('fonts/gooddognew.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    @font-face{font-family:'GooddogNew';src:url('fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+    :root{
+      --blue:#5ACAF1;--pink:#EB356F;
+      --blue-light:#e8f8fd;--pink-light:#fde8ef;
+      --cream:#faf8f5;--dark:#1a1a2e;
+      --text:#2d2d3a;--muted:#7a7a8c;
+      --border:#e8e6e0;--white:#ffffff;
+      --radius:20px;--radius-sm:12px;
     }
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
 
-    :root {
-      --blue: #5ACAF1;
-      --pink: #EB356F;
-      --blue-light: #e8f8fd;
-      --pink-light: #fde8ef;
-      --cream: #faf8f5;
-      --dark: #1a1a2e;
-      --text: #2d2d3a;
-      --muted: #7a7a8c;
-      --border: #e8e6e0;
-      --white: #ffffff;
-      --radius: 20px;
-      --radius-sm: 12px;
+    /* PAGE */
+    .page-hero{padding:8rem 5% 4rem;background:var(--cream);text-align:center}
+    .section-tag{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:.75rem}
+    .page-hero h1{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--dark);margin-bottom:1rem;line-height:1.15}
+    .page-hero p{font-size:17px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.65}
+
+    /* FILTERS */
+    .filter-wrap{background:var(--cream);padding:.75rem 5% 1.25rem;position:sticky;top:130px;z-index:50;border-bottom:1px solid var(--border);display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+    .filter-btn{padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);font-size:13px;font-weight:500;cursor:pointer;background:white;color:var(--muted);transition:all .2s;font-family:'Outfit',sans-serif}
+    .filter-btn:hover{border-color:var(--blue);color:var(--blue)}
+    .filter-btn.active{background:var(--blue);border-color:var(--blue);color:white}
+
+    /* SECTORS */
+    .sector-section{padding:5rem 5%}
+    .sector-section:nth-child(even){background:var(--cream)}
+
+    .sector-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;gap:2rem;flex-wrap:wrap}
+    .sector-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:.5rem}
+    .sector-label-dot{width:8px;height:8px;border-radius:50%;background:var(--pink)}
+    .sector-header h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--dark);line-height:1.2}
+    .sector-header p{font-size:15px;color:var(--muted);max-width:520px;line-height:1.65;margin-top:.5rem}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--border);color:var(--text);text-decoration:none;padding:10px 22px;border-radius:50px;font-size:14px;font-weight:500;white-space:nowrap;transition:border-color .2s,color .2s;flex-shrink:0}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+    /* GRIDS */
+    .ideas-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .col-12{grid-column:span 12}
+    .col-7{grid-column:span 7}
+    .col-6{grid-column:span 6}
+    .col-5{grid-column:span 5}
+    .col-4{grid-column:span 4}
+
+    /* CARDS */
+    .idea-card{border-radius:var(--radius);overflow:hidden;background:var(--border)}
+    .idea-card img{width:100%;display:block;object-fit:cover;transition:transform .4s;cursor:zoom-in}
+    .idea-card:hover img{transform:scale(1.04)}
+    .idea-card-body{padding:1.25rem 1.5rem 1.5rem;background:white}
+    .idea-card-body h3{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:.35rem;line-height:1.3}
+    .idea-card-body p{font-size:13px;color:var(--muted);line-height:1.55}
+    .img-wide{aspect-ratio:16/9}
+    .img-tall{aspect-ratio:3/4}
+    .img-landscape{aspect-ratio:16/7}
+
+    /* TEXT CARDS */
+    .idea-card-text{border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column;justify-content:center}
+    .idea-card-text.blue{background:var(--blue-light)}
+    .idea-card-text.pink{background:var(--pink-light)}
+    .idea-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);background:white;padding:4px 10px;border-radius:50px;margin-bottom:.75rem;width:fit-content}
+    .idea-tag.pink{color:var(--pink)}
+    .idea-card-text h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:.6rem;line-height:1.25}
+    .idea-card-text p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+
+    /* GALLERY STRIP */
+    .gallery-strip{grid-column:span 12;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .gallery-strip .idea-card img{aspect-ratio:3/4}
+
+    /* CTA INLINE */
+    .cta-inline{grid-column:span 12;background:var(--dark);border-radius:var(--radius);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .cta-inline h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:white;margin-bottom:.3rem}
+    .cta-inline p{font-size:14px;color:rgba(255,255,255,.65)}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;text-decoration:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;transition:transform .2s,box-shadow .2s;white-space:nowrap;flex-shrink:0}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(90,202,241,.35)}
+
+    /* CTA FINAL */
+    .cta-section{padding:6rem 5%;background:var(--pink);text-align:center}
+    .cta-section h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:white;margin-bottom:1rem}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--pink);text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:700;transition:transform .2s}
+    .btn-white:hover{transform:translateY(-2px)}
+
+    /* LIGHTBOX */
+    #lbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);align-items:center;justify-content:center;cursor:pointer}
+    #lbox.on{display:flex}
+    #lbox-img{max-width:90vw;max-height:88vh;border-radius:10px;object-fit:contain;display:block;cursor:default}
+    #lbox-x{position:fixed;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(250,248,245,.82);border:none;font-size:20px;cursor:pointer;z-index:100000;display:flex;align-items:center;justify-content:center}
+
+    /* FOOTER */
+    footer{background:var(--pink);padding:4rem 0 2rem;color:rgba(255,255,255,.9)}
+    .footer-inner{max-width:90%;margin:0 auto}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:3rem;margin-bottom:2rem}
+    .footer-brand img{height:40px;margin-bottom:1rem;filter:brightness(0) invert(1)}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:240px;margin-bottom:1rem;color:rgba(255,255,255,.85)}
+    .social-links{display:flex;gap:.6rem}
+    .social-links a{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);transition:all .2s;text-decoration:none}
+    .social-links a:hover{border-color:white;color:white}
+    .footer-col h4{font-size:12px;font-weight:600;color:white;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+    .footer-col ul{list-style:none;margin:0;padding:0}
+    .footer-col ul li{margin-bottom:.5rem}
+    .footer-col ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;transition:color .2s}
+    .footer-col ul li a:hover{color:white}
+    .newsletter-row{display:flex;gap:.4rem;margin-bottom:.4rem}
+    .newsletter-form input[type="email"]{flex:1;min-width:0;padding:9px 14px;border-radius:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.15);color:white;font-size:13px;font-family:'Outfit',sans-serif;outline:none}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.5)}
+    .newsletter-form button{padding:9px 16px;border-radius:50px;border:none;background:white;color:var(--pink);font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif}
+    .nl-success{font-size:12px;color:rgba(255,255,255,.8)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.7)}
+    .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:none}
+    .footer-bottom a:hover{color:white}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .col-7,.col-5{grid-column:span 12}
+      .col-4,.col-6{grid-column:span 6}
+      .gallery-strip{grid-template-columns:1fr 1fr}
+      .footer-top{grid-template-columns:1fr 1fr}
+      .filter-wrap{top:108px}
     }
-
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
-
-    
+    @media(max-width:768px){
+      .nav-top-logo img{height:36px}
+      .nav-top-cta a{font-size:12px;padding:7px 13px}
+      .nav-menu{gap:16px}
+      .nav-menu a{font-size:13px}
+      .col-4,.col-6{grid-column:span 12}
+      .gallery-strip{grid-template-columns:1fr 1fr}
+      .footer-top{grid-template-columns:1fr}
+      .cta-inline{flex-direction:column;text-align:center}
+      .sector-header{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:480px){
+      .nav-menu{gap:8px;flex-wrap:wrap;padding:0 8px 8px}
+      .gallery-strip{grid-template-columns:1fr 1fr}
+      .filter-wrap{gap:.4rem}
+      .filter-btn{font-size:12px;padding:6px 12px}
+    }
   
-    
-  
-    /* LB-START */
-    #lbox { display:none; position:fixed; inset:0; z-index:99999;
-      background:rgba(0,0,0,.9); align-items:center; justify-content:center; }
-    #lbox.on { display:flex; }
-    #lbox-img { max-width:90vw; max-height:88vh; border-radius:10px;
-      object-fit:contain; display:block; }
-    #lbox-x { position:fixed; top:14px; right:14px; width:38px; height:38px;
-      border-radius:50%; background:rgba(250,248,245,.82); border:none;
-      font-size:20px; line-height:38px; text-align:center; cursor:pointer;
-      z-index:100000; padding:0; }
-    /* LB-END */
-  
-    
-  
-    
-  
-    
-  /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    .nav-top{display:flex;align-items:center;padding:14px 24px 14px;min-height:70px}
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
+    .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
     .nav-top-spacer{flex:1}
-    .nav-top-logo{flex:0 0 auto}
     .nav-top-logo a{line-height:0;text-decoration:none;display:block}
     .nav-top-logo img{height:42px;width:auto;display:block}
     .nav-top-cta{flex:1;display:flex;justify-content:flex-end}
-    .nav-top-cta a{background:var(--pink);color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
+    .nav-top-cta a{background:#EB356F;color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
     .nav-top-cta a:hover{opacity:.85}
-    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:12px 24px 12px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
+    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:8px 24px 14px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
     .nav-menu li{list-style:none}
-    .nav-menu a{text-decoration:none;color:var(--text);font-size:14px;font-weight:400;transition:color .2s}
-    .nav-menu a:hover,.nav-menu a.active{color:var(--blue)}
+    .nav-menu a{text-decoration:none;color:#2d2d3a;font-size:14px;font-weight:400;transition:color .2s}
+    .nav-menu a:hover,.nav-menu a.active{color:#5ACAF1}
+    /* Burger */
+    .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0}
+    .nav-burger span{display:block;width:24px;height:2px;background:#2d2d3a;border-radius:2px;transition:all .3s}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    /* Mobile menu panel */
+    .nav-mobile-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:9998;flex-direction:column;padding:100px 2rem 2rem;gap:0}
+    .nav-mobile-panel.open{display:flex}
+    .nav-mobile-panel a{text-decoration:none;color:#2d2d3a;font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block;transition:color .2s}
+    .nav-mobile-panel a:hover{color:#5ACAF1}
+    .nav-mobile-cta{margin-top:auto;padding-top:2rem}
+    .nav-mobile-cta a{display:block;text-align:center;background:#EB356F;color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
+    @media(max-width:768px){
+      .nav-top-cta{display:none}
+      .nav-menu{display:none}
+      .nav-burger{display:flex}
+      .nav-top{padding:14px 20px}
+      .nav-top-logo img{height:36px}
+    }
     /* /NAV */
   </style>
 </head>
 <body>
-
-                    <nav>
+    <nav>
     <div class="nav-top">
       <div class="nav-top-spacer"></div>
-      <div class="nav-top-logo">
-        <a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a>
-      </div>
-      <div class="nav-top-cta">
-        <a href="contact.html">Discutons de votre projet</a>
-      </div>
+      <div class="nav-top-logo"><a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
+      <div class="nav-top-cta"><a href="contact.html">Discutons de votre projet</a></div>
+      <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <ul class="nav-menu">
       <li><a href="index.html">Accueil</a></li>
@@ -140,263 +209,189 @@
       <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
     </ul>
   </nav>
-
-  <!-- HERO -->
+  <div class="nav-mobile-panel" id="nav-mobile-panel">
+    <a href="index.html">Accueil</a>
+    <a href="nos-supports.html">Nos supports</a>
+    <a href="inspirez-vous.html" style="color:#5ACAF1">Inspirez-vous</a>
+    <a href="a-propos-de-nous.html">À propos de nous</a>
+    <div class="nav-mobile-cta"><a href="contact.html">Discutons de votre projet</a></div>
+  </div>
   <section class="page-hero">
     <span class="section-tag">Inspirations</span>
     <h1>Des murs qui racontent quelque chose</h1>
-    <p>Entreprises, écoles, salles d'attente, restaurants : chaque espace mérite une fresque à colorier qui lui ressemble. Voici ce qu'on peut créer ensemble.</p>
+    <p>Entreprises, écoles, salles d'attente, restaurants : chaque espace mérite une fresque à colorier qui lui ressemble.</p>
   </section>
 
-  <!-- FILTERS -->
   <div class="filter-wrap">
-    <button class="filter-btn active" onclick="filterSector('all', this)">Tout voir</button>
-    <button class="filter-btn" onclick="filterSector('entreprise', this)">Entreprise</button>
-    <button class="filter-btn" onclick="filterSector('education', this)">Éducation</button>
-    <button class="filter-btn" onclick="filterSector('medical', this)">Médical</button>
-    <button class="filter-btn" onclick="filterSector('restauration', this)">Restauration</button>
-    <button class="filter-btn" onclick="filterSector('collectivite', this)">Collectivités</button>
+    <button class="filter-btn active" onclick="filterSector('all',this)">Tout voir</button>
+    <button class="filter-btn" onclick="filterSector('entreprise',this)">Entreprise</button>
+    <button class="filter-btn" onclick="filterSector('education',this)">Éducation</button>
+    <button class="filter-btn" onclick="filterSector('medical',this)">Médical</button>
+    <button class="filter-btn" onclick="filterSector('restauration',this)">Restauration</button>
+    <button class="filter-btn" onclick="filterSector('collectivite',this)">Collectivités</button>
   </div>
 
   <!-- ENTREPRISE -->
-  <section class="sector-section" data-sector="entreprise" id="entreprise">
+  <section class="sector-section" data-sector="entreprise" id="entreprise" style="scroll-margin-top:200px">
     <div class="sector-header">
-      <div class="sector-header-left">
+      <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Entreprise</div>
         <h2>Open spaces, salles de pause et couloirs</h2>
-        <p>Impliquer vos collaborateurs dans la décoration de leurs espaces, c'est plus qu'une idée originale : c'est un levier d'appartenance et de marque employeur.</p>
+        <p>Impliquer vos collaborateurs dans la décoration de leurs espaces, c'est un levier d'appartenance et de marque employeur.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
-      <!-- Paysage: 2 grandes images côte à côte -->
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-1.jpg" alt="Fresque murale à colorier open space entreprise" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
-        <div class="idea-card-body">
-          <h3>Un panorama à colorier en open space</h3>
-          <p>Une fresque qui court sur toute la longueur du mur et invite les équipes à contribuer collectivement.</p>
-        </div>
+        <img src="images/inspirez-vous-entreprise-1.jpg" alt="Fresque murale panoramique open space entreprise" class="img-landscape" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un panorama à colorier en open space</h3><p>Une fresque qui court sur toute la longueur du mur et invite les équipes à contribuer collectivement.</p></div>
       </div>
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-2.jpg" alt="Fresque murale trombinoscope entreprise à colorier" style="aspect-ratio:16/7;object-fit:cover;width:100%;display:block;">
-        <div class="idea-card-body">
-          <h3>Trombinoscope géant à colorier</h3>
-          <p>Chaque collaborateur devient un personnage de la fresque. Une œuvre collective qui raconte votre équipe.</p>
-        </div>
+        <img src="images/inspirez-vous-entreprise-2.jpg" alt="Trombinoscope géant à colorier entreprise" class="img-landscape" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Trombinoscope géant à colorier</h3><p>Chaque collaborateur devient un personnage de la fresque. Une œuvre collective qui raconte votre équipe.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise3.jpg" alt="Fresque murale décoration couloir entreprise" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
-        <div class="idea-card-body">
-          <h3>Un couloir qui raconte quelque chose</h3>
-          <p>Même un couloir devient un espace de marque avec la bonne fresque.</p>
-        </div>
+        <img src="images/inspirez-vous-entreprise3.jpg" alt="Décoration couloir entreprise fresque murale" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un couloir qui raconte quelque chose</h3><p>Même un couloir devient un espace de marque avec la bonne fresque.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprises-4.jpg" alt="Papier peint panoramique à colorier bureau" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
-        <div class="idea-card-body">
-          <h3>Votre ville en panorama</h3>
-          <p>Toulouse, Paris, Lyon : un panorama urbain sur-mesure ancré dans votre territoire.</p>
-        </div>
+        <img src="images/inspirez-vous-entreprises-4.jpg" alt="Papier peint panoramique Toulouse bureau" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Votre ville en panorama</h3><p>Toulouse, Paris, Lyon : un panorama urbain sur-mesure ancré dans votre territoire.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise5.jpg" alt="Sticker mural à colorier salle de réunion" style="aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
-        <div class="idea-card-body">
-          <h3>Salle de réunion différenciante</h3>
-          <p>Un visuel fort qui pose le cadre et donne envie d'être créatif.</p>
-        </div>
+        <img src="images/inspirez-vous-entreprise5.jpg" alt="Salle de réunion fresque murale à colorier" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Salle de réunion différenciante</h3><p>Un visuel fort qui pose le cadre et donne envie d'être créatif.</p></div>
       </div>
       <div class="cta-inline">
-        <div>
-          <h3>Votre open space mérite mieux qu'un mur blanc</h3>
-          <p>On vous aide à imaginer le visuel idéal selon votre identité et votre espace.</p>
-        </div>
+        <div><h3>Votre open space mérite mieux qu'un mur blanc</h3><p>On vous aide à imaginer le visuel idéal selon votre identité.</p></div>
         <a href="contact.html" class="btn-primary">Discuter de votre projet →</a>
       </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
-  <section class="sector-section" data-sector="education" id="education">
+  <section class="sector-section" data-sector="education" id="education" style="scroll-margin-top:200px">
     <div class="sector-header">
-      <div class="sector-header-left">
+      <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Éducation</div>
         <h2>Crèches, écoles et espaces éducatifs</h2>
-        <p>Un mur qui évolue au rythme de la classe : repositionnable sans trace, il se change aussi facilement qu'une affiche, en suivant les thèmes et les saisons.</p>
+        <p>Un mur qui évolue au rythme de la classe : repositionnable sans trace, il se change aussi facilement qu'une affiche.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <div class="idea-card col-7">
-        <img src="images/inspirez-vous-ecole-1.jpg" alt="Sticker mural à colorier salle de classe école" class="img-wide">
-        <div class="idea-card-body">
-          <h3>Un mur qui donne envie de venir le matin</h3>
-          <p>Conçu avec eux, pour eux, avec des marges de sécurité intégrées pour ne pas déborder sur les murs.</p>
-        </div>
+        <img src="images/inspirez-vous-ecole-1.jpg" alt="Sticker mural à colorier salle de classe école" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un mur qui donne envie de venir le matin</h3><p>Conçu avec eux, pour eux, avec des marges de sécurité intégrées.</p></div>
       </div>
       <div class="idea-card col-5">
-        <img src="images/inspirez-vous-ecole-2.jpg" alt="Fresque murale jungle à colorier pour enfants" class="img-wide">
-        <div class="idea-card-body">
-          <h3>La jungle, les animaux, l'espace...</h3>
-          <p>Chaque thème de l'année scolaire devient une nouvelle fresque.</p>
-        </div>
+        <img src="images/inspirez-vous-ecole-2.jpg" alt="Fresque murale jungle à colorier enfants" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>La jungle, les animaux, l'espace...</h3><p>Chaque thème de l'année scolaire devient une nouvelle fresque.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-3.jpg" alt="Système solaire éducatif à colorier mural" class="img-tall">
-        <div class="idea-card-body">
-          <h3>Visuels éducatifs</h3>
-          <p>Système solaire, alphabet, carte du monde : les apprentissages intégrés au décor.</p>
-        </div>
+        <img src="images/inspirez-vous-ecole-3.jpg" alt="Système solaire éducatif à colorier mural" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Visuels éducatifs</h3><p>Système solaire, alphabet, carte du monde : les apprentissages intégrés au décor.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole4.jpg" alt="Papier peint à colorier crèche école" class="img-tall">
-        <div class="idea-card-body">
-          <h3>Un mur immersif</h3>
-          <p>Le papier peint pré-encollé transforme toute une paroi en espace créatif.</p>
-        </div>
+        <img src="images/inspirez-vous-ecole4.jpg" alt="Papier peint à colorier crèche école" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un mur immersif</h3><p>Le papier peint transforme toute une paroi en espace créatif.</p></div>
       </div>
       <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative collectivité école" class="img-tall">
-        <div class="idea-card-body">
-          <h3>Pour les collectivités</h3>
-          <p>Médiathèques, gymnases, centres de loisirs : un espace créatif pour tous.</p>
-        </div>
+        <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative collectivité" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Pour les collectivités</h3><p>Médiathèques, gymnases, centres de loisirs.</p></div>
       </div>
     </div>
   </section>
 
   <!-- MEDICAL -->
-  <section class="sector-section" data-sector="medical" id="medical">
+  <section class="sector-section" data-sector="medical" id="medical" style="scroll-margin-top:200px">
     <div class="sector-header">
-      <div class="sector-header-left">
+      <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Médical</div>
         <h2>Salles d'attente, cabinets et cliniques</h2>
-        <p>Personne n'aime attendre. Avec un mur à colorier, le temps d'attente devient un temps créatif : les enfants sont captivés, les adultes aussi.</p>
+        <p>Avec un mur à colorier, le temps d'attente devient un temps créatif. Les enfants sont captivés, les adultes aussi.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <div class="idea-card col-7">
-        <img src="images/inspirez-vous-medical-1.jpg" alt="Salle d'attente médecin avec fresque murale à colorier" class="img-wide">
-        <div class="idea-card-body">
-          <h3>Une salle d'attente apaisante</h3>
-          <p>Un mur à colorier réduit le stress et détourne l'attention de l'attente, pour les enfants comme pour les adultes.</p>
-        </div>
+        <img src="images/inspirez-vous-medical-1.jpg" alt="Salle d'attente médecin avec fresque murale à colorier" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Une salle d'attente apaisante</h3><p>Un mur à colorier réduit le stress et détourne l'attention de l'attente.</p></div>
       </div>
       <div class="idea-card col-5">
-        <img src="images/inspirez-vous-medical2.jpg" alt="Fresque murale à colorier cabinet médical" class="img-wide">
-        <div class="idea-card-body">
-          <h3>Un jardin à colorier</h3>
-          <p>Repositionnable et sans travaux, il s'adapte à n'importe quel espace.</p>
-        </div>
+        <img src="images/inspirez-vous-medical2.jpg" alt="Fresque murale à colorier cabinet médical" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un jardin à colorier</h3><p>Repositionnable et sans travaux, il s'adapte à n'importe quel espace.</p></div>
       </div>
-      <div class="idea-card-text blue-bg col-5" style="border-radius:var(--radius);padding:2rem;">
+      <div class="idea-card-text blue col-5" style="min-height:200px">
         <span class="idea-tag">Médical</span>
         <h3>Compatible certification HAS</h3>
-        <p>Encres non-toxiques, papier M1, pose sans travaux. Nos solutions répondent aux exigences des établissements de santé et ERP.</p>
-        <a href="amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants.html" class="btn-outline" style="width:fit-content;margin-top:.5rem">Lire notre guide HAS →</a>
+        <p>Encres non-toxiques, papier M1, pose sans travaux. Nos solutions répondent aux exigences des établissements de santé.</p>
+        <a href="amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants.html" class="btn-outline" style="width:fit-content">Lire notre guide HAS →</a>
       </div>
       <div class="cta-inline col-7">
-        <div>
-          <h3>Votre salle d'attente mérite mieux</h3>
-          <p>Devis gratuit sous 48h. Livraison partout en France.</p>
-        </div>
+        <div><h3>Votre salle d'attente mérite mieux</h3><p>Devis gratuit sous 48h.</p></div>
         <a href="contact.html" class="btn-primary">Demander un devis →</a>
       </div>
     </div>
   </section>
 
   <!-- RESTAURATION -->
-  <section class="sector-section" data-sector="restauration" id="restauration">
+  <section class="sector-section" data-sector="restauration" id="restauration" style="scroll-margin-top:200px">
     <div class="sector-header">
-      <div class="sector-header-left">
+      <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Restauration</div>
         <h2>Restaurants, hôtels et espaces kids friendly</h2>
-        <p>Un espace kids friendly différenciant, modulable et sans travaux. L'attente devient un moment agréable : les parents respirent, le service se fait plus sereinement.</p>
+        <p>Un espace kids friendly différenciant, modulable et sans travaux. L'attente devient agréable : les parents respirent.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
-
     <div class="ideas-grid">
-
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-1.jpg" alt="Fresque murale à colorier restaurant adulte" class="img-wide">
-        <div class="idea-card-body">
-          <h3>Une fresque qui crée l'ambiance</h3>
-          <p>Un visuel qui s'intègre à votre direction artistique et devient un point d'attention naturel pour vos clients.</p>
-        </div>
+        <img src="images/inspirez-vous-restaurant-1.jpg" alt="Fresque murale à colorier restaurant ambiance" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Une fresque qui crée l'ambiance</h3><p>Un visuel qui s'intègre à votre direction artistique.</p></div>
       </div>
-
       <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-2.jpg" alt="Fresque murale Maroc à colorier décoration restaurant" class="img-wide">
-        <div class="idea-card-body">
-          <h3>Un voyage à colorier sur vos murs</h3>
-          <p>Maroc, Polynésie, Venise, la jungle : des visuels dépaysants qui racontent l'univers de votre établissement.</p>
-        </div>
+        <img src="images/inspirez-vous-restaurant-2.jpg" alt="Fresque murale Maroc décoration restaurant" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+        <div class="idea-card-body"><h3>Un voyage à colorier sur vos murs</h3><p>Maroc, Polynésie, Venise : des visuels dépaysants qui racontent votre établissement.</p></div>
       </div>
-
-      <div class="idea-card-text pink-bg col-12" style="border-radius:var(--radius); padding:2.5rem; display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
-        <div>
-          <span class="idea-tag pink">Franchises</span>
-          <h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--dark);margin-bottom:.5rem;">Vous êtes une franchise ?</h3>
-          <p style="font-size:14px;color:var(--muted);max-width:520px;line-height:1.65;">On crée une fresque adaptée à votre direction artistique et on la décline selon les régions et thèmes de chaque franchise. Un concept cohérent, personnalisé par site.</p>
-        </div>
+      <div class="idea-card-text pink col-12" style="padding:2.5rem;flex-direction:row;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-radius:var(--radius)">
+        <div><span class="idea-tag pink">Franchises</span><h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:.5rem">Vous êtes une franchise ?</h3><p style="font-size:14px;color:var(--muted);max-width:520px;line-height:1.65;margin:0">On crée une fresque adaptée à votre DA et on la décline selon les régions et thèmes de chaque site.</p></div>
         <a href="contact.html" class="btn-primary">Parler de votre projet →</a>
       </div>
-
     </div>
   </section>
 
   <!-- COLLECTIVITES -->
-  <section class="sector-section" data-sector="collectivite" id="collectivite">
+  <section class="sector-section" data-sector="collectivite" id="collectivite" style="scroll-margin-top:200px">
     <div class="sector-header">
-      <div class="sector-header-left">
+      <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Collectivités</div>
         <h2>Médiathèques, mairies et espaces publics</h2>
-        <p>Un papier peint coloriage géant sur-mesure, c'est une décoration murale participative qui s'installe sans chantier, sans colle, sans contrainte. On répond à vos briefs éducatifs.</p>
+        <p>Un papier peint coloriage géant sur-mesure, sans chantier, sans colle. On répond à vos briefs éducatifs.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
-
     <div class="ideas-grid">
-
       <div class="gallery-strip">
-        <div class="idea-card">
-          <img src="images/inspirez-vous-communes1.jpg" alt="Fresque murale Polynésie à colorier collectivité" class="img-tall">
-        </div>
-        <div class="idea-card">
-          <img src="images/inspirez-vous-communes-2.jpg" alt="Papier peint jardin d'hiver à colorier espace public" class="img-tall">
-        </div>
-        <div class="idea-card">
-          <img src="images/inspirez-vous-commune3.jpg" alt="Coloriage mural géant école collectivité" class="img-tall">
-        </div>
-        <div class="idea-card">
-          <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative école" class="img-tall">
-        </div>
+        <div class="idea-card"><img src="images/inspirez-vous-communes1.jpg" alt="Fresque murale collectivité Polynésie" onclick="lbOpen(this.src,this.alt)"></div>
+        <div class="idea-card"><img src="images/inspirez-vous-communes-2.jpg" alt="Papier peint jardin d'hiver collectivité" onclick="lbOpen(this.src,this.alt)"></div>
+        <div class="idea-card"><img src="images/inspirez-vous-commune3.jpg" alt="Coloriage mural géant collectivité" onclick="lbOpen(this.src,this.alt)"></div>
+        <div class="idea-card"><img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative école collectivité" onclick="lbOpen(this.src,this.alt)"></div>
       </div>
-
       <div class="cta-inline">
-        <div>
-          <h3>Un mur qui appartient à tout le monde</h3>
-          <p>Médiathèque, mairie, office de tourisme, gymnase : on représente le patrimoine local et on invite les habitants à contribuer.</p>
-        </div>
+        <div><h3>Un mur qui appartient à tout le monde</h3><p>Médiathèque, mairie, office de tourisme, gymnase : on représente votre patrimoine local.</p></div>
         <a href="contact.html" class="btn-primary">Discuter de votre projet →</a>
       </div>
-
     </div>
   </section>
 
-  <!-- CTA FINAL -->
   <section class="cta-section">
     <h2>Vous avez une idée en tête ?</h2>
     <p>On adore les projets un peu fous. Parlez-nous de votre espace et on imagine la fresque idéale.</p>
-    <a href="contact.html" class="btn-white">
-      Lancer mon projet
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <a href="contact.html" class="btn-white">Lancer mon projet <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </section>
 
-  <!-- FOOTER -->
-    <footer>
+  <footer>
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
@@ -409,100 +404,61 @@
             <a href="https://www.tiktok.com/@les.petits.papierspeints" target="_blank" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.37a8.16 8.16 0 004.77 1.52V7.44a4.85 4.85 0 01-1-.75z"/></svg></a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Liens utiles</h4>
-          <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Nos formules</h4>
-          <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Newsletter</h4>
-          <form action="https://formspree.io/f/mdavaonj" method="POST" class="newsletter-form" onsubmit="submitNewsletter(event)">
-            <input type="hidden" name="_subject" value="Nouvelle inscription newsletter Les Petits Papiers">
-            <div class="newsletter-row">
-              <input type="email" name="email" placeholder="Votre e-mail" required>
-              <button type="submit">OK</button>
-            </div>
-            <p class="nl-success" style="display:none">Inscription confirmée !</p>
-          </form>
-        </div>
+        <div class="footer-col"><h4>Liens utiles</h4><ul><li><a href="nos-supports.html">Nos supports</a></li><li><a href="inspirez-vous.html">Inspirez-vous</a></li><li><a href="a-propos-de-nous.html">À propos de nous</a></li><li><a href="contact.html">Contact</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+        <div class="footer-col"><h4>Nos formules</h4><ul><li><a href="la-vignette.html">La Vignette</a></li><li><a href="le-grand-format.html">Le Grand Format</a></li><li><a href="le-panorama.html">Le Panorama</a></li></ul></div>
+        <div class="footer-col"><h4>Newsletter</h4><form action="https://formspree.io/f/mdavaonj" method="POST" class="newsletter-form" onsubmit="submitNL(event)"><input type="hidden" name="_subject" value="Newsletter Les Petits Papiers"><div class="newsletter-row"><input type="email" name="email" placeholder="Votre e-mail" required><button type="submit">OK</button></div><p class="nl-success" style="display:none">Inscription confirmée !</p></form></div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
-        <a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a>
-      </div>
+      <div class="footer-bottom"><span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span><a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a></div>
     </div>
   </footer>
 
-  <script>
-    function filterSector(sector, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const sections = document.querySelectorAll('.sector-section');
-      sections.forEach(s => {
-        if (sector === 'all' || s.dataset.sector === sector) {
-          s.style.display = '';
-          setTimeout(() => s.style.opacity = '1', 10);
-        } else {
-          s.style.opacity = '0';
-          setTimeout(() => s.style.display = 'none', 300);
-        }
-      });
-
-      if (sector !== 'all') {
-        setTimeout(function(){
-          var el=document.getElementById(sector);
-          if(!el)return;
-          var nH=(document.querySelector('nav')||{offsetHeight:115}).offsetHeight;
-          var fH=(document.querySelector('.filter-wrap')||{offsetHeight:50}).offsetHeight;
-          window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-nH-fH-8,behavior:'smooth'});
-        },80);
-      });
-        }, 80);
-      });
-          }
-        }, 80);
-      });
-          }
-        }, 80);
-      }
-    }
-
-    // Fade in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.idea-card, .idea-card-text, .avant-apres').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity .5s ease, transform .5s ease';
-      observer.observe(el);
-    });
-  </script>
-
-  
   <div id="lbox" onclick="if(event.target===this)lbClose()">
     <button id="lbox-x" onclick="lbClose()">✕</button>
     <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
   </div>
+
+  <script>
+    function filterSector(sector, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var sections = document.querySelectorAll('.sector-section');
+      sections.forEach(function(s){
+        if (sector === 'all' || s.dataset.sector === sector) {
+          s.style.display = '';
+          setTimeout(function(){s.style.opacity='1';},10);
+        } else {
+          s.style.opacity = '0';
+          setTimeout(function(){s.style.display='none';},300);
+        }
+      });
+      if (sector !== 'all') {
+        setTimeout(function(){
+          var el = document.getElementById(sector);
+          if (!el) return;
+          var navH = (document.querySelector('nav')||{offsetHeight:130}).offsetHeight;
+          var filterH = (document.querySelector('.filter-wrap')||{offsetHeight:60}).offsetHeight;
+          window.scrollTo({top: el.getBoundingClientRect().top + window.pageYOffset - navH - filterH - 8, behavior:'smooth'});
+        }, 80);
+      }
+    }
+    function lbOpen(src,alt){document.getElementById('lbox-img').src=src;document.getElementById('lbox-img').alt=alt||'';document.getElementById('lbox').classList.add('on');document.body.style.overflow='hidden';}
+    function lbClose(){document.getElementById('lbox').classList.remove('on');document.body.style.overflow='';}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
+    function submitNL(e){e.preventDefault();fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){e.target.querySelector('.nl-success').style.display='block';e.target.reset();}});}
+    // Highlight active filter on scroll
+    var sectors = ['entreprise','education','medical','restauration','collectivite'];
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var idx = sectors.indexOf(e.target.id);
+          if(idx>=0){
+            document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+            document.querySelectorAll('.filter-btn')[idx+1].classList.add('active');
+          }
+        }
+      });
+    },{threshold:0.3});
+    sectors.forEach(function(id){var el=document.getElementById(id);if(el)obs.observe(el);});
+  </script>
 </body>
 </html>

@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Les Petits Papiers · Le Panorama : 100% sur-mesure. Sur devis. Fresques murales à colorier fabriquées en France.">
-  <title>Le Panorama : 100% sur-mesure - Les Petits Papiers</title>
+  <meta name="description" content="Créez une fresque murale à colorier 100% sur-mesure selon votre brief et votre univers graphique. Sur devis.">
+  <title>Le Panorama - Fresque murale 100% sur-mesure - Les Petits Papiers</title>
+  <meta property="og:title" content="Le Panorama - Fresque murale 100% sur-mesure - Les Petits Papiers">
+  <meta property="og:description" content="Créez une fresque murale à colorier 100% sur-mesure selon votre brief et votre univers graphique. Sur devis.">
+  <meta property="og:image" content="https://maylisdaussy-lpp.github.io/lpp-site-FINAL/images/inspirez-vous-entreprises-4.jpg">
+  <meta property="og:url" content="https://www.lespetitspapierspeints.com/le-panorama">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Petits Papiers">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,21 +23,7 @@
     :root{--blue:#5ACAF1;--pink:#EB356F;--blue-light:#e8f8fd;--pink-light:#fde8ef;--cream:#faf8f5;--dark:#1a1a2e;--text:#2d2d3a;--muted:#7a7a8c;--border:#e8e6e0;--white:#ffffff;--radius:20px;--radius-sm:12px}
     html{scroll-behavior:smooth}
     body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    .nav-top{display:flex;align-items:center;padding:14px 24px 14px;min-height:70px}
-    .nav-top-spacer{flex:1}
-    .nav-top-logo{flex:0 0 auto}
-    .nav-top-logo a{line-height:0;text-decoration:none;display:block}
-    .nav-top-logo img{height:42px;width:auto;display:block}
-    .nav-top-cta{flex:1;display:flex;justify-content:flex-end}
-    .nav-top-cta a{background:var(--pink);color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
-    .nav-top-cta a:hover{opacity:.85}
-    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:12px 24px 12px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
-    .nav-menu li{list-style:none}
-    .nav-menu a{text-decoration:none;color:var(--text);font-size:14px;font-weight:400;transition:color .2s}
-    .nav-menu a:hover,.nav-menu a.active{color:var(--blue)}
-    /* /NAV */
+    
     /* HERO */
     .format-hero{padding-top:130px;background:linear-gradient(135deg,#EB356F,#5ACAF1);padding-bottom:2.5rem}
     .format-hero-inner{max-width:90%;margin:0 auto;padding:2.5rem 2rem 0}
@@ -119,14 +113,52 @@
     @media(max-width:900px){.format-wrap{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:1rem}}
     @media(max-width:768px){.nav-top-logo img{height:36px}.nav-top-cta a{font-size:12px;padding:7px 13px}.nav-menu{gap:16px}.nav-menu a{font-size:13px}.footer-top{grid-template-columns:1fr}}
     @media(max-width:480px){.nav-menu{gap:8px;flex-wrap:wrap;padding:0 8px 8px}.sidebar{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}}
+  
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
+    .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
+    .nav-top-spacer{flex:1}
+    .nav-top-logo a{line-height:0;text-decoration:none;display:block}
+    .nav-top-logo img{height:42px;width:auto;display:block}
+    .nav-top-cta{flex:1;display:flex;justify-content:flex-end}
+    .nav-top-cta a{background:#EB356F;color:white;text-decoration:none;padding:9px 20px;border-radius:50px;font-size:13px;font-weight:500;white-space:nowrap;transition:opacity .2s}
+    .nav-top-cta a:hover{opacity:.85}
+    .nav-menu{display:flex;align-items:center;justify-content:center;gap:32px;list-style:none;padding:8px 24px 14px;margin:0;border-top:1px solid rgba(0,0,0,.06)}
+    .nav-menu li{list-style:none}
+    .nav-menu a{text-decoration:none;color:#2d2d3a;font-size:14px;font-weight:400;transition:color .2s}
+    .nav-menu a:hover,.nav-menu a.active{color:#5ACAF1}
+    /* Burger */
+    .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0}
+    .nav-burger span{display:block;width:24px;height:2px;background:#2d2d3a;border-radius:2px;transition:all .3s}
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    /* Mobile menu panel */
+    .nav-mobile-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:9998;flex-direction:column;padding:100px 2rem 2rem;gap:0}
+    .nav-mobile-panel.open{display:flex}
+    .nav-mobile-panel a{text-decoration:none;color:#2d2d3a;font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block;transition:color .2s}
+    .nav-mobile-panel a:hover{color:#5ACAF1}
+    .nav-mobile-cta{margin-top:auto;padding-top:2rem}
+    .nav-mobile-cta a{display:block;text-align:center;background:#EB356F;color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
+    @media(max-width:768px){
+      .nav-top-cta{display:none}
+      .nav-menu{display:none}
+      .nav-burger{display:flex}
+      .nav-top{padding:14px 20px}
+      .nav-top-logo img{height:36px}
+    }
+    /* /NAV */
   </style>
 </head>
 <body>
-    <nav>
+      <nav>
     <div class="nav-top">
       <div class="nav-top-spacer"></div>
       <div class="nav-top-logo"><a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
       <div class="nav-top-cta"><a href="contact.html">Discutons de votre projet</a></div>
+      <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <ul class="nav-menu">
       <li><a href="index.html">Accueil</a></li>
@@ -135,6 +167,13 @@
       <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
     </ul>
   </nav>
+  <div class="nav-mobile-panel" id="nav-mobile-panel">
+    <a href="index.html">Accueil</a>
+    <a href="nos-supports.html">Nos supports</a>
+    <a href="inspirez-vous.html">Inspirez-vous</a>
+    <a href="a-propos-de-nous.html">À propos de nous</a>
+    <div class="nav-mobile-cta"><a href="contact.html">Discutons de votre projet</a></div>
+  </div>
   <div class="format-hero">
     <div class="format-hero-inner">
       <span class="format-hero-tag">Formule sur-mesure</span>
