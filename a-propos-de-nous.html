@@ -279,7 +279,6 @@
     @media(max-width:768px){
       .nav-top-cta{display:none}
       .nav-menu{display:none}
-      .nav-burger{display:flex}
       .nav-top{padding:14px 20px}
       .nav-top-logo img{height:36px}
     }
@@ -385,18 +384,17 @@
       div[style*="grid-template-columns: 1fr 1fr 1fr"]{grid-template-columns:1fr!important}
       div[style*="display:flex;gap"]{flex-wrap:wrap}
     }
+  
+    @media(max-width:768px){
+      .nav-top{justify-content:space-between}
+      .nav-top-spacer{display:none}
+      .nav-top-logo{position:absolute;left:50%;transform:translateX(-50%)}
+      .nav-top-cta{display:none}
+      .nav-burger{display:flex!important;margin-left:auto}
+    }
   </style>
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698">
-    function toggleMenu() {
-      var b = document.getElementById('nav-burger');
-      var p = document.getElementById('nav-mobile-panel');
-      if (!b || !p) return;
-      b.classList.toggle('open');
-      p.classList.toggle('open');
-      document.body.style.overflow = p.classList.contains('open') ? 'hidden' : '';
-    }
-  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
 </head>
 <body>
@@ -674,5 +672,15 @@
   </script>
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
   <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/takel")</script>
+  <script>
+    function toggleMenu() {
+      var b = document.getElementById('nav-burger');
+      var p = document.getElementById('nav-mobile-panel');
+      if (!b || !p) return;
+      b.classList.toggle('open');
+      p.classList.toggle('open');
+      document.body.style.overflow = p.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
 </body>
 </html>
