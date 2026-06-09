@@ -440,6 +440,11 @@
       .engagements-grid{display:grid!important;grid-template-columns:1fr!important}
       .engagement-card{width:100%!important}
     }
+      @media screen and (max-width:900px){
+      .engagements-grid{display:block!important}
+      .engagements-grid .engagement-card{margin-bottom:1.5rem;width:100%!important}
+      .engagements-grid .engagement-card:last-child{margin-bottom:0}
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
