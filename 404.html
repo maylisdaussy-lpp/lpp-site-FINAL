@@ -67,6 +67,28 @@
     .nav-mobile-cta{margin-top:auto;padding-top:2rem}
     .nav-mobile-cta a{display:block;text-align:center;background:var(--pink);color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
     @media(max-width:768px){.nav-top-cta{display:none}.nav-menu{display:none}.nav-burger{display:flex}.nav-top{padding:14px 20px}.nav-top-logo img{height:36px}}
+  
+    @media(max-width:768px){
+      /* Burger fix */
+      .nav-burger{display:flex!important;z-index:10001!important;position:relative!important;pointer-events:all!important}
+      .nav-mobile-panel{z-index:9999!important}
+      /* Prevent horizontal scroll */
+      body,html{overflow-x:hidden!important;max-width:100vw!important}
+      /* Stack all grids on mobile */
+      .engagements-grid{grid-template-columns:1fr!important}
+      .valeurs-grid{grid-template-columns:1fr!important}
+      .labels-grid{grid-template-columns:1fr!important}
+      /* A-propos engagement boxes */
+      .engagement-card,.valeur-card,.label-card{width:100%!important}
+    }
+    @media(max-width:480px){
+      /* Nos-supports internal nav - hide on mobile */
+      .tabs-wrap{display:none!important}
+      /* Catalogue section stack */
+      .catalogue-inner,.catalogue-section > div{grid-template-columns:1fr!important;flex-direction:column!important}
+      /* Particuliers images stack */
+      .particuliers-imgs{grid-template-columns:1fr!important}
+    }
   </style>
 </head>
 <body>

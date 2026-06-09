@@ -387,7 +387,16 @@
     }
   </style>
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698">
+    function toggleMenu() {
+      var b = document.getElementById('nav-burger');
+      var p = document.getElementById('nav-mobile-panel');
+      if (!b || !p) return;
+      b.classList.toggle('open');
+      p.classList.toggle('open');
+      document.body.style.overflow = p.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
 </head>
 <body>
