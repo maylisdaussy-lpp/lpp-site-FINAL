@@ -33,7 +33,7 @@
     .nav-menu a{text-decoration:none;color:#2d2d3a;font-size:14px;font-weight:400;transition:color .2s}
     .nav-menu a:hover,.nav-menu a.active{color:#5ACAF1}
     /* Burger */
-    .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0}
+    .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;z-index:10000;position:relative}
     .nav-burger span{display:block;width:24px;height:2px;background:#2d2d3a;border-radius:2px;transition:all .3s}
     .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-burger.open span:nth-child(2){opacity:0}

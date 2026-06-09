@@ -377,7 +377,15 @@
       .hero-right { min-height: 300px; }
       .story { grid-template-columns: 1fr; }
       .story-img { min-height: 260px; }
-    }</style>
+    }    @media(max-width:768px){
+      .labels-grid,.engagements-grid,.valeurs-grid{grid-template-columns:1fr!important}
+      .label-card{flex-direction:column!important}
+      /* Stack logos certifs */
+      div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+      div[style*="grid-template-columns: 1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+      div[style*="display:flex;gap"]{flex-wrap:wrap}
+    }
+  </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>

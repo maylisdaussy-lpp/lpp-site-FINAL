@@ -19,6 +19,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProductCollection","name":"Supports muraux à colorier Les Petits Papiers","description":"Stickers repositionnables et papiers peints pré-encollés à colorier pour professionnels","brand":{"@type":"Brand","name":"Les Petits Papiers"},"url":"https://www.lespetitspapierspeints.com/nos-supports"}
+      function syncTabsTop(){var nav=document.querySelector('nav');var tw=document.querySelector('.tabs-wrap');if(nav&&tw)tw.style.top=nav.offsetHeight+'px';}
+    syncTabsTop();window.addEventListener('resize',syncTabsTop);
   </script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -49,7 +51,7 @@
     .page-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
 
     /* ── TABS ── */
-    .tabs-wrap{position:sticky;top:112px;z-index:50;background:white;border-bottom:1px solid var(--border);padding:0 5%;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .tabs-wrap{position:sticky;top:0;z-index:50;background:white;border-bottom:1px solid var(--border);padding:0 5%;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
     .tab-btn{padding:1rem 1.25rem;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2.5px solid transparent;transition:color .2s,border-color .2s;font-family:'Outfit',sans-serif;white-space:nowrap;flex-shrink:0}
     .tab-btn:hover{color:var(--text)}
     .tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
@@ -156,7 +158,7 @@
       .labels-grid{grid-template-columns:1fr 1fr}
       .video-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}
       .footer-top{grid-template-columns:1fr 1fr}
-      .tabs-wrap{overflow-x:auto;top:108px}
+      .tabs-wrap{position:sticky;top:0;z-index:50;background:white;border-bottom:1px solid var(--border);padding:0 5%;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
     }
     @media(max-width:768px){
       .labels-grid{grid-template-columns:1fr}
@@ -246,6 +248,11 @@
     #mlb2-42333023 .ml-form-successContent h4{color:white!important;font-family:'Outfit',sans-serif!important;font-size:18px!important;font-weight:500!important;margin:0 0 .25rem}
     #mlb2-42333023 .ml-form-successContent p{color:rgba(255,255,255,.85)!important;font-family:'Outfit',sans-serif!important;font-size:13px!important}
     #mlb2-42333023 .ml-form-embedSubmitLoad{display:inline-block;width:16px;height:16px}
+      @media(max-width:768px){
+      .tabs-wrap{top:0}
+      .catalogue-inner{grid-template-columns:1fr!important;gap:1.5rem!important}
+      #mlb2-42333023 .ml-form-embedContainer{width:100%!important}
+    }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
