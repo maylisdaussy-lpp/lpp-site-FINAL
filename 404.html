@@ -3,79 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page introuvable - Les Petits Papiers, fresques murales à colorier pour professionnels.">
   <title>Page introuvable - Les Petits Papiers</title>
+  <meta property="og:title" content="Page introuvable - Les Petits Papiers">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Outfit', sans-serif; background: #faf8f5; min-height: 100vh; display: flex; flex-direction: column; }
-    .error-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
-    }
-    .error-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .error-content {
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: flex-start;
-      padding: 4rem;
-    }
-    .error-num {
-      font-size: 7rem; font-weight: 700;
-      color: #5ACAF1; line-height: 1;
-      margin-bottom: .5rem;
-    }
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem; font-weight: 600;
-      color: #1a1a2e; margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-    p { font-size: 16px; color: #7a7a8c; margin-bottom: 2.5rem; line-height: 1.65; }
-    .btn-home {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #EB356F; color: white;
-      text-decoration: none; padding: 13px 28px;
-      border-radius: 50px; font-size: 15px; font-weight: 600;
-      transition: opacity .2s;
-    }
-    .btn-home:hover { opacity: .85; }
-    @media (max-width: 768px) {
-      .error-wrap { grid-template-columns: 1fr; }
-      .error-img { height: 280px; order: -1; }
-      .error-content { padding: 3rem 2rem; }
-      .error-num { font-size: 5rem; }
-    }
-  
-    
-  
-    
-  
-    
-  
-    /* LB-START */
-    #lbox { display:none; position:fixed; inset:0; z-index:99999;
-      background:rgba(0,0,0,.9); align-items:center; justify-content:center; }
-    #lbox.on { display:flex; }
-    #lbox-img { max-width:90vw; max-height:88vh; border-radius:10px;
-      object-fit:contain; display:block; }
-    #lbox-x { position:fixed; top:14px; right:14px; width:38px; height:38px;
-      border-radius:50%; background:rgba(250,248,245,.82); border:none;
-      font-size:20px; line-height:38px; text-align:center; cursor:pointer;
-      z-index:100000; padding:0; }
-    /* LB-END */
-  
-    
-  
-    
-  
-    
-  
-  
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    @font-face{font-family:'GooddogNew';src:url('fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+    :root{--blue:#5ACAF1;--pink:#EB356F;--cream:#faf8f5;--dark:#1a1a2e;--text:#2d2d3a;--muted:#7a7a8c;--border:#e8e6e0;--white:#ffffff}
+    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
     .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
@@ -110,59 +51,62 @@
       .nav-top-logo img{height:36px}
     }
     /* /NAV */
-  
-    /* MailerLite */
-    #mlb2-42332261.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
-    #mlb2-42332261.ml-form-embedContainer .ml-form-embedWrapper{background-color:transparent;border-width:0;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative}
-    #mlb2-42332261.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:100%;width:100%}
-    #mlb2-42332261 .ml-form-embedBody{padding:0}
-    #mlb2-42332261 .ml-form-horizontalRow{display:flex;gap:.4rem;width:100%}
-    #mlb2-42332261 .ml-input-horizontal{flex:1;min-width:0}
-    #mlb2-42332261 .ml-input-horizontal .horizontal-fields{width:100%}
-    #mlb2-42332261 .ml-field-group input[type="email"]{width:100%!important;padding:9px 14px!important;border-radius:50px!important;border:1px solid rgba(255,255,255,.3)!important;background:rgba(255,255,255,.15)!important;color:white!important;font-size:13px!important;font-family:'Outfit',sans-serif!important;outline:none!important;box-sizing:border-box!important}
-    #mlb2-42332261 .ml-field-group input::placeholder{color:rgba(255,255,255,.5)!important}
-    #mlb2-42332261 .ml-button-horizontal button.primary{padding:9px 16px!important;border-radius:50px!important;border:none!important;background:white!important;color:#EB356F!important;font-size:13px!important;font-weight:600!important;cursor:pointer!important;font-family:'Outfit',sans-serif!important;white-space:nowrap}
-    #mlb2-42332261 .ml-button-horizontal button.loading{display:none}
-    #mlb2-42332261 .ml-form-embedSubmitLoad{display:inline-block;width:16px;height:16px}
-    #mlb2-42332261 .ml-form-successBody p{color:rgba(255,255,255,.9)!important;font-size:13px!important;font-family:'Outfit',sans-serif!important}
-    #mlb2-42332261 .ml-mobileButton-horizontal{display:none}
-    .ml-form-formContent.horozintalForm{float:none!important}
-    @media(max-width:400px){#mlb2-42332261 .ml-form-horizontalRow{flex-direction:column}.ml-mobileButton-horizontal{display:block!important;margin-top:.5rem;width:100%}.ml-button-horizontal.primary{display:none}}
+    .error-page{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;background:var(--cream)}
+    .error-code{font-family:'GooddogNew','Outfit',sans-serif;font-size:8rem;font-weight:700;color:var(--pink);line-height:1;margin-bottom:1rem}
+    .error-title{font-family:'GooddogNew','Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--dark);margin-bottom:1rem}
+    .error-text{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto 2rem;line-height:1.65}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:white;text-decoration:none;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:600}
+    footer{background:var(--pink);padding:2rem 0;color:rgba(255,255,255,.9)}
+    .footer-bottom{max-width:90%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.7)}
+    .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:none}
+    .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0}
+    .nav-burger span{display:block;width:24px;height:2px;background:#2d2d3a;border-radius:2px}
+    .nav-mobile-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:9998;flex-direction:column;padding:100px 2rem 2rem}
+    .nav-mobile-panel.open{display:flex}
+    .nav-mobile-panel a{text-decoration:none;color:var(--text);font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block}
+    .nav-mobile-cta{margin-top:auto;padding-top:2rem}
+    .nav-mobile-cta a{display:block;text-align:center;background:var(--pink);color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
+    @media(max-width:768px){.nav-top-cta{display:none}.nav-menu{display:none}.nav-burger{display:flex}.nav-top{padding:14px 20px}.nav-top-logo img{height:36px}}
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
 </head>
 <body>
-  <div class="error-wrap">
-    <div class="error-content">
-      <p class="error-num">404</p>
-      <h1>Oh oh, une erreur s'est produite</h1>
-      <p>Reprenez votre navigation où vous en étiez :</p>
-      <nav class="nav-links">
-        <a href="index.html">Accueil</a>
-        <a href="nos-supports.html">Nos supports</a>
-        <a href="inspirez-vous.html">Inspirez-vous</a>
-        <a href="a-propos-de-nous.html">À propos de nous</a>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
-      </nav>
-      <a href="index.html" class="btn-home">Retour à l'accueil →</a>
+  <nav>
+    <div class="nav-top">
+      <div class="nav-top-spacer"></div>
+      <div class="nav-top-logo"><a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
+      <div class="nav-top-cta"><a href="contact.html">Discutons de votre projet</a></div>
+      <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <img src="images/404-image.png" alt="Les Petits Papiers - page introuvable" class="error-img">
+    <ul class="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="nos-supports.html">Nos supports</a></li>
+      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
+      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+    </ul>
+  </nav>
+  <div class="nav-mobile-panel" id="nav-mobile-panel">
+    <a href="index.html">Accueil</a>
+    <a href="nos-supports.html">Nos supports</a>
+    <a href="inspirez-vous.html">Inspirez-vous</a>
+    <a href="a-propos-de-nous.html">À propos de nous</a>
+    <div class="nav-mobile-cta"><a href="contact.html">Discutons de votre projet</a></div>
   </div>
-  <div id="lbox" onclick="if(event.target===this)lbClose()">
-    <button id="lbox-x" onclick="lbClose()">✕</button>
-    <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Ce mur est encore blanc...</h1>
+    <p class="error-text">La page que vous cherchez n'existe pas ou a été déplacée. Pas de panique, on a plein d'autres murs à colorier !</p>
+    <a href="index.html" class="btn-primary">Retour à l'accueil</a>
   </div>
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
+      <a href="index.html">Accueil</a>
+    </div>
+  </footer>
   <script>
-    function ml_webform_success_42332261() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-42332261 .row-success').show();
-      $('.ml-subscribe-form-42332261 .row-form').hide();
-    }
+    function toggleMenu(){var b=document.getElementById('nav-burger');var p=document.getElementById('nav-mobile-panel');b.classList.toggle('open');p.classList.toggle('open');document.body.style.overflow=p.classList.contains('open')?'hidden':'';}
   </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
-  <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/takel")</script>
 </body>
 </html>
