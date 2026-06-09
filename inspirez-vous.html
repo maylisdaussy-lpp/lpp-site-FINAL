@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Inspirations pour vos décorations murales à colorier : entreprises, crèches, salles d'attente, restaurants et collectivités. Découvrez nos réalisations.">
   <title>Inspirez-vous : fresques murales à colorier pour professionnels - Les Petits Papiers</title>
-  <meta property="og:title" content="Inspirez-vous : fresques murales à colorier - Les Petits Papiers">
+  <meta property="og:title" content="Inspirez-vous - Les Petits Papiers">
   <meta property="og:description" content="Inspirations décorations murales à colorier pour entreprises, écoles, salles d'attente et restaurants.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -15,7 +15,13 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
-  <style>/* NAV */
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    @font-face{font-family:'GooddogNew';src:url('fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+    :root{--blue:#5ACAF1;--pink:#EB356F;--blue-light:#e8f8fd;--pink-light:#fde8ef;--cream:#faf8f5;--dark:#1a1a2e;--text:#2d2d3a;--muted:#7a7a8c;--border:#e8e6e0;--white:#ffffff;--radius:20px;--radius-sm:12px}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
+    /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
     .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
     .nav-top-spacer{flex:1}
@@ -49,28 +55,19 @@
     }
     /* /NAV */
     @media(max-width:768px){
-      .nav-top-cta{display:none!important}
-      .nav-menu{display:none!important}
-      .nav-burger{display:flex!important;z-index:10001;position:relative}
-      .nav-top{padding:14px 20px!important;position:relative}
-      .nav-top-spacer{display:none!important}
-      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important}
+      .nav-top{display:flex!important;align-items:center!important;padding:14px 20px!important;position:relative!important;min-height:56px!important}
+      .nav-top-spacer{display:none!important}.nav-top-cta{display:none!important}.nav-menu{display:none!important}
+      .nav-burger{display:flex!important;order:1!important;margin-left:auto!important;z-index:10001!important;position:relative!important;flex-shrink:0}
+      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important;z-index:1}
     }
-    
-    
-    
-    
-    
-    
-    
-    
-
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    @font-face{font-family:'GooddogNew';src:url('fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
-    :root{--blue:#5ACAF1;--pink:#EB356F;--blue-light:#e8f8fd;--pink-light:#fde8ef;--cream:#faf8f5;--dark:#1a1a2e;--text:#2d2d3a;--muted:#7a7a8c;--border:#e8e6e0;--white:#ffffff;--radius:20px;--radius-sm:12px}
-    html{scroll-behavior:smooth}
-    body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
-    
+    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-burger.open span:nth-child(2){opacity:0}
+    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-mobile-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:9999;flex-direction:column;padding:100px 2rem 2rem}
+    .nav-mobile-panel.open{display:flex}
+    .nav-mobile-panel>a{text-decoration:none!important;color:#2d2d3a;font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block}
+    .nav-mobile-cta{margin-top:auto;padding-top:2rem}
+    .nav-mobile-cta a{display:block;text-align:center;background:#EB356F;color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
     .page-hero{padding:8rem 5% 4rem;background:var(--cream);text-align:center}
     .section-tag{display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:.75rem}
     .page-hero h1{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--dark);margin-bottom:1rem;line-height:1.15}
@@ -90,25 +87,18 @@
     .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
     .ideas-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
     .col-12{grid-column:span 12}.col-7{grid-column:span 7}.col-6{grid-column:span 6}.col-5{grid-column:span 5}.col-4{grid-column:span 4}
-    .idea-card{border-radius:var(--radius);overflow:hidden;background:var(--border)}
-    .idea-card img{width:100%;display:block;object-fit:cover;transition:transform .4s;cursor:zoom-in}
+    .idea-card{border-radius:var(--radius);overflow:hidden;background:var(--border);cursor:zoom-in}
+    .idea-card img{width:100%;display:block;object-fit:cover;transition:transform .4s;pointer-events:none}
     .idea-card:hover img{transform:scale(1.04)}
-    .idea-card-body{padding:1.25rem 1.5rem 1.5rem;background:white}
-    .idea-card-body h3{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:.35rem;line-height:1.3}
-    .idea-card-body p{font-size:13px;color:var(--muted);line-height:1.55}
+    .idea-card-body{padding:1.25rem 1.5rem 1.5rem;background:white;cursor:default;pointer-events:auto}
     .img-wide{aspect-ratio:16/9}.img-tall{aspect-ratio:3/4}.img-landscape{aspect-ratio:16/7}
-    .idea-card-text{border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column;justify-content:center}
-    .idea-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);background:white;padding:4px 10px;border-radius:50px;margin-bottom:.75rem;width:fit-content}
-    .idea-tag.pink{color:var(--pink)}
-    .idea-card-text h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:.6rem;line-height:1.25}
-    .idea-card-text p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:1rem}
     .gallery-strip{grid-column:span 12;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
     .gallery-strip .idea-card img{aspect-ratio:3/4}
     .cta-inline{grid-column:span 12;background:var(--dark);border-radius:var(--radius);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
     .cta-inline h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:white;margin-bottom:.3rem}
     .cta-inline p{font-size:14px;color:rgba(255,255,255,.65)}
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;text-decoration:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;transition:transform .2s,box-shadow .2s;white-space:nowrap;flex-shrink:0}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(90,202,241,.35)}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:white;text-decoration:none;padding:13px 26px;border-radius:50px;font-size:15px;font-weight:600;transition:transform .2s;white-space:nowrap;flex-shrink:0}
+    .btn-primary:hover{transform:translateY(-2px)}
     .cta-section{padding:6rem 5%;background:var(--pink);text-align:center}
     .cta-section h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:white;margin-bottom:1rem}
     .cta-section p{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto}
@@ -133,84 +123,19 @@
     .newsletter-row{display:flex;gap:.4rem;margin-bottom:.4rem}
     .newsletter-form input[type="email"]{flex:1;min-width:0;padding:9px 14px;border-radius:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.15);color:white;font-size:13px;font-family:'Outfit',sans-serif;outline:none}
     .newsletter-form input::placeholder{color:rgba(255,255,255,.5)}
-    .newsletter-form button{padding:9px 16px;border-radius:50px;border:none;background:white;color:var(--pink);font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serifbackground:white!important;color:var(--pink)!important;}
+    .newsletter-form button{padding:9px 16px;border-radius:50px;border:none;background:white!important;color:var(--pink)!important;font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:1rem;color:rgba(255,255,255,.7)}
     .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:none}.footer-bottom a:hover{color:white}
     @media(max-width:1024px){.col-7,.col-5{grid-column:span 12}.col-4,.col-6{grid-column:span 6}.gallery-strip{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){.nav-top-cta{display:none}.nav-menu{display:none}.nav-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}.nav-burger span{display:block;width:24px;height:2px;background:#2d2d3a;border-radius:2px}.nav-top{padding:14px 20px}.nav-top-logo img{height:36px}.col-4,.col-6{grid-column:span 12}.gallery-strip{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr}.cta-inline{flex-direction:column;text-align:center}.sector-header{flex-direction:column;align-items:flex-start}}
-    @media(max-width:480px){.gallery-strip{grid-template-columns:1fr 1fr}.filter-wrap{gap:.4rem}.filter-btn{font-size:12px;padding:6px 12px}}
-    
-    
-    
-    
-    
-    
-    
-    
+    @media(max-width:768px){.col-4,.col-5,.col-6,.col-7{grid-column:span 12}.gallery-strip{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr}.cta-inline{flex-direction:column;text-align:center}.sector-header{flex-direction:column;align-items:flex-start}}
       @media(max-width:768px){
-      .col-5,.col-7{grid-column:span 12!important}
-      body{overflow-x:hidden;max-width:100vw}
-      .ideas-grid{overflow-x:hidden}
-    }
-  
-    @media(max-width:768px){
-      /* Burger fix */
-      .nav-burger{display:flex!important;z-index:10001!important;position:relative!important;pointer-events:all!important}
-      
-      /* Prevent horizontal scroll */
-      body,html{overflow-x:hidden!important;max-width:100vw!important}
-      /* Stack all grids on mobile */
-      .engagements-grid{grid-template-columns:1fr!important}
-      .valeurs-grid{grid-template-columns:1fr!important}
-      .labels-grid{grid-template-columns:1fr!important}
-      /* A-propos engagement boxes */
-      .engagement-card,.valeur-card,.label-card{width:100%!important}
-    }
-    @media(max-width:480px){
-      /* Nos-supports internal nav - hide on mobile */
-      .tabs-wrap{display:none!important}
-      /* Catalogue section stack */
-      .catalogue-inner,.catalogue-section > div{grid-template-columns:1fr!important;flex-direction:column!important}
-      /* Particuliers images stack */
-      .particuliers-imgs{grid-template-columns:1fr!important}
-    }
-  
-    @media(max-width:768px){
-      .nav-top{justify-content:space-between}
-      .nav-top-spacer{display:none}
-      .nav-top-logo{position:absolute;left:50%;transform:translateX(-50%)}
-      .nav-top-cta{display:none}
-      .nav-burger{display:flex!important;margin-left:auto}
-    }
-  
-    @media(max-width:768px){
-      .nav-top{display:flex!important;align-items:center!important;padding:14px 20px!important;position:relative!important;min-height:56px!important}
-      .nav-top-spacer{display:none!important}
-      .nav-top-cta{display:none!important}
-      .nav-menu{display:none!important}
-      .nav-burger{display:flex!important;order:-1!important;z-index:10001!important;position:relative!important;flex-shrink:0}
-      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important}
-    }
-    .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .nav-burger.open span:nth-child(2){opacity:0}
-    .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .nav-mobile-panel{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;z-index:9999;flex-direction:column;padding:100px 2rem 2rem}
-    .nav-mobile-panel.open{display:flex}
-    .nav-mobile-panel>a{text-decoration:none!important;color:#2d2d3a;font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block}
-    .nav-mobile-cta{margin-top:auto;padding-top:2rem}
-    .nav-mobile-cta a{display:block;text-align:center;background:#EB356F;color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
-    @media(max-width:768px){
-      .nav-top{display:flex!important;align-items:center!important;padding:14px 20px!important;position:relative!important;min-height:56px!important}
-      .nav-top-spacer{display:none!important}
-      .nav-top-cta{display:none!important}
-      .nav-menu{display:none!important}
-      .nav-burger{display:flex!important;order:1!important;margin-left:auto!important;z-index:10001!important;position:relative!important;flex-shrink:0}
-      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important;z-index:1}
+      .col-12[style*="grid-template-columns:5fr 7fr"]{display:block!important}
+      .col-12[style*="grid-template-columns:5fr 7fr"]>div{margin-bottom:1rem}
     }
   </style>
 </head>
 <body>
-      <nav>
+  <nav>
     <div class="nav-top">
       <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -226,7 +151,7 @@
     </ul>
   </nav>
   <div class="nav-mobile-panel" id="nav-mobile-panel">
-    <button onclick="toggleMenu()" aria-label="Fermer" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002">
+    <button onclick="toggleMenu()" aria-label="Fermer" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d2d3a" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <a href="index.html">Accueil</a>
@@ -234,8 +159,6 @@
     <a href="inspirez-vous.html" style="color:#5ACAF1">Inspirez-vous</a>
     <a href="a-propos-de-nous.html">À propos de nous</a>
     <div class="nav-mobile-cta"><a href="contact.html">Discutons de votre projet</a></div>
-  </div>
-  </div>
   </div>
 
   <section class="page-hero">
@@ -253,6 +176,7 @@
     <button class="filter-btn" onclick="filterSector('collectivite',this)">Collectivités</button>
   </div>
 
+  <!-- ENTREPRISE -->
   <section class="sector-section" data-sector="entreprise" id="entreprise" style="scroll-margin-top:220px">
     <div class="sector-header">
       <div>
@@ -263,29 +187,29 @@
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
-      <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-1.jpg" alt="Votre ville en panorama à colorier open space" class="img-landscape" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Votre ville en panorama</h3><p>Toulouse, Paris, Lyon : un panorama urbain sur-mesure ancré dans votre territoire, qui court sur toute la longueur du mur.</p></div>
+      <div class="idea-card col-6" onclick="lbOpen('images/inspirez-vous-entreprise-1.jpg','Votre ville en panorama')">
+        <img src="images/inspirez-vous-entreprise-1.jpg" alt="Votre ville en panorama" class="img-landscape">
+        <div class="idea-card-body"><h3>Votre ville en panorama</h3><p>Toulouse, Paris, Lyon : un panorama urbain sur-mesure ancré dans votre territoire.</p></div>
       </div>
-      <div class="idea-card col-6">
-        <img src="images/inspirez-vous-entreprise-2.jpg" alt="Un panorama à colorier en open space entreprise" class="img-landscape" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-6" onclick="lbOpen('images/inspirez-vous-entreprise-2.jpg','Un panorama qui invite à colorier')">
+        <img src="images/inspirez-vous-entreprise-2.jpg" alt="Un panorama qui invite à colorier" class="img-landscape">
         <div class="idea-card-body"><h3>Un panorama qui invite à colorier</h3><p>Une fresque qui court sur toute la longueur du mur et invite les équipes à contribuer collectivement.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise3.jpg" alt="Un mur qui invite à voyager fresque bureau" class="img-tall" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Un mur qui invite à voyager</h3><p>Des visuels dépaysants qui racontent l'univers de votre entreprise et donnent envie d'être là.</p></div>
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-entreprise3.jpg','Un mur qui invite à voyager')">
+        <img src="images/inspirez-vous-entreprise3.jpg" alt="Un mur qui invite à voyager" class="img-tall">
+        <div class="idea-card-body"><h3>Un mur qui invite à voyager</h3><p>Des visuels dépaysants qui racontent l'univers de votre entreprise.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprise-trombinoscope.jpg" alt="Trombinoscope géant à colorier entreprise" class="img-tall" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Un trombinoscope à colorier</h3><p>Chaque collaborateur devient un personnage de la fresque. Une oeuvre collective qui raconte votre équipe.</p></div>
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-entreprise-trombinoscope.jpg','Un trombinoscope à colorier')">
+        <img src="images/inspirez-vous-entreprise-trombinoscope.jpg" alt="Un trombinoscope à colorier" class="img-tall">
+        <div class="idea-card-body"><h3>Un trombinoscope à colorier</h3><p>Chaque collaborateur devient un personnage de la fresque.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-entreprises-4.jpg" alt="Un paysage qui vous ressemble décoration bureau" class="img-tall" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Un paysage qui vous ressemble</h3><p>Un visuel fort qui pose le cadre, reflète vos valeurs et donne envie d'être créatif.</p></div>
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-entreprises-4.jpg','Un paysage qui vous ressemble')">
+        <img src="images/inspirez-vous-entreprises-4.jpg" alt="Un paysage qui vous ressemble" class="img-tall">
+        <div class="idea-card-body"><h3>Un paysage qui vous ressemble</h3><p>Un visuel fort qui pose le cadre et reflète vos valeurs.</p></div>
       </div>
-      <div class="idea-card col-12">
-        <img src="images/inspirez-vous-entreprise5.jpg" alt="Couloir entreprise fresque murale à colorier" class="img-landscape" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Même un couloir peut raconter quelque chose</h3><p>Un espace de passage devient un espace de marque avec la bonne fresque.</p></div>
+      <div class="idea-card col-12" onclick="lbOpen('images/inspirez-vous-entreprise5.jpg','Même un couloir peut raconter quelque chose')">
+        <img src="images/inspirez-vous-entreprise5.jpg" alt="Même un couloir peut raconter quelque chose" class="img-landscape">
+        <div class="idea-card-body"><h3>Même un couloir peut raconter quelque chose</h3><p>Un espace de passage devient un espace de marque.</p></div>
       </div>
       <div class="cta-inline">
         <div><h3>Votre open space mérite mieux qu'un mur blanc</h3><p>On vous aide à imaginer le visuel idéal selon votre identité.</p></div>
@@ -293,7 +217,9 @@
       </div>
     </div>
   </section>
-<section class="sector-section" data-sector="education" id="education" style="scroll-margin-top:220px">
+
+  <!-- EDUCATION -->
+  <section class="sector-section" data-sector="education" id="education" style="scroll-margin-top:220px">
     <div class="sector-header">
       <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Éducation</div>
@@ -303,100 +229,108 @@
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
-      <div class="idea-card col-7">
-        <img src="images/inspirez-vous-ecole-1.jpg" alt="Sticker mural à colorier salle de classe école" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-7" onclick="lbOpen('images/inspirez-vous-ecole-1.jpg','Un mur qui donne envie de venir le matin')">
+        <img src="images/inspirez-vous-ecole-1.jpg" alt="Un mur qui donne envie de venir le matin" class="img-wide">
         <div class="idea-card-body"><h3>Un mur qui donne envie de venir le matin</h3><p>Conçu avec eux, pour eux, avec des marges de sécurité intégrées.</p></div>
       </div>
-      <div class="idea-card col-5">
-        <img src="images/inspirez-vous-ecole-2.jpg" alt="Fresque murale jungle à colorier enfants" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-5" onclick="lbOpen('images/inspirez-vous-ecole-2.jpg','La jungle, les animaux, l'espace...')">
+        <img src="images/inspirez-vous-ecole-2.jpg" alt="La jungle, les animaux" class="img-wide">
         <div class="idea-card-body"><h3>La jungle, les animaux, l'espace...</h3><p>Chaque thème de l'année scolaire devient une nouvelle fresque.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-3.jpg" alt="Système solaire éducatif à colorier mural" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-ecole-3.jpg','Visuels éducatifs')">
+        <img src="images/inspirez-vous-ecole-3.jpg" alt="Visuels éducatifs" class="img-tall">
         <div class="idea-card-body"><h3>Visuels éducatifs</h3><p>Système solaire, alphabet, carte du monde : les apprentissages intégrés au décor.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole4.jpg" alt="Papier peint à colorier crèche école" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-ecole4.jpg','Un mur immersif')">
+        <img src="images/inspirez-vous-ecole4.jpg" alt="Un mur immersif" class="img-tall">
         <div class="idea-card-body"><h3>Un mur immersif</h3><p>Le papier peint transforme toute une paroi en espace créatif.</p></div>
       </div>
-      <div class="idea-card col-4">
-        <img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative collectivité" class="img-tall" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-4" onclick="lbOpen('images/inspirez-vous-ecole-5.jpg','Pour les collectivités')">
+        <img src="images/inspirez-vous-ecole-5.jpg" alt="Pour les collectivités" class="img-tall">
         <div class="idea-card-body"><h3>Pour les collectivités</h3><p>Médiathèques, gymnases, centres de loisirs.</p></div>
       </div>
     </div>
   </section>
-<section class="sector-section" data-sector="medical" id="medical" style="scroll-margin-top:220px">
+
+  <!-- MEDICAL -->
+  <section class="sector-section" data-sector="medical" id="medical" style="scroll-margin-top:220px">
     <div class="sector-header">
       <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Médical</div>
         <h2>Salles d'attente, cabinets et cliniques</h2>
-        <p>Avec un mur à colorier, le temps d'attente devient un temps créatif. Les enfants sont captivés, les adultes aussi.</p>
+        <p>Avec un mur à colorier, le temps d'attente devient un temps créatif.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
-      <div class="idea-card col-7">
-        <img src="images/inspirez-vous-medical-1.jpg" alt="Salle d'attente médecin avec fresque murale à colorier" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-7" onclick="lbOpen('images/inspirez-vous-medical-1.jpg','Une salle d'attente apaisante')">
+        <img src="images/inspirez-vous-medical-1.jpg" alt="Une salle d'attente apaisante" class="img-wide">
         <div class="idea-card-body"><h3>Une salle d'attente apaisante</h3><p>Un mur à colorier réduit le stress et détourne l'attention de l'attente.</p></div>
       </div>
-      <div class="idea-card col-5">
-        <img src="images/inspirez-vous-medical2.jpg" alt="Fresque murale à colorier cabinet médical" class="img-wide" onclick="lbOpen(this.src,this.alt)">
-        <div class="idea-card-body"><h3>Un levier de détente pour vos collaborateurs</h3><p>Repositionnable et sans travaux, il transforme l'ambiance de n'importe quel espace de soins.</p></div>
+      <div class="idea-card col-5" onclick="lbOpen('images/inspirez-vous-medical2.jpg','Un levier de détente pour vos collaborateurs')">
+        <img src="images/inspirez-vous-medical2.jpg" alt="Un levier de détente" class="img-wide">
+        <div class="idea-card-body"><h3>Un levier de détente pour vos collaborateurs</h3><p>Repositionnable et sans travaux, il transforme l'ambiance.</p></div>
       </div>
-      <div class="col-5" style="background:#e8f8fd;border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column;justify-content:center;min-height:200px">
-        <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#5ACAF1;background:white;padding:4px 10px;border-radius:50px;margin-bottom:.75rem;width:fit-content">Médical</span>
-        <h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:.6rem;line-height:1.25">Compatible certification HAS</h3>
-        <p style="font-size:14px;color:#7a7a8c;line-height:1.65;margin-bottom:1rem">Encres non-toxiques, papier M1, pose sans travaux. Nos solutions répondent aux exigences des établissements de santé.</p>
-        <a href="amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants.html" style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid #e8e6e0;color:#2d2d3a;text-decoration:none;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:500;width:fit-content;transition:border-color .2s,color .2s">Lire notre guide HAS →</a>
-      </div>
-      <div class="cta-inline col-7">
-        <div><h3>Votre salle d'attente mérite mieux</h3><p>Devis gratuit sous 48h.</p></div>
-        <a href="contact.html" class="btn-primary">Demander un devis →</a>
+      <div class="col-12" style="display:grid;grid-template-columns:5fr 7fr;gap:1rem">
+        <div style="background:#e8f8fd;border-radius:var(--radius);padding:2rem;display:flex;flex-direction:column;justify-content:center">
+          <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#5ACAF1;background:white;padding:4px 10px;border-radius:50px;margin-bottom:.75rem;width:fit-content">Médical</span>
+          <h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:#1a1a2e;margin-bottom:.6rem;line-height:1.25">Compatible certification HAS</h3>
+          <p style="font-size:14px;color:#7a7a8c;line-height:1.65;margin-bottom:1rem">Encres non-toxiques, papier M1, pose sans travaux.</p>
+          <a href="amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants.html" style="display:inline-flex;align-items:center;border:1.5px solid #e8e6e0;color:#2d2d3a;text-decoration:none;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:500;width:fit-content">Lire notre guide HAS →</a>
+        </div>
+        <div class="cta-inline" style="margin:0">
+          <div><h3>Votre salle d'attente mérite mieux</h3><p>Devis gratuit sous 48h.</p></div>
+          <a href="contact.html" class="btn-primary">Demander un devis →</a>
+        </div>
       </div>
     </div>
   </section>
-<section class="sector-section" data-sector="restauration" id="restauration" style="scroll-margin-top:220px">
+
+  <!-- RESTAURATION -->
+  <section class="sector-section" data-sector="restauration" id="restauration" style="scroll-margin-top:220px">
     <div class="sector-header">
       <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Restauration</div>
         <h2>Restaurants, hôtels et espaces kids friendly</h2>
-        <p>Un espace kids friendly différenciant, modulable et sans travaux. L'attente devient agréable : les parents respirent.</p>
+        <p>Un espace kids friendly différenciant, modulable et sans travaux.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
-      <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-1.jpg" alt="Fresque murale à colorier restaurant ambiance" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-6" onclick="lbOpen('images/inspirez-vous-restaurant-1.jpg','Une fresque qui crée l'ambiance')">
+        <img src="images/inspirez-vous-restaurant-1.jpg" alt="Une fresque qui crée l'ambiance" class="img-wide">
         <div class="idea-card-body"><h3>Une fresque qui crée l'ambiance</h3><p>Un visuel qui s'intègre à votre direction artistique.</p></div>
       </div>
-      <div class="idea-card col-6">
-        <img src="images/inspirez-vous-restaurant-2.jpg" alt="Fresque murale Maroc décoration restaurant" class="img-wide" onclick="lbOpen(this.src,this.alt)">
+      <div class="idea-card col-6" onclick="lbOpen('images/inspirez-vous-restaurant-2.jpg','Un levier pour réduire l'attente perçue')">
+        <img src="images/inspirez-vous-restaurant-2.jpg" alt="Un levier pour réduire l'attente perçue" class="img-wide">
         <div class="idea-card-body"><h3>Un levier pour réduire l'attente perçue</h3><p>Avec une décoration collaborative et ludique, réduisez le temps d'attente perçu : vous travaillez, vos clients s'occupent.</p></div>
       </div>
-      <div class="idea-card-text pink col-12" style="padding:2.5rem;flex-direction:row;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-radius:var(--radius)">
-        <div><span class="idea-tag pink">Franchises</span><h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:.5rem">Vous êtes une franchise ?</h3><p style="font-size:14px;color:var(--muted);max-width:520px;line-height:1.65;margin:0">On crée une fresque adaptée à votre DA et on la décline selon les régions et thèmes de chaque site.</p></div>
+      <div style="grid-column:span 12;background:#fde8ef;border-radius:var(--radius);padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-radius:var(--radius)">
+        <div><span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#EB356F;background:white;padding:4px 10px;border-radius:50px;margin-bottom:.75rem;width:fit-content">Franchises</span><h3 style="font-family:'GooddogNew','Outfit',sans-serif;font-size:1.3rem;font-weight:700;color:#1a1a2e;margin-bottom:.5rem">Vous êtes une franchise ?</h3><p style="font-size:14px;color:#7a7a8c;max-width:520px;line-height:1.65;margin:0">On crée une fresque adaptée à votre DA et on la décline selon les régions et thèmes de chaque site.</p></div>
         <a href="contact.html" class="btn-primary">Parler de votre projet →</a>
       </div>
     </div>
   </section>
-<section class="sector-section" data-sector="collectivite" id="collectivite" style="scroll-margin-top:220px">
+
+  <!-- COLLECTIVITES -->
+  <section class="sector-section" data-sector="collectivite" id="collectivite" style="scroll-margin-top:220px">
     <div class="sector-header">
       <div>
         <div class="sector-label"><span class="sector-label-dot"></span> Collectivités</div>
         <h2>Médiathèques, mairies et espaces publics</h2>
-        <p>Un papier peint coloriage géant sur-mesure, sans chantier, sans colle. On répond à vos briefs éducatifs.</p>
+        <p>Un papier peint coloriage géant sur-mesure, sans chantier, sans colle.</p>
       </div>
       <a href="contact.html" class="btn-outline">Démarrer un projet →</a>
     </div>
     <div class="ideas-grid">
       <div class="gallery-strip">
-        <div class="idea-card"><img src="images/inspirez-vous-communes1.jpg" alt="Fresque murale collectivité Polynésie" onclick="lbOpen(this.src,this.alt)"></div>
-        <div class="idea-card"><img src="images/inspirez-vous-communes-2.jpg" alt="Papier peint jardin d'hiver collectivité" onclick="lbOpen(this.src,this.alt)"></div>
-        <div class="idea-card"><img src="images/inspirez-vous-commune3.jpg" alt="Coloriage mural géant collectivité" onclick="lbOpen(this.src,this.alt)"></div>
-        <div class="idea-card"><img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque murale éducative école collectivité" onclick="lbOpen(this.src,this.alt)"></div>
+        <div class="idea-card" onclick="lbOpen('images/inspirez-vous-communes1.jpg','Fresque collectivité')"><img src="images/inspirez-vous-communes1.jpg" alt="Fresque collectivité"></div>
+        <div class="idea-card" onclick="lbOpen('images/inspirez-vous-communes-2.jpg','Papier peint collectivité')"><img src="images/inspirez-vous-communes-2.jpg" alt="Papier peint collectivité"></div>
+        <div class="idea-card" onclick="lbOpen('images/inspirez-vous-commune3.jpg','Coloriage mural collectivité')"><img src="images/inspirez-vous-commune3.jpg" alt="Coloriage mural collectivité"></div>
+        <div class="idea-card" onclick="lbOpen('images/inspirez-vous-ecole-5.jpg','Fresque éducative')"><img src="images/inspirez-vous-ecole-5.jpg" alt="Fresque éducative"></div>
       </div>
       <div class="cta-inline">
-        <div><h3>Un mur qui appartient à tout le monde</h3><p>Médiathèque, mairie, office de tourisme, gymnase : on représente votre patrimoine local.</p></div>
+        <div><h3>Un mur qui appartient à tout le monde</h3><p>Médiathèque, mairie, office de tourisme, gymnase.</p></div>
         <a href="contact.html" class="btn-primary">Discuter de votre projet →</a>
       </div>
     </div>
@@ -434,24 +368,65 @@
     <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
   </div>
 
-  
+  <script>
+    function filterSector(sector, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.sector-section').forEach(function(s){
+        s.style.display = (sector === 'all' || s.dataset.sector === sector) ? '' : 'none';
+      });
+      if (sector !== 'all') {
+        setTimeout(function(){
+          var el = document.getElementById(sector);
+          if (!el) return;
+          var nav = document.querySelector('nav');
+          var fw = document.getElementById('filter-wrap');
+          var offset = (nav ? nav.offsetHeight : 128) + (fw ? fw.offsetHeight : 56) + 8;
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+        }, 60);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+    function lbOpen(src, alt) {
+      document.getElementById('lbox-img').src = src;
+      document.getElementById('lbox-img').alt = alt || '';
+      document.getElementById('lbox').classList.add('on');
+      document.body.style.overflow = 'hidden';
+    }
+    function lbClose() {
+      document.getElementById('lbox').classList.remove('on');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lbClose(); });
+    function syncFilterTop() {
+      var nav = document.querySelector('nav');
+      var fw = document.getElementById('filter-wrap');
+      if (nav && fw) fw.style.top = nav.offsetHeight + 'px';
+    }
+    syncFilterTop();
+    window.addEventListener('resize', syncFilterTop);
+    function submitNL(e) {
+      e.preventDefault();
+      fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } })
+        .then(function(r) { if (r.ok) { e.target.querySelector('.nl-success').style.display = 'block'; e.target.reset(); } });
+    }
+  </script>
+  <script>
+    function toggleMenu() {
+      var b = document.getElementById('nav-burger');
+      var p = document.getElementById('nav-mobile-panel');
+      if (!b || !p) return;
+      b.classList.toggle('open');
+      p.classList.toggle('open');
+      document.body.style.overflow = p.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
   <script>
     function ml_webform_success_42332261() {
       var $ = ml_jQuery || jQuery;
       $('.ml-subscribe-form-42332261 .row-success').show();
       $('.ml-subscribe-form-42332261 .row-form').hide();
-    }
-  </script>
-</body>
-</html>
-  <script>
-    function toggleMenu(){
-      var b=document.getElementById('nav-burger');
-      var p=document.getElementById('nav-mobile-panel');
-      if(!b||!p)return;
-      b.classList.toggle('open');
-      p.classList.toggle('open');
-      document.body.style.overflow=p.classList.contains('open')?'hidden':'';
     }
   </script>
 </body>
