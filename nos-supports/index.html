@@ -45,8 +45,20 @@
     .nav-mobile-panel a:hover{color:#5ACAF1}
     
     
+    @media(max-width:768px){
+      .nav-top-cta{display:none}
+      .nav-menu{display:none}
+      .nav-top{padding:14px 20px}
+      .nav-top-logo img{height:36px}
     }
     /* /NAV */
+    @media(max-width:768px){
+      .nav-top-cta{display:none!important}
+      .nav-menu{display:none!important}
+      .nav-burger{display:flex!important;z-index:10001;position:relative}
+      .nav-top{padding:14px 20px!important;position:relative}
+      .nav-top-spacer{display:none!important}
+      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important}
     }
     
     
@@ -193,14 +205,14 @@
       .video-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}
       .footer-top{grid-template-columns:1fr 1fr}
       .tabs-wrap{position:sticky;top:0;z-index:50;background:white;border-bottom:1px solid var(--border);padding:0 5%;display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
-    }}
+    }
     @media(max-width:768px){
       .labels-grid{grid-template-columns:1fr}
       .footer-top{grid-template-columns:1fr}
-    }}
+    }
     @media(max-width:420px){
       .revetements{grid-template-columns:1fr}
-    }}
+    }
   
     
   
@@ -227,7 +239,7 @@
     #mlb2-42332261 .ml-form-successBody p{color:rgba(255,255,255,.9)!important;font-size:13px!important;font-family:'Outfit',sans-serif!important}
     #mlb2-42332261 .ml-mobileButton-horizontal{display:none}
     .ml-form-formContent.horozintalForm{float:none!important}
-    @media(max-width:400px){#mlb2-42332261 .ml-form-horizontalRow{flex-direction:column}.ml-mobileButton-horizontal{display:block!important;margin-top:.5rem;width:100%}.ml-button-horizontal.primary{display:none}}}
+    @media(max-width:400px){#mlb2-42332261 .ml-form-horizontalRow{flex-direction:column}.ml-mobileButton-horizontal{display:block!important;margin-top:.5rem;width:100%}.ml-button-horizontal.primary{display:none}}
   
     /* ML Catalogue */
     #mlb2-42333023.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important}
@@ -253,8 +265,20 @@
       .tabs-wrap{top:0}
       .catalogue-inner{grid-template-columns:1fr!important;gap:1.5rem!important}
       #mlb2-42333023 .ml-form-embedContainer{width:100%!important}
-    }}
+    }
   
+    @media(max-width:768px){
+      /* Burger fix */
+      .nav-burger{display:flex!important;z-index:10001!important;position:relative!important;pointer-events:all!important}
+      
+      /* Prevent horizontal scroll */
+      body,html{overflow-x:hidden!important;max-width:100vw!important}
+      /* Stack all grids on mobile */
+      .engagements-grid{grid-template-columns:1fr!important}
+      .valeurs-grid{grid-template-columns:1fr!important}
+      .labels-grid{grid-template-columns:1fr!important}
+      /* A-propos engagement boxes */
+      .engagement-card,.valeur-card,.label-card{width:100%!important}
     }
     @media(max-width:480px){
       /* Nos-supports internal nav - hide on mobile */
@@ -263,15 +287,28 @@
       .catalogue-inner,.catalogue-section > div{grid-template-columns:1fr!important;flex-direction:column!important}
       /* Particuliers images stack */
       .particuliers-imgs{grid-template-columns:1fr!important}
-    }}
+    }
       @media(max-width:480px){
       .tabs-wrap{display:none!important}
       .catalogue-inner{grid-template-columns:1fr!important;gap:1.5rem!important}
       #mlb2-42333023.ml-form-embedContainer{width:100%!important}
-    }}
-  
     }
   
+    @media(max-width:768px){
+      .nav-top{justify-content:space-between}
+      .nav-top-spacer{display:none}
+      .nav-top-logo{position:absolute;left:50%;transform:translateX(-50%)}
+      .nav-top-cta{display:none}
+      .nav-burger{display:flex!important;margin-left:auto}
+    }
+  
+    @media(max-width:768px){
+      .nav-top{display:flex!important;align-items:center!important;padding:14px 20px!important;position:relative!important;min-height:56px!important}
+      .nav-top-spacer{display:none!important}
+      .nav-top-cta{display:none!important}
+      .nav-menu{display:none!important}
+      .nav-burger{display:flex!important;order:-1!important;z-index:10001!important;position:relative!important;flex-shrink:0}
+      .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important}
     }
     .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-burger.open span:nth-child(2){opacity:0}
@@ -281,14 +318,6 @@
     .nav-mobile-panel>a{text-decoration:none!important;color:#2d2d3a;font-size:18px;font-weight:500;padding:1rem 0;border-bottom:1px solid #e8e6e0;display:block}
     .nav-mobile-cta{margin-top:auto;padding-top:2rem}
     .nav-mobile-cta a{display:block;text-align:center;background:#EB356F;color:white;text-decoration:none;padding:15px;border-radius:50px;font-size:16px;font-weight:600}
-    }
-      @media(max-width:768px){
-      .labels-grid{grid-template-columns:1fr!important;gap:1rem!important}
-      .label-card{flex-direction:column!important;align-items:flex-start!important}
-    }}
-  
-    }
-  
     @media(max-width:768px){
       .nav-top{display:flex!important;align-items:center!important;padding:14px 20px!important;position:relative!important;min-height:56px!important}
       .nav-top-spacer{display:none!important}
@@ -296,7 +325,12 @@
       .nav-menu{display:none!important}
       .nav-burger{display:flex!important;order:1!important;margin-left:auto!important;z-index:10001!important;position:relative!important;flex-shrink:0}
       .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important;z-index:1}
-    }</style>
+    }
+      @media(max-width:768px){
+      .labels-grid{grid-template-columns:1fr!important;gap:1rem!important}
+      .label-card{flex-direction:column!important;align-items:flex-start!important}
+    }
+  </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-502419698"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-502419698');</script>
@@ -308,11 +342,11 @@
       <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-top-logo"><a href="index.html"><img src="/logo.svg" alt="Les Petits Papiers"></a></div>
+      <div class="nav-top-logo"><a href="/"><img src="/logo.svg" alt="Les Petits Papiers"></a></div>
       <div class="nav-top-cta"><a href="/contact/">Discutons de votre projet</a></div>
     </div>
     <ul class="nav-menu">
-      <li><a href="index.html">Accueil</a></li>
+      <li><a href="/">Accueil</a></li>
       <li><a href="/nos-supports/" class="active">Nos supports</a></li>
       <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
       <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
@@ -322,7 +356,7 @@
     <button onclick="toggleMenu()" aria-label="Fermer" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d2d3a" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-    <a href="index.html">Accueil</a>
+    <a href="/">Accueil</a>
     <a href="/nos-supports/" style="color:#5ACAF1">Nos supports</a>
     <a href="/inspirez-vous/">Inspirez-vous</a>
     <a href="/a-propos-de-nous/">À propos de nous</a>
