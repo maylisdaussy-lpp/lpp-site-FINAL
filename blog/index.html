@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aménagement mural en hôpital : découvrez des solutions adaptées aux exigences HAS pour créer un environnement ludique, sécurisé et apaisant pour les enfants.">
-  <title>Aménagement mural hôpital : solutions adaptées aux exigences HAS pour les enfants - Les Petits Papiers</title>
-  <meta property="og:title" content="Aménagement mural hôpital : solutions adaptées HAS pour les enfants - Les Petits Papiers">
-  <meta property="og:description" content="Comment aménager les espaces hospitaliers pédiatriques avec des solutions murales conformes HAS. Encres non-toxiques, papier M1.">
+  <meta name="description" content="Guides pratiques, inspirations et conseils pour transformer vos espaces professionnels avec une fresque murale à colorier.">
+  <title>Blog - Conseils déco murale à colorier pour professionnels - Les Petits Papiers</title>
+  <meta property="og:title" content="Blog - Conseils déco murale à colorier pour professionnels - Les Petits Papiers">
+  <meta property="og:description" content="Guides pratiques, inspirations et conseils pour transformer vos espaces professionnels avec une fresque murale à colorier.">
+  <meta property="og:image" content="https://maylisdaussy-lpp.github.io/lpp-site-FINAL/images/home-hero.jpg">
+  <meta property="og:url" content="https://www.lespetitspapierspeints.com/blog">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Les Petits Papiers">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Aménagement mural hôpital : solutions adaptées aux exigences HAS pour les enfants",
-    "description": "Comment les solutions murales repositionnables répondent aux critères de la certification HAS en milieu hospitalier pédiatrique.",
-    "author": { "@type": "Person", "name": "Maylis Daussy" },
-    "publisher": { "@type": "Organization", "name": "Les Petits Papiers", "url": "https://www.lespetitspapierspeints.com" },
-    "url": "https://www.lespetitspapierspeints.com/amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants"
-  }</script>
   <style>/* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
     .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
@@ -86,184 +80,37 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-    /* ARTICLE LAYOUT */
-    .article-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 7rem 2rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 4rem;
-      align-items: start;
-    }
+    .page-hero { padding: 8rem 5rem 4rem; background: var(--cream); text-align: center; }
+    .section-tag { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--pink); margin-bottom: .75rem; }
+    .page-hero h1 { font-family: 'GooddogNew', 'Outfit', sans-serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
+    .page-hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.65; }
 
-    /* MAIN CONTENT */
-    .article-header { margin-bottom: 2.5rem; }
+    .blog-grid { padding: 5rem 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 
-    .article-meta {
-      display: flex; align-items: center; gap: .75rem;
-      margin-bottom: 1.25rem; flex-wrap: wrap;
-    }
+    .post-card { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); transition: transform .2s, border-color .2s; display: flex; flex-direction: column; }
+    .post-card:hover { transform: translateY(-4px); border-color: var(--blue); }
+    .post-card a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
 
-    .article-tag {
-      font-size: 11px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: .08em; color: var(--blue);
-      background: var(--blue-light); padding: 4px 12px; border-radius: 50px;
-    }
+    .post-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .post-img-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--blue-light); display: flex; align-items: center; justify-content: center; }
+    .post-img-placeholder svg { width: 40px; height: 40px; opacity: .4; }
 
-    .article-date { font-size: 13px; color: var(--muted); }
+    .post-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .post-meta { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
+    .post-tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: var(--blue); background: var(--blue-light); padding: 3px 10px; border-radius: 50px; }
+    .post-date { font-size: 12px; color: var(--muted); }
+    .post-body h2 { font-size: 17px; font-weight: 700; color: var(--dark); line-height: 1.3; margin-bottom: .6rem; }
+    .post-body p { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
+    .post-read { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue); margin-top: 1.25rem; }
 
-    .article-header h1 {
-      font-family: 'GooddogNew', 'Outfit', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 700; line-height: 1.15;
-      color: var(--dark); margin-bottom: 1rem;
-    }
+    .cta-section { padding: 6rem 5rem; background: var(--pink); text-align: center; }
+    .cta-section h2 { font-family: 'GooddogNew', 'Outfit', sans-serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: white; margin-bottom: 1rem; }
+    .cta-section p { font-size: 17px; color: rgba(255,255,255,.8); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-white { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--pink); text-decoration: none; padding: 16px 36px; border-radius: 50px; font-size: 15px; font-weight: 700; transition: transform .2s; }
+    .btn-white:hover { transform: translateY(-2px); }
 
-    .article-intro {
-      font-size: 17px; color: var(--muted);
-      line-height: 1.7; border-left: 3px solid var(--blue);
-      padding-left: 1.25rem; margin-bottom: 2rem;
-    }
-
-    .article-hero {
-      width: 100%; aspect-ratio: 16/9;
-      object-fit: cover; border-radius: var(--radius);
-      margin-bottom: 2.5rem;
-    }
-
-    /* ARTICLE BODY */
-    .article-body h2 {
-      font-family: 'GooddogNew', 'Outfit', sans-serif;
-      font-size: 1.5rem; font-weight: 700;
-      color: var(--dark); margin: 2.5rem 0 1rem;
-      line-height: 1.25;
-    }
-
-    .article-body h3 {
-      font-size: 1.1rem; font-weight: 600;
-      color: var(--dark); margin: 1.75rem 0 .75rem;
-    }
-
-    .article-body p {
-      font-size: 15px; color: var(--text);
-      line-height: 1.8; margin-bottom: 1.1rem;
-    }
-
-    .article-body ul, .article-body ol {
-      margin: 1rem 0 1.25rem 1.5rem;
-    }
-
-    .article-body li {
-      font-size: 15px; color: var(--text);
-      line-height: 1.7; margin-bottom: .4rem;
-    }
-
-    .article-body img {
-      width: 100%; border-radius: var(--radius-sm);
-      margin: 1.5rem 0;
-    }
-
-    .article-body .highlight-box {
-      background: var(--blue-light);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem; margin: 1.75rem 0;
-      border-left: 3px solid var(--blue);
-    }
-
-    .article-body .highlight-box p {
-      margin: 0; font-size: 14px; color: var(--dark);
-    }
-
-    /* FAQ */
-    .faq { margin-top: 2.5rem; }
-    .faq h2 { font-family: 'GooddogNew', 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 1.25rem; }
-
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      margin-bottom: .75rem;
-      overflow: hidden;
-    }
-
-    .faq-q {
-      padding: 1rem 1.25rem;
-      font-size: 15px; font-weight: 600; color: var(--dark);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      background: white;
-      list-style: none;
-      user-select: none;
-    }
-
-    .faq-q:hover { color: var(--blue); }
-    .faq-q::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--muted); }
-    details[open] .faq-q::after { content: '−'; }
-
-    .faq-a {
-      padding: 0 1.25rem 1rem;
-      font-size: 14px; color: var(--muted); line-height: 1.65;
-      background: white;
-    }
-
-    /* SIDEBAR */
-    .sidebar { position: sticky; top: 118px; }
-
-    .sidebar-card {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin-bottom: 1.25rem;
-      border: 1px solid var(--border);
-    }
-
-    .sidebar-card h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 1rem; }
-
-    .toc-list { list-style: none; }
-    .toc-list li { margin-bottom: .5rem; }
-    .toc-list a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 6px; }
-    .toc-list a:hover { color: var(--blue); }
-    .toc-list a::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--border); flex-shrink: 0; transition: background .2s; }
-    .toc-list a:hover::before { background: var(--blue); }
-
-    .btn-cta {
-      display: block; text-align: center;
-      padding: 13px; background: var(--pink);
-      color: white; text-decoration: none;
-      border-radius: 50px; font-size: 14px; font-weight: 600;
-      transition: opacity .2s;
-    }
-
-    .btn-cta:hover { opacity: .85; }
-
-    .related-posts { list-style: none; }
-    .related-posts li { margin-bottom: .75rem; }
-    .related-posts a { font-size: 13px; color: var(--text); text-decoration: none; line-height: 1.4; display: block; transition: color .2s; }
-    .related-posts a:hover { color: var(--blue); }
-
-    /* BREADCRUMB */
-    .breadcrumb {
-      padding: 5rem 2rem 0;
-      max-width: 1100px; margin: 0 auto;
-      font-size: 13px; color: var(--muted);
-      display: flex; gap: .5rem; align-items: center; flex-wrap: wrap;
-    }
-    .breadcrumb a { color: var(--muted); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--blue); }
-    .breadcrumb span { color: var(--border); }
-
-    /* FOOTER */
-
-    @media (max-width: 1024px) {
-      .article-wrap { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-      .sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-      footer { padding-left: 2rem; padding-right: 2rem; }
-      .breadcrumb { padding-top: 4rem; padding-left: 1.5rem; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 0 1.25rem; }
-      .sidebar { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 1024px) { .blog-grid { grid-template-columns: 1fr 1fr; padding: 3rem 2rem; } .page-hero, .cta-section, footer { padding-left: 2rem; padding-right: 2rem; } }
+    @media (max-width: 640px) { nav { padding: 0 1.25rem; } .blog-grid { grid-template-columns: 1fr; } }
   
     /* Max width global */
     .site-content { max-width: 90%; margin: 0 auto; }
@@ -420,13 +267,13 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-top-logo"><a href="index.html"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
-      <div class="nav-top-cta"><a href="contact.html">Discutons de votre projet</a></div>
+      <div class="nav-top-cta"><a href="/contact/">Discutons de votre projet</a></div>
     </div>
     <ul class="nav-menu">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="nos-supports.html">Nos supports</a></li>
-      <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-      <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
+      <li><a href="/nos-supports/">Nos supports</a></li>
+      <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+      <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
     </ul>
   </nav>
   <div class="nav-mobile-panel" id="nav-mobile-panel">
@@ -434,125 +281,89 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d2d3a" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <a href="index.html">Accueil</a>
-    <a href="nos-supports.html">Nos supports</a>
-    <a href="inspirez-vous.html">Inspirez-vous</a>
-    <a href="a-propos-de-nous.html">À propos de nous</a>
-    <div class="nav-mobile-cta"><a href="contact.html">Discutons de votre projet</a></div>
+    <a href="/nos-supports/">Nos supports</a>
+    <a href="/inspirez-vous/">Inspirez-vous</a>
+    <a href="/a-propos-de-nous/">À propos de nous</a>
+    <div class="nav-mobile-cta"><a href="/contact/">Discutons de votre projet</a></div>
   </div>
   </div>
   </div>
 
-  <nav class="breadcrumb" aria-label="Fil d'ariane">
-    <a href="index.html">Accueil</a>
-    <span>/</span>
-    <a href="blog.html">Ressources</a>
-    <span>/</span>
-    <span>Aménagement mural hôpital</span>
-  </nav>
+  <section class="page-hero">
+    <span class="section-tag">Ressources</span>
+    <h1>Conseils et inspirations</h1>
+    <p>Guides pratiques, idées de projets et conseils déco pour transformer vos espaces professionnels.</p>
+  </section>
 
-  <div class="article-wrap">
+  <div class="blog-grid">
 
-    <article>
-      <header class="article-header">
-        <div class="article-meta">
-          <span class="article-tag">Médical</span>
-          <span class="article-date">2025</span>
+    <div class="post-card">
+      <a href="/decoration-dentreprise-levier-strategique-bien-etre-image-de-marque/">
+        <img src="images/entreprise-trombinoscope.png" alt="Décoration d'entreprise levier stratégique bien-être et image de marque" class="post-img">
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-tag">Entreprise</span>
+            <span class="post-date">2025</span>
+          </div>
+          <h2>Décoration d'entreprise : un levier stratégique pour le bien-être et l'image de marque</h2>
+          <p>Comment un mur peut transformer l'expérience collaborateur, renforcer votre marque employeur et devenir un outil de différenciation.</p>
+          <span class="post-read">Lire l'article →</span>
         </div>
-        <h1>Aménagement mural en milieu hospitalier : des solutions compatibles avec les exigences de la certification HAS</h1>
-        <p class="article-intro">L'aménagement des espaces en milieu hospitalier répond à des exigences précises encadrées par la certification HAS. Les solutions murales, bien conçues, s'inscrivent pleinement dans cette démarche, en créant des environnements adaptés aux enfants sans compromettre les contraintes techniques du secteur.</p>
-      </header>
+      </a>
+    </div>
 
-      <img src="images/inspirez-vous-medical-1.jpg" alt="Aménagement mural salle d'attente médicale avec sticker à colorier" class="article-hero">
-
-      <div class="article-body">
-
-        <h2 id="has">Certification HAS et environnement patient : un cadre exigeant</h2>
-        <p>La certification HAS repose sur une évaluation globale de la qualité des soins, intégrant également des critères liés à l'environnement dans lequel évoluent les patients. Parmi eux, <strong>le critère 1.1-02</strong> est central : les mineurs doivent bénéficier d'un environnement spécifiquement conçu pour répondre à leurs besoins.</p>
-
-        <div class="highlight-box">
-          <p>Le référentiel HAS précise que "durant une hospitalisation, les mineurs bénéficient d'activités ludiques et éducatives, adaptées à leur âge". Cette exigence invite à intégrer ces dimensions directement dans l'environnement.</p>
+    <div class="post-card">
+      <a href="/amenagement-salle-de-classe-creches-collectivites-repondons-vos-questions/">
+        <img src="images/sticker-ecole.jpg" alt="Aménagement mural salle de classe école crèche collectivité" class="post-img">
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-tag">Éducation</span>
+            <span class="post-date">2025</span>
+          </div>
+          <h2>Aménagement mural salle de classe : solutions sur-mesure pour écoles, crèches et collectivités</h2>
+          <p>Des fresques murales à colorier qui évoluent au rythme des apprentissages et des saisons, sans travaux ni immobilisation.</p>
+          <span class="post-read">Lire l'article →</span>
         </div>
+      </a>
+    </div>
 
-        <p>Ce cadre implique notamment :</p>
-        <ul>
-          <li>Un espace adapté à l'âge et au développement de l'enfant</li>
-          <li>Un environnement garantissant sécurité et bien-être</li>
-          <li>L'accès à des activités ludiques et éducatives pendant l'hospitalisation</li>
-        </ul>
-
-        <h2 id="visuel">L'environnement visuel comme levier de bien-être</h2>
-        <p>Les recherches en psychologie environnementale confirment que l'environnement visuel influence directement le ressenti des patients. Dans un contexte hospitalier où l'anxiété est souvent élevée, cette dimension devient particulièrement stratégique.</p>
-        <p>Un espace visuellement adapté permet de réduire le stress perçu, de détourner l'attention des situations anxiogènes et de créer un cadre rassurant pour les familles. Ces effets sont d'autant plus importants dans les services pédiatriques.</p>
-
-        <img src="images/inspirez-vous-medical2.jpg" alt="Fresque murale apaisante à colorier en salle d'attente médicale pédiatrique">
-
-        <h2 id="ludique">Intégrer des dispositifs ludiques directement sur les murs</h2>
-        <p>L'un des enjeux majeurs de la certification HAS concerne l'accès à des activités ludiques et éducatives. Une approche complémentaire aux jeux et livres classiques consiste à intégrer ces dimensions directement dans l'environnement, à travers les murs.</p>
-        <p>Les supports muraux à colorier permettent de :</p>
-        <ul>
-          <li>Proposer une activité accessible en continu, sans logistique supplémentaire</li>
-          <li>Occuper l'attention des enfants de manière autonome</li>
-          <li>Créer un espace engageant sans encombrer les lieux</li>
-        </ul>
-        <p>Dans les environnements contraints, cette approche ne nécessite ni espace dédié supplémentaire, ni gestion complexe. Et surtout, nos solutions repositionnables s'installent sans travaux, sans colle permanente, sans altération des surfaces.</p>
-
-        <h2 id="qvt">Certification HAS et qualité de vie au travail</h2>
-        <p>Au-delà des patients, la certification HAS intègre également la qualité de vie au travail des professionnels de santé. Un environnement plus agréable et mieux conçu contribue à réduire la fatigue mentale des équipes, améliorer les interactions avec les patients et renforcer le sentiment de qualité du cadre de travail.</p>
-
-        <h2 id="conclusion">Concilier exigences réglementaires et expérience humaine</h2>
-        <p>La certification HAS impose un cadre exigeant, mais elle ouvre la voie à des approches innovantes. En intégrant des solutions murales adaptées, il est possible de répondre aux critères environnementaux tout en apportant une réelle valeur ajoutée en termes de bien-être.</p>
-        <p>Dans les services accueillant des mineurs, ces aménagements prennent une dimension encore plus forte : transformer un environnement potentiellement anxiogène en un espace plus rassurant, plus engageant et mieux adapté aux besoins des enfants.</p>
-
-        <div class="faq">
-          <h2>Questions fréquentes</h2>
-          <details class="faq-item">
-            <summary class="faq-q">Nos supports respectent-ils les normes des établissements de santé ?</summary>
-            <p class="faq-a">Oui. Nos papiers peints sont certifiés M1 (norme incendie ERP) et nos encres sont non-toxiques, respectueuses de la qualité de l'air intérieur. Les stickers repositionnables s'installent sans colle permanente et sans dégradation des surfaces.</p>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Comment installer sans perturber l'activité du service ?</summary>
-            <p class="faq-a">Nos solutions se posent en 30 minutes sans travaux, sans bruit et sans produits chimiques. Aucune immobilisation du local n'est nécessaire.</p>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Peut-on personnaliser pour un service pédiatrique spécifique ?</summary>
-            <p class="faq-a">Absolument. On conçoit des visuels sur-mesure selon l'univers et les besoins de votre service : thème, couleurs, dimensions exactes, éléments éducatifs intégrés.</p>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-q">Livrez-vous partout en France ?</summary>
-            <p class="faq-a">Oui, on livre partout en France et à l'international.</p>
-          </details>
+    <div class="post-card">
+      <a href="/amenagement-mural-hopital-solutions-adaptees-aux-exigences-has-pour-les-enfants/">
+        <img src="images/inspirez-vous-medical-1.jpg" alt="Aménagement mural hôpital solutions HAS enfants" class="post-img">
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-tag">Médical</span>
+            <span class="post-date">2025</span>
+          </div>
+          <h2>Aménagement mural hôpital : solutions adaptées aux exigences HAS pour les enfants</h2>
+          <p>Comment respecter les normes HAS tout en créant un environnement apaisant et stimulant pour les jeunes patients.</p>
+          <span class="post-read">Lire l'article →</span>
         </div>
+      </a>
+    </div>
 
-      </div>
-    </article>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <div class="sidebar-card">
-        <h3>Dans cet article</h3>
-        <ul class="toc-list">
-          <li><a href="#has">Certification HAS</a></li>
-          <li><a href="#visuel">Environnement visuel</a></li>
-          <li><a href="#ludique">Dispositifs ludiques</a></li>
-          <li><a href="#qvt">QVT et personnel soignant</a></li>
-          <li><a href="#conclusion">Concilier réglementation et expérience</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-card">
-        <h3>Votre projet médical</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:1rem;">On vous aide à trouver la solution adaptée à votre espace et vos contraintes réglementaires.</p>
-        <a href="contact.html" class="btn-cta">Demander un devis gratuit</a>
-      </div>
-      <div class="sidebar-card">
-        <h3>Articles liés</h3>
-        <ul class="related-posts">
-          <li><a href="decoration-salle-dattente-comment-creer-un-espace-apaisant-rassurant-et-adapte-aux-enfants-comme-aux-adultes.html">Décoration salle d'attente : créer un espace apaisant</a></li>
-          <li><a href="blog.html">Voir tous les articles →</a></li>
-        </ul>
-      </div>
-    </aside>
+    <div class="post-card">
+      <a href="/decoration-salle-dattente-comment-creer-un-espace-apaisant-rassurant-et-adapte-aux-enfants-comme-aux-adultes/">
+        <img src="images/jardin-hiver-coloriage.jpg" alt="Décoration salle d'attente espace apaisant enfants adultes" class="post-img">
+        <div class="post-body">
+          <div class="post-meta">
+            <span class="post-tag">Médical</span>
+            <span class="post-date">2025</span>
+          </div>
+          <h2>Décoration salle d'attente : comment créer un espace apaisant, rassurant et adapté</h2>
+          <p>Conseils pratiques pour transformer une salle d'attente en expérience positive, que ce soit pour les enfants ou les adultes.</p>
+          <span class="post-read">Lire l'article →</span>
+        </div>
+      </a>
+    </div>
 
   </div>
+
+  <section class="cta-section">
+    <h2>Votre projet en tête ?</h2>
+    <p>On passe de l'inspiration à la réalisation. Parlez-nous de votre espace.</p>
+    <a href="/contact/" class="btn-white">Démarrer votre projet →</a>
+  </section>
 
     <footer>
     <div class="footer-inner">
@@ -570,19 +381,19 @@
         <div class="footer-col">
           <h4>Liens utiles</h4>
           <ul>
-            <li><a href="nos-supports.html">Nos supports</a></li>
-            <li><a href="inspirez-vous.html">Inspirez-vous</a></li>
-            <li><a href="a-propos-de-nous.html">À propos de nous</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/nos-supports/">Nos supports</a></li>
+            <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
+            <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Nos formules</h4>
           <ul>
-            <li><a href="la-vignette.html">La Vignette</a></li>
-            <li><a href="le-grand-format.html">Le Grand Format</a></li>
-            <li><a href="le-panorama.html">Le Panorama</a></li>
+            <li><a href="/la-vignette/">La Vignette</a></li>
+            <li><a href="/le-grand-format/">Le Grand Format</a></li>
+            <li><a href="/le-panorama/">Le Panorama</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -631,12 +442,27 @@
       </div>
     </div>
   </footer>
-
   <script> })
         .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
     }
+      function submitNewsletter(e) {
+      e.preventDefault();
+      fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
+        .then(r => { if(r.ok){ e.target.querySelector('.nl-success').style.display='block'; e.target.reset(); }});
+    }
+  
+    function lbOpen(src,alt){
+      document.getElementById('lbox-img').src=src;
+      document.getElementById('lbox-img').alt=alt||'';
+      document.getElementById('lbox').classList.add('on');
+      document.body.style.overflow='hidden';
+    }
+    function lbClose(){
+      document.getElementById('lbox').classList.remove('on');
+      document.body.style.overflow='';
+    }
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
   </script>
-
   <div id="lbox" onclick="if(event.target===this)lbClose()">
     <button id="lbox-x" onclick="lbClose()">✕</button>
     <img id="lbox-img" src="" alt="" onclick="event.stopPropagation()">
