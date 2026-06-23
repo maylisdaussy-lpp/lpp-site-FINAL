@@ -3,21 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Page introuvable - Les Petits Papiers, fresques murales à colorier pour professionnels.">
-  <title>Pâge introuvable - Les Petits Papiers</title>
-  <meta property="og:title" content="Page introuvable - Les Petits Papiers">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Page introuvable - Les Petits Papiers</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FV756KQ9N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7FV756KQ9N');</script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7FV756KQ9N');
+    // Redirections 301-like via JavaScript pour les anciennes URLs Shopify
+    (function() {
+      var path = window.location.pathname + window.location.search;
+      var redirects = [
+        // Anciennes URLs produits Shopify (avec ou sans .json)
+        { pattern: /^\/products\/.*/i, target: '/nos-supports/' },
+        // Anciennes URLs blog Shopify
+        { pattern: /^\/blogs\/leblogdespetitspapiers/i, target: '/blog/' },
+        { pattern: /^\/blogs\/.*/i, target: '/blog/' },
+        // Anciennes pages statiques
+        { pattern: /^\/pages\/contact/i, target: '/contact/' },
+        { pattern: /^\/pages\/le-coin-des-pros/i, target: '/nos-supports/' },
+        { pattern: /^\/pages\/.*/i, target: '/' },
+        // Anciennes collections
+        { pattern: /^\/collections\/enfants/i, target: '/particuliers/' },
+        { pattern: /^\/collections\/.*/i, target: '/nos-supports/' },
+        // .html en double sur les pages migrées
+        { pattern: /^\/a-propos-de-nous\.html$/i, target: '/a-propos-de-nous/' },
+        { pattern: /^\/contact\.html$/i, target: '/contact/' },
+        { pattern: /^\/nos-supports\.html$/i, target: '/nos-supports/' },
+        { pattern: /^\/inspirez-vous\.html$/i, target: '/inspirez-vous/' },
+        { pattern: /^\/blog\.html$/i, target: '/blog/' },
+        // URLs sans trailing slash (au cas où)
+        { pattern: /^\/(nos-supports|inspirez-vous|contact|a-propos-de-nous|blog|particuliers|la-vignette|le-grand-format|le-panorama)$/i, target: function(m) { return '/' + m[1] + '/'; } }
+      ];
+      for (var i = 0; i < redirects.length; i++) {
+        var r = redirects[i];
+        var match = path.match(r.pattern);
+        if (match) {
+          var target = typeof r.target === 'function' ? r.target(match) : r.target;
+          window.location.replace(target);
+          return;
+        }
+      }
+    })();
   </script>
-  <style>/* NAV */
+<style>/* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e8e6e0;font-family:'Outfit',sans-serif}
     .nav-top{display:flex;align-items:center;padding:18px 24px 8px;min-height:66px}
     .nav-top-spacer{flex:1}
@@ -144,58 +176,40 @@
       .nav-top-logo{position:absolute!important;left:50%!important;transform:translateX(-50%)!important;flex:none!important;z-index:1}
     }
   </style>
+  <style>
+    .err-wrap { min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; }
+    .err-inner { max-width: 600px; }
+    .err-code { font-size: 5rem; font-weight: 700; color: #5ACAF1; margin: 0; line-height: 1; }
+    .err-title { font-size: 2rem; margin: 1rem 0; color: #2d2d3a; }
+    .err-text { color: #666; margin-bottom: 2rem; line-height: 1.6; }
+    .err-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .err-btn { padding: .9rem 1.75rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: transform .2s; }
+    .err-btn.primary { background: #EB356F; color: white; }
+    .err-btn.secondary { background: white; color: #2d2d3a; border: 1px solid #e0e0e0; }
+    .err-btn:hover { transform: translateY(-2px); }
+  </style>
 </head>
 <body>
-      <nav>
-    <div class="nav-top">
-      <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-top-logo"><a href="/"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
-      <div class="nav-top-cta"><a href="/contact/">Discutons de votre projet</a></div>
+
+  <div class="err-wrap">
+    <div class="err-inner">
+      <p class="err-code">404</p>
+      <h1 class="err-title">Cette page n'existe plus</h1>
+      <p class="err-text">Vous cherchiez peut-être un de nos produits ou un article ? Le site a évolué, mais nous sommes toujours là pour vous accompagner.</p>
+      <div class="err-actions">
+        <a href="/nos-supports/" class="err-btn primary">Voir nos supports</a>
+        <a href="/" class="err-btn secondary">Retour à l'accueil</a>
+      </div>
     </div>
-    <ul class="nav-menu">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/nos-supports/">Nos supports</a></li>
-      <li><a href="/inspirez-vous/">Inspirez-vous</a></li>
-      <li><a href="/a-propos-de-nous/">À propos de nous</a></li>
-    </ul>
-  </nav>
-  <div class="nav-mobile-panel" id="nav-mobile-panel">
-    <button onclick="toggleMenu()" aria-label="Fermer" style="position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2d2d3a" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-    <a href="/">Accueil</a>
-    <a href="/nos-supports/">Nos supports</a>
-    <a href="/inspirez-vous/">Inspirez-vous</a>
-    <a href="/a-propos-de-nous/">À propos de nous</a>
-    <div class="nav-mobile-cta"><a href="/contact/">Discutons de votre projet</a></div>
   </div>
-  </div>
-  </div>
-  <div class="error-page">
-    <div class="error-code">404</div>
-    <h1 class="error-title">Ce mur est encore blanc...</h1>
-    <p class="error-text">La pâge que vous cherchez n'existe pas ou a été déplacée. Pas de panique, on a plein d'autrès murs à colorier !</p>
-    <a href="/" class="btn-primary">Retour à l'accueil</a>
-  </div>
-  <footer>
+<footer>
     <div class="footer-bottom">
       <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
       <a href="/">Accueil</a>
     </div>
   </footer>
-</body>
-</html>
   <script>
-    function toggleMenu(){
-      var b=document.getElementById('nav-burger');
-      var p=document.getElementById('nav-mobile-panel');
-      if(!b||!p)return;
-      b.classList.toggle('open');
-      p.classList.toggle('open');
-      document.body.style.overflow=p.classList.contains('open')?'hidden':'';
-    }
+    function toggleMenu(){var b=document.getElementById('nav-burger');var p=document.getElementById('nav-mobile-panel');if(!b||!p)return;b.classList.toggle('open');p.classList.toggle('open');document.body.style.overflow=p.classList.contains('open')?'hidden':'';}
   </script>
 </body>
 </html>
