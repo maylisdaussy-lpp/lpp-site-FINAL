@@ -143,10 +143,10 @@
     /* ILS NOUS ONT FAIT CONFIANCE - bandeau logos en quinconce */
     .clients-band{padding:4.5rem 5%;background:var(--white);text-align:center;border-top:1px solid #e8e6e0}
     .clients-band h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.25rem,2vw,1.7rem);font-weight:700;color:var(--pink);margin:0 auto 2.5rem;max-width:640px;line-height:1.3}
-    .clients-grid{display:flex;align-items:flex-start;justify-content:center;gap:3rem;flex-wrap:wrap;max-width:900px;margin:0 auto}
-    .client-logo{position:relative;height:58px;width:150px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+    .clients-grid{display:flex;align-items:flex-start;justify-content:center;gap:3.5rem;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+    .client-logo{position:relative;height:72px;width:180px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
     .clients-grid .client-logo:nth-child(2),.clients-grid .client-logo:nth-child(4){margin-top:2rem}
-    .client-logo img{height:52px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+    .client-logo img{height:66px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
     .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
     @media(max-width:600px){.clients-grid .client-logo:nth-child(2),.clients-grid .client-logo:nth-child(4){margin-top:0}}
   </style>
@@ -157,6 +157,7 @@
       <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
+      <div class="nav-top-spacer"></div>
       <div class="nav-top-logo"><a href="/"><img src="/logo.svg" alt="Les Petits Papiers"></a></div>
       <div class="nav-top-cta"><a href="/contact/">Discutons de votre projet</a></div>
     </div>

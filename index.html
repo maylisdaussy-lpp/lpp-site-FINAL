@@ -204,11 +204,11 @@
     /* CLIENTS - bandeau logos (version coloriage visible, version couleur au survol, defilement) */
     .clients-band{padding:4.5rem 0;background:var(--white);text-align:center;border-top:1px solid #e8e6e0;overflow:hidden}
     .clients-band h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.25rem,2vw,1.7rem);font-weight:700;color:var(--pink);margin:0 auto 2.5rem;max-width:640px;line-height:1.3;padding:0 5%}
-    .clients-track{display:flex;align-items:center;gap:3.5rem;width:max-content;animation:clients-scroll 24s linear infinite}
+    .clients-track{display:flex;align-items:center;gap:4.5rem;width:max-content;animation:clients-scroll 42s linear infinite}
     .clients-band:hover .clients-track{animation-play-state:paused}
     @keyframes clients-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    .client-logo{position:relative;height:58px;width:150px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
-    .client-logo img{height:52px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+    .client-logo{position:relative;height:72px;width:180px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+    .client-logo img{height:66px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
     .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
 
     /* CTA */
@@ -368,6 +368,7 @@
       <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
+      <div class="nav-top-spacer"></div>
       <div class="nav-top-logo"><a href="/"><img src="logo.svg" alt="Les Petits Papiers"></a></div>
       <div class="nav-top-cta"><a href="/contact/">Discutons de votre projet</a></div>
     </div>
@@ -587,34 +588,6 @@
       <a href="https://www.ici.fr/emissions/j-ai-teste-ici-occitanie?page=13" target="_blank" class="presse-logo">Ici Occitanie</a>
       <a href="https://www.ladepeche.fr/2026/06/13/portrait-ce-que-je-vends-ce-nest-pas-du-vent-affirme-la-fondatrice-des-petits-papiers-qui-transforme-les-murs-blancs-en-coloriages-geants-13412772.php" target="_blank" class="presse-logo">La Dépêche</a>
     </div>
-  
-    <!-- ============ AVIS GOOGLE (widget Featurable) ============
-         Pour afficher tes vrais avis Google (mise a jour automatique) :
-         1. Cree un widget GRATUIT sur https://featurable.com (connexion Google, choisis ta fiche)
-         2. Choisis un layout qui montre bien les avis (Masonry ou Grid conseille)
-         3. Dans l'editeur : epingle en haut / garde les avis que tu veux mettre en avant
-         4. Clique "Embed", copie le code, et remplace VOTRE_ID_FEATURABLE ci-dessous
-            par ton identifiant (ou colle le snippet complet de ton dashboard).
-         Le meme widget fonctionne sur la home ET sur a-propos.
-    ========================================================== -->
-    <div class="avis-google" style="max-width:1100px;margin:3.5rem auto 0;padding-top:2.5rem;border-top:1px solid #e8e6e0">
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:1.75rem;flex-wrap:wrap">
-        <svg width="22" height="22" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
-          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-        </svg>
-        <span style="font-size:15px;font-weight:600;color:#2d2d3a">Ils nous ont fait confiance</span>
-        <span style="color:#fbbc04;font-size:17px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      </div>
-      <!-- Widget Featurable (les avis s'affichent ici une fois connecte) -->
-      <script src="https://featurable.com/assets/bundle.js" defer></script>
-      <div id="featurable-VOTRE_ID_FEATURABLE" data-featurable-async></div>
-      <div style="text-align:center;margin-top:1.75rem">
-        <a href="https://share.google/7dPHhRkGenNf32Rr1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2d2d3a;border:1.5px solid #e8e6e0;text-decoration:none;padding:11px 22px;border-radius:50px;font-size:13px;font-weight:600">Voir tous nos avis sur Google &#8594;</a>
-      </div>
-    </div>
   </section>
 
   <!-- PARTICULIERS -->
@@ -679,6 +652,39 @@
       <a class="client-logo" href="https://www.aperitiu-toulouse.fr/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
         <img src="images/clients/aperitiu.png" alt="" loading="lazy">
       </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="/galerie/" style="display:inline-flex;align-items:center;gap:8px;color:var(--pink);text-decoration:none;font-size:14.5px;font-weight:600;border-bottom:1.5px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--pink)'" onmouseout="this.style.borderColor='transparent'">Voir nos fresques murales à colorier déjà posées <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ============ AVIS GOOGLE (widget Featurable) ============
+       Pour afficher tes vrais avis Google (mise a jour automatique) :
+       1. Cree un widget GRATUIT sur https://featurable.com (connexion Google, choisis ta fiche)
+       2. Choisis un layout qui montre bien les avis (Masonry ou Grid conseille)
+       3. Dans l'editeur : epingle en haut / garde les avis que tu veux mettre en avant
+       4. Clique "Embed", copie le code, et remplace VOTRE_ID_FEATURABLE ci-dessous
+          par ton identifiant (ou colle le snippet complet de ton dashboard).
+       Le meme widget fonctionne sur la home ET sur a-propos.
+  ========================================================== -->
+  <section style="background:var(--white);padding:0 5% 4.5rem">
+    <div class="avis-google" style="max-width:1100px;margin:0 auto;padding-top:2.5rem;border-top:1px solid #e8e6e0">
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:1.75rem;flex-wrap:wrap">
+        <svg width="22" height="22" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+        <span style="font-size:15px;font-weight:600;color:#2d2d3a">Ce qu'ils en ont pensé</span>
+        <span style="color:#fbbc04;font-size:17px;letter-spacing:1px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <!-- Widget Featurable (les avis s'affichent ici une fois connecte) -->
+      <script src="https://featurable.com/assets/bundle.js" defer></script>
+      <div id="featurable-VOTRE_ID_FEATURABLE" data-featurable-async></div>
+      <div style="text-align:center;margin-top:1.75rem">
+        <a href="https://share.google/7dPHhRkGenNf32Rr1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#2d2d3a;border:1.5px solid #e8e6e0;text-decoration:none;padding:11px 22px;border-radius:50px;font-size:13px;font-weight:600">Voir tous nos avis sur Google &#8594;</a>
+      </div>
     </div>
   </section>
 
