@@ -201,6 +201,16 @@
     .presse-logo{font-size:18px;font-weight:700;color:var(--muted);opacity:.5;text-decoration:none;transition:opacity .2s}
     .presse-logo:hover{opacity:.8}
 
+    /* CLIENTS - bandeau logos (version coloriage visible, version couleur au survol, defilement) */
+    .clients-band{padding:4.5rem 0;background:var(--white);text-align:center;border-top:1px solid #e8e6e0;overflow:hidden}
+    .clients-band h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.25rem,2vw,1.7rem);font-weight:700;color:var(--pink);margin:0 auto 2.5rem;max-width:640px;line-height:1.3;padding:0 5%}
+    .clients-track{display:flex;align-items:center;gap:3.5rem;width:max-content;animation:clients-scroll 24s linear infinite}
+    .clients-band:hover .clients-track{animation-play-state:paused}
+    @keyframes clients-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .client-logo{position:relative;height:58px;width:150px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+    .client-logo img{height:52px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+    .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
+
     /* CTA */
     .cta-section{padding:7rem 5%;background:var(--pink);text-align:center;position:relative;overflow:hidden}
     .cta-section h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:white;margin-bottom:1rem}
@@ -635,6 +645,41 @@
     <h2>Votre projet mérite un mur à sa hauteur</h2>
     <p>On discute de votre espace, vos envies, votre budget : on vous propose la solution idéale.</p>
     <a href="/contact/" class="btn-white">Démarrer votre projet <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </section>
+
+  <!-- ILS NOUS ONT FAIT CONFIANCE - bandeau logos qui defile -->
+  <!-- Chaque logo = 1 fichier couleur dans /images/clients/, affiche en
+       niveaux de gris par defaut et colorise au survol (CSS filter). Pour
+       ajouter un client : dupliquer un bloc .client-logo, deposer le fichier,
+       ajouter le lien vers son site (backlink) si connu. -->
+  <section class="clients-band">
+    <h3>Ils nous ont fait confiance pour transformer leurs murs en coloriages géants</h3>
+    <div class="clients-track">
+      <a class="client-logo" href="https://presquile-habitat.fr/" target="_blank" rel="noopener" aria-label="Presqu'île Habitat">
+        <img src="images/clients/presquile-habitat.png" alt="Logo Presqu'île Habitat" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.formasup-med.com/" target="_blank" rel="noopener" aria-label="Forma'Sup Méditerranée">
+        <img src="images/clients/formasup.png" alt="Logo Forma'Sup Méditerranée" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.polyaero-hautesalpes.com/" target="_blank" rel="noopener" aria-label="Poly'Aero Hautes-Alpes">
+        <img src="images/clients/polyaero.jpg" alt="Logo Poly'Aero Hautes-Alpes" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.aperitiu-toulouse.fr/" target="_blank" rel="noopener" aria-label="Aperitiu">
+        <img src="images/clients/aperitiu.png" alt="Logo Aperitiu" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://presquile-habitat.fr/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+        <img src="images/clients/presquile-habitat.png" alt="" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.formasup-med.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+        <img src="images/clients/formasup.png" alt="" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.polyaero-hautesalpes.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+        <img src="images/clients/polyaero.jpg" alt="" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.aperitiu-toulouse.fr/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+        <img src="images/clients/aperitiu.png" alt="" loading="lazy">
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->

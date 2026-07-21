@@ -139,6 +139,16 @@
       .col-12[style*="grid-template-columns:5fr 7fr"]{display:block!important}
       .col-12[style*="grid-template-columns:5fr 7fr"]>div{margin-bottom:1rem}
     }
+
+    /* ILS NOUS ONT FAIT CONFIANCE - bandeau logos en quinconce */
+    .clients-band{padding:4.5rem 5%;background:var(--white);text-align:center;border-top:1px solid #e8e6e0}
+    .clients-band h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.25rem,2vw,1.7rem);font-weight:700;color:var(--pink);margin:0 auto 2.5rem;max-width:640px;line-height:1.3}
+    .clients-grid{display:flex;align-items:flex-start;justify-content:center;gap:3rem;flex-wrap:wrap;max-width:900px;margin:0 auto}
+    .client-logo{position:relative;height:58px;width:150px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+    .clients-grid .client-logo:nth-child(2),.clients-grid .client-logo:nth-child(4){margin-top:2rem}
+    .client-logo img{height:52px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
+    .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
+    @media(max-width:600px){.clients-grid .client-logo:nth-child(2),.clients-grid .client-logo:nth-child(4){margin-top:0}}
   </style>
 </head>
 <body>
@@ -347,6 +357,25 @@
     <h2>Vous avez une idée en tête ?</h2>
     <p>On adore les projets un peu fous. Parlez-nous de votre espace et on imagine la fresque idéale.</p>
     <a href="/contact/" class="btn-white">Lancer mon projet <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </section>
+
+  <!-- ILS NOUS ONT FAIT CONFIANCE - bandeau logos en quinconce -->
+  <section class="clients-band">
+    <h3>Ils nous ont fait confiance pour transformer leurs murs en coloriages géants</h3>
+    <div class="clients-grid">
+      <a class="client-logo" href="https://presquile-habitat.fr/" target="_blank" rel="noopener" aria-label="Presqu'île Habitat">
+        <img src="/images/clients/presquile-habitat.png" alt="Logo Presqu'île Habitat" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.formasup-med.com/" target="_blank" rel="noopener" aria-label="Forma'Sup Méditerranée">
+        <img src="/images/clients/formasup.png" alt="Logo Forma'Sup Méditerranée" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.polyaero-hautesalpes.com/" target="_blank" rel="noopener" aria-label="Poly'Aero Hautes-Alpes">
+        <img src="/images/clients/polyaero.jpg" alt="Logo Poly'Aero Hautes-Alpes" loading="lazy">
+      </a>
+      <a class="client-logo" href="https://www.aperitiu-toulouse.fr/" target="_blank" rel="noopener" aria-label="Aperitiu">
+        <img src="/images/clients/aperitiu.png" alt="Logo Aperitiu" loading="lazy">
+      </a>
+    </div>
   </section>
 
   <div style="background:linear-gradient(135deg,#fde8ef 0%,#e8f8fd 100%);padding:1.1rem;text-align:center;font-size:14px"><p style="margin:0;color:#2d2d3a">Vous êtes un particulier ? <a href="/particuliers/" style="color:#EB356F;font-weight:600;text-decoration:none">Découvrez nos fresques pour la maison →</a></p></div>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 90" width="220" height="90">
+  <path d="M34 18c14 0 24 11 24 24s-10 24-24 24-24-11-24-24 10-24 24-24z" fill="#5CBF8E"/>
+  <path d="M24 45l7 7 15-16" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="53" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#2d2d3a">Clinique Ora</text>
+</svg>
