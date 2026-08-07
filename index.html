@@ -211,6 +211,34 @@
     .client-logo img{height:66px;width:auto;max-width:180px;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .35s ease,opacity .35s ease,transform .35s ease}
     .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
 
+    /* PARTENAIRES */
+    .partners-band{position:relative;overflow:hidden;padding:4.5rem 0 9rem;background:var(--cream);text-align:center;border-top:1px solid var(--border)}
+    .partners-band h3{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.5rem,2.4vw,2.2rem);font-weight:400;color:var(--pink);margin:0 0 .4rem}
+    .partners-band .partners-subtitle{font-size:15px;color:var(--muted);font-weight:600;margin:0 0 2.5rem}
+    .partners-row{display:flex;align-items:center;gap:24px;max-width:1000px;margin:0 auto;padding:0 5%}
+    .partners-scroll{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%)}
+    .partners-track{display:flex;align-items:center;gap:60px;width:max-content;animation:partners-scroll 18s linear infinite}
+    .partners-row:hover .partners-track{animation-play-state:paused}
+    @keyframes partners-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .partner-logo{background:none;border:none;padding:0;cursor:pointer;flex:none}
+    .partner-logo img{height:52px;width:auto;object-fit:contain;filter:grayscale(1) opacity(.55);transition:filter .3s ease,transform .3s ease}
+    .partner-logo:hover img{filter:grayscale(0) opacity(1);transform:translateY(-3px)}
+    .partner-slot{height:52px;min-width:140px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--border);border-radius:12px;color:var(--muted);font-size:12px;padding:0 18px;flex:none}
+    .partners-mascot{position:absolute;bottom:0;right:60px;height:130px;animation:mascotFloat 4s ease-in-out infinite}
+    @keyframes mascotFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+    @media(max-width:640px){.partners-mascot{right:20px;height:90px}}
+
+    .partner-overlay{position:fixed;inset:0;background:rgba(26,26,46,.45);display:none;align-items:center;justify-content:center;z-index:9500;padding:20px}
+    .partner-overlay.open{display:flex}
+    .partner-card{background:var(--white);border-radius:24px;padding:32px;max-width:380px;width:100%;text-align:center;box-shadow:0 30px 60px rgba(26,26,46,.2);position:relative}
+    .partner-card .close-btn{position:absolute;top:14px;right:14px;background:none;border:none;font-size:18px;color:var(--muted);cursor:pointer;width:30px;height:30px;border-radius:50%}
+    .partner-card .close-btn:hover{background:var(--cream)}
+    .partner-card img{height:48px;width:auto;object-fit:contain;margin-bottom:16px}
+    .partner-card h4{margin:0 0 10px;font-size:19px;color:var(--dark)}
+    .partner-card p{margin:0 0 22px;font-size:14px;color:var(--muted);line-height:1.55}
+    .partner-card a.visit-btn{display:inline-block;background:var(--pink);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:700;transition:background .2s ease,transform .15s ease}
+    .partner-card a.visit-btn:hover{background:#C42A5C;transform:translateY(-2px)}
+
     /* CTA */
     .cta-section{padding:7rem 5%;background:var(--pink);text-align:center;position:relative;overflow:hidden}
     .cta-section h2{font-family:'GooddogNew','Outfit',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:white;margin-bottom:1rem}
@@ -354,11 +382,14 @@
     gtag('config', 'G-7FV756KQ9N');
   </script>
 <style id="hp-particulier-bar">
-.hp-bar{grid-column:1/-1;background:linear-gradient(135deg,#fde8ef 0%,#e8f8fd 100%);text-align:center;padding:.7rem 1rem;font-size:14px;font-family:'Outfit',sans-serif}
-.hp-bar p{margin:0;color:#2d2d3a}
-.hp-bar a{color:#EB356F;font-weight:600;text-decoration:none;white-space:nowrap}
-.hp-bar a:hover{text-decoration:underline}
-@media(max-width:600px){.hp-bar{font-size:13px;padding:.6rem .75rem}}
+.particulier-wrap{display:flex;justify-content:center;padding:18px 20px 0}
+.particulier-pill{display:inline-block;text-align:center;background:linear-gradient(120deg,var(--pink-light),var(--blue-light));border:1px solid rgba(196,42,92,.12);padding:14px 26px;border-radius:22px;font-size:14px;line-height:1.6;color:var(--text);font-family:'Outfit',sans-serif;box-shadow:0 8px 22px rgba(196,42,92,.10);animation:pillFloat 5s ease-in-out infinite;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease}
+.particulier-pill:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(196,42,92,.16)}
+.particulier-pill strong{color:var(--dark);font-weight:600}
+.particulier-pill a{color:var(--pink);font-weight:700;text-decoration:none;margin-left:2px}
+.particulier-pill a:hover{text-decoration:underline}
+@keyframes pillFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(max-width:600px){.particulier-pill{font-size:13px;padding:12px 20px}}
 </style>
 </head>
 <body>
@@ -392,10 +423,15 @@
   </div>
   </div>
 
+  <div class="particulier-wrap">
+    <div class="particulier-pill">
+      Vous êtes un <strong>particulier</strong> ?<br>
+      <a href="/particuliers/">Découvrez nos décorations murales pour la maison →</a>
+    </div>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hp-bar"><p>Vous êtes un particulier ? <a href="/particuliers/">C'est par ici →</a></p></div>
-    
     <div class="hero-left">
       <div class="hero-tag"><span></span> Fabriqué en France · Papier recyclé</div>
       <h1 class="fade-up delay-1">Transformez vos murs en <em>coloriages géants</em> avec nos fresques personnalisées</h1>
@@ -655,6 +691,82 @@
     </div>
   </section>
 
+  <!-- NOS PARTENAIRES - bandeau logos qui defile, clic = fiche descriptive -->
+  <!-- Pour ajouter un partenaire : deposer le logo dans /images/partners/,
+       dupliquer un bloc <button class="partner-logo">, et ajouter son entree
+       dans l'objet partnersInfo (nom, logo, description, url) plus bas. -->
+  <section class="partners-band">
+    <h3>Nos partenaires</h3>
+    <p class="partners-subtitle">Nos copains engagés à nos côtés</p>
+
+    <div class="partners-row">
+      <div class="partners-scroll">
+        <div class="partners-track">
+          <button class="partner-logo" data-partner="club-employes"><img src="images/partners/club-employes.png" alt="Club Employés" loading="lazy"></button>
+          <button class="partner-logo" data-partner="wiismile"><img src="images/partners/wiismile.png" alt="WiiSmile" loading="lazy"></button>
+          <button class="partner-logo" data-partner="go-and-lend"><img src="images/partners/go-and-lend.png" alt="Go&amp;Lend" loading="lazy"></button>
+          <div class="partner-slot">+ votre logo ici</div>
+          <!-- suite dupliquee pour boucler le defilement sans coupure -->
+          <button class="partner-logo" data-partner="club-employes" aria-hidden="true" tabindex="-1"><img src="images/partners/club-employes.png" alt="" loading="lazy"></button>
+          <button class="partner-logo" data-partner="wiismile" aria-hidden="true" tabindex="-1"><img src="images/partners/wiismile.png" alt="" loading="lazy"></button>
+          <button class="partner-logo" data-partner="go-and-lend" aria-hidden="true" tabindex="-1"><img src="images/partners/go-and-lend.png" alt="" loading="lazy"></button>
+          <div class="partner-slot">+ votre logo ici</div>
+        </div>
+      </div>
+    </div>
+
+    <img class="partners-mascot" src="images/partners/mascotte-heros.png" alt="" loading="lazy">
+  </section>
+
+  <div class="partner-overlay" id="partnerOverlay">
+    <div class="partner-card">
+      <button class="close-btn" id="partnerClose" aria-label="Fermer">&times;</button>
+      <img id="partnerLogo" src="" alt="">
+      <h4 id="partnerName">-</h4>
+      <p id="partnerDesc">-</p>
+      <a class="visit-btn" id="partnerLink" href="#" target="_blank" rel="noopener">Visiter leur site &rarr;</a>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var partnersInfo = {
+        "club-employes": {
+          name: "Club Employés",
+          logo: "images/partners/club-employes.png",
+          desc: "Plateforme d'avantages salariés (CSE) : billetterie, voyages, réductions et carte cadeau prépayée pour améliorer le pouvoir d'achat des équipes.",
+          url: "https://club-employes.com/"
+        },
+        "wiismile": {
+          name: "WiiSmile",
+          logo: "images/partners/wiismile.png",
+          desc: "Avec WiiSmile, comité d'entreprise externalisé dédié aux TPE-PME, agissez directement sur la qualité de vie de vos collaborateurs et de leurs familles. Récompensez et motivez vos équipes grâce à une solution unique à la fiscalité réduite, pilotable depuis une interface en ligne, et démarquez-vous des recruteurs avec une offre complète pour rivaliser avec les grands groupes. Plus de 100 000 personnes font déjà confiance à WiiSmile.",
+          url: "https://wiismile.fr/"
+        },
+        "go-and-lend": {
+          name: "Go & Lend",
+          logo: "images/partners/go-and-lend.png",
+          desc: "Go & Lend, c'est une application mobile solidaire à destination des CSE d'entreprises. Au-delà d'une simple application, c'est tout un concept basé sur la solidarité, la communication et l'entraide entre collègues. Grâce à elle, vos collaborateurs bénéficient d'un espace où ils peuvent échanger, planifier des événements et emprunter des objets à leurs collègues, le tout dans une appli simple d'utilisation et hyper intuitive.",
+          url: "https://go-and-lend.com/"
+        }
+      };
+      var overlay = document.getElementById('partnerOverlay');
+      document.querySelectorAll('[data-partner]').forEach(function(el){
+        el.addEventListener('click', function(){
+          var info = partnersInfo[el.dataset.partner];
+          if(!info) return;
+          document.getElementById('partnerLogo').src = info.logo;
+          document.getElementById('partnerLogo').alt = info.name;
+          document.getElementById('partnerName').textContent = info.name;
+          document.getElementById('partnerDesc').textContent = info.desc;
+          document.getElementById('partnerLink').href = info.url;
+          overlay.classList.add('open');
+        });
+      });
+      document.getElementById('partnerClose').addEventListener('click', function(){ overlay.classList.remove('open'); });
+      overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('open'); });
+    })();
+  </script>
+
   <!-- ============ AVIS GOOGLE (widget Elfsight) ============ -->
   <section style="background:var(--white);padding:0 5% 4.5rem">
     <div class="avis-google" style="max-width:1100px;margin:0 auto;padding-top:2.5rem;border-top:1px solid #e8e6e0">
@@ -678,7 +790,12 @@
   </section>
 
   <!-- FOOTER -->
-  <div style="background:linear-gradient(135deg,#fde8ef 0%,#e8f8fd 100%);padding:1.1rem;text-align:center;font-size:14px"><p style="margin:0;color:#2d2d3a">Vous êtes un particulier ? <a href="/particuliers/" style="color:#EB356F;font-weight:600;text-decoration:none">Découvrez nos fresques pour la maison →</a></p></div>
+  <div class="particulier-wrap" style="padding:0 20px 2.5rem">
+    <div class="particulier-pill">
+      Vous êtes un <strong>particulier</strong> ?<br>
+      <a href="/particuliers/">Découvrez nos décorations murales pour la maison →</a>
+    </div>
+  </div>
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
