@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Parcourez tous nos stickers et fresques muraux à colorier pour enfants et adultes, choisissez vos options de personnalisation et recevez votre devis en quelques clics. Fabriqué en France.">
+<title>Nos modèles à colorier — Les Petits Papiers</title>
+<link rel="canonical" href="https://lespetitspapierspeints.com/nos-modeles/">
+<meta property="og:title" content="Nos modèles à colorier — Les Petits Papiers">
+<meta property="og:description" content="Parcourez tous nos stickers et fresques muraux à colorier pour enfants et adultes, choisissez vos options et recevez votre devis en quelques clics.">
+<meta property="og:image" content="https://lespetitspapierspeints.com/images/particuliers-jungle.jpg">
+<link rel="icon" type="image/svg+xml" href="https://lespetitspapierspeints.com/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:"GooddogNew";
+    src:url("https://lespetitspapierspeints.com/fonts/gooddognew.ttf") format("truetype");
+    font-weight:normal; font-style:normal; font-display:swap;
+  }
+  :root{
+    --cream:#faf8f5;
+    --ink:#1a1a2e;
+    --text:#2d2d3a;
+    --ink-soft:#7a7a8c;
+    --coral:#EB356F;
+    --coral-light:#fde8ef;
+    --coral-dark:#C42A5C;
+    --blue:#5ACAF1;
+    --blue-light:#e8f8fd;
+    --line:#e8e6e0;
+    --white:#ffffff;
+    --radius:20px;
+    --radius-sm:12px;
+  }
+  *{box-sizing:border-box;}
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:"Outfit", "Segoe UI", Helvetica, Arial, sans-serif;
+    background:linear-gradient(160deg, #FAF8F5 0%, #FCEEF3 42%, #EAF7FC 100%);
+    background-attachment:fixed;
+    color:var(--text);
+  }
+
+  @keyframes fadeInUp{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+  @keyframes gentleFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+  @keyframes gentleFloatSmall{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-4px); } }
+  @keyframes slideModelNext{ from{ opacity:0; transform:translateX(60px); } to{ opacity:1; transform:translateX(0); } }
+  @keyframes slideModelPrev{ from{ opacity:0; transform:translateX(-60px); } to{ opacity:1; transform:translateX(0); } }
+  .carousel-frame.slide-next{ animation:slideModelNext .7s cubic-bezier(.22,1,.36,1); }
+  .carousel-frame.slide-prev{ animation:slideModelPrev .7s cubic-bezier(.22,1,.36,1); }
+
+  .fade-in{ animation:fadeInUp .6s cubic-bezier(.22,1,.36,1) both; }
+
+  h1, .catalog-title{
+    font-family:"GooddogNew","Outfit",sans-serif;
+    letter-spacing:0.01em;
+  }
+  header{
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+    padding:20px 40px; border-bottom:1px solid var(--line); background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(6px);
+  }
+  header img{ height:34px; grid-column:2; justify-self:center; }
+  header .badge{
+    grid-column:3; justify-self:end; cursor:pointer;
+    font-size:13px; color:var(--coral-dark); background:var(--coral-light);
+    padding:6px 14px; border-radius:20px; font-weight:600; white-space:nowrap;
+  }
+  @media(max-width:640px){
+    header{ padding:14px 16px; }
+    header img{ height:26px; }
+    header .badge{ font-size:11px; padding:5px 10px; }
+  }
+
+  /* ---------- VIEW HOME ---------- */
+  #view-home{ max-width:1100px; margin:0 auto; padding:50px 40px 100px; transition:opacity .35s ease; }
+  h1{ font-size:44px; margin:0 0 10px; font-weight:400; text-align:center; color:var(--ink); line-height:1.15; }
+  h1 em{ font-style:italic; color:var(--coral); }
+  .subtitle{ color:var(--ink-soft); font-size:17px; text-align:center; max-width:480px; margin:0 auto 34px;}
+  @media(max-width:640px){
+    #view-home{ padding:30px 18px 70px; }
+    h1{ font-size:30px; }
+    .subtitle{ font-size:15px; }
+  }
+
+  .catalogue-banner{
+    width:100vw; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+    margin-top:-50px; margin-bottom:10px;
+    height:40vh; min-height:280px; max-height:480px; overflow:hidden;
+  }
+  .catalogue-banner img{ width:100%; height:100%; object-fit:cover; object-position:center center; display:block; }
+  @media(max-width:900px){ .catalogue-banner{ height:32vh; min-height:220px; } }
+  @media(max-width:640px){ .catalogue-banner{ height:26vh; min-height:170px; } }
+
+  .main-cats{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:640px){ .main-cats{ grid-template-columns:1fr; } }
+  .cat-main{
+    position:relative; border-radius:26px; overflow:hidden; height:260px;
+    cursor:pointer; border:3px solid transparent; background-size:110%; background-position:center;
+    display:flex; align-items:flex-end;
+    box-shadow:0 14px 34px rgba(196,42,92,0.10);
+    transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease, background-size 3s ease, border-color .3s ease;
+  }
+  .cat-main:hover{ transform:translateY(-4px); background-size:118%; box-shadow:0 20px 42px rgba(196,42,92,0.16); }
+  .cat-main.active{ border-color:var(--coral); }
+  .cat-main .overlay-grad{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%); }
+  .cat-main .cat-label{ position:relative; z-index:2; color:white; padding:22px; font-size:24px; font-weight:400; font-family:"GooddogNew","Outfit",sans-serif; }
+  .cat-main .cat-label span{ display:block; font-size:13px; font-weight:400; opacity:0.85; margin-top:4px; font-family:"Outfit",sans-serif; }
+
+  .subcats{
+    display:grid; grid-template-rows:0fr; opacity:0; margin-top:0; overflow:hidden;
+    transition:grid-template-rows .4s cubic-bezier(.22,1,.36,1), opacity .35s ease, margin-top .4s ease;
+  }
+  .subcats.open{ grid-template-rows:1fr; opacity:1; margin-top:22px; }
+  .subcats-inner{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:14px;
+    padding:10px 4px 18px;
+    min-height:0;
+  }
+  .subcat-card{
+    background:var(--white); border:1px solid var(--line); border-radius:16px;
+    padding:16px 10px; text-align:center; cursor:pointer; font-weight:600; font-size:13px;
+    line-height:1.3; word-break:normal; overflow-wrap:break-word;
+    transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, border-color .3s ease;
+  }
+  .subcat-card:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(196,42,92,0.12); border-color:var(--coral);}
+  .subcat-card.is-panorama{ border-style:dashed; }
+  .subcat-spacer{ grid-column:1 / -1; height:20px; }
+
+  /* ---------- VIEW CATALOG ---------- */
+  #view-catalog{ display:none; max-width:1400px; margin:0 auto; padding:34px 40px 110px; transition:opacity .35s ease; }
+  .back-link{
+    display:inline-flex; align-items:center; gap:7px;
+    background:none; border:none; color:var(--ink-soft); font-size:14px; cursor:pointer;
+    padding:0; margin-bottom:14px; font-weight:600; font-family:inherit; transition:color .2s ease, transform .2s ease;
+  }
+  .back-link:hover{ color:var(--coral-dark); transform:translateX(-3px); }
+  .back-link .hand-arrow{ flex-shrink:0; }
+  .breadcrumb{ font-size:13px; color:var(--ink-soft); margin-bottom:24px; text-align:center; }
+  .breadcrumb b{ color:var(--ink); }
+
+  /* La grande box unique : visuel + explications, elle flotte doucement */
+  .catalog-card{
+    background:var(--white);
+    border-radius:32px;
+    padding:36px 36px 32px;
+    box-shadow:0 24px 60px rgba(26,26,46,0.09), 0 6px 18px rgba(196,42,92,0.06);
+    animation:gentleFloat 6s ease-in-out infinite;
+  }
+  @media(max-width:640px){
+    #view-catalog{ padding:20px 14px 80px; }
+    .catalog-card{ padding:20px 16px 24px; border-radius:22px; }
+    .model-name{ font-size:22px; }
+    .carousel-frame{ width:90%; height:44vh; min-height:260px; }
+  }
+
+  .model-name{
+    text-align:center; font-family:"Outfit",sans-serif; font-weight:700; font-size:28px;
+    color:var(--coral-dark); margin-bottom:6px; letter-spacing:0.01em;
+  }
+  .model-desc{ text-align:center; color:var(--ink-soft); font-size:13.5px; margin-bottom:20px; max-width:480px; margin-left:auto; margin-right:auto; }
+
+  .carousel-frame{
+    position:relative; border-radius:24px; overflow:hidden;
+    width:80%; margin:0 auto; height:60vh; min-height:360px; background:transparent;
+  }
+  .carousel-frame img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:transparent;
+    opacity:0; transform:scale(0.97); transition:opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+  }
+  .carousel-frame img.active{ opacity:1; transform:scale(1); cursor:zoom-in; pointer-events:auto; }
+  .carousel-frame img{ pointer-events:none; }
+  .carousel-frame .ph{
+    position:absolute; inset:0; display:none; align-items:center; justify-content:center;
+    flex-direction:column; color:white; font-weight:700; font-size:16px; text-align:center; gap:8px;
+  }
+  .carousel-frame .ph.active{ display:flex; opacity:1; }
+  .carousel-frame .ph small{ font-weight:400; font-size:11.5px; opacity:0.85; }
+
+  .carousel-viewport{ position:relative; }
+  .carousel-peek{
+    position:absolute; top:7%; bottom:7%; width:9.5%;
+    border-radius:18px; overflow:hidden; opacity:0.32;
+    transition:opacity .45s ease; pointer-events:none; z-index:1;
+  }
+  .carousel-peek img{ width:100%; height:100%; object-fit:cover; }
+  .carousel-peek .ph-mini{ width:100%; height:100%; }
+  .peek-prev{ left:0; }
+  .peek-next{ right:0; }
+  @media(max-width:640px){ .carousel-peek{ display:none; } }
+
+  .model-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.92); border:1px solid var(--line);
+    width:42px; height:42px; border-radius:50%; font-size:20px; cursor:pointer; color:var(--ink); z-index:3;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    box-shadow:0 6px 16px rgba(26,26,46,0.08);
+  }
+  .model-nav:hover{ background:var(--white); transform:translateY(-50%) scale(1.08); box-shadow:0 10px 22px rgba(196,42,92,0.16); }
+  .model-nav:active{ transform:translateY(-50%) scale(0.94); }
+  .model-nav.prev{ left:-14px; }
+  .model-nav.next{ right:-14px; }
+  @media(max-width:640px){ .model-nav.prev{left:6px;} .model-nav.next{right:6px;} }
+
+  .photo-dots{ display:flex; justify-content:center; gap:7px; margin:16px 0 30px; }
+  .photo-dots span{ width:7px; height:7px; border-radius:50%; background:var(--line); cursor:pointer; transition:transform .2s ease, background .2s ease; display:inline-block; }
+  .photo-dots span.active{ background:var(--coral); transform:scale(1.3); }
+
+  .style-filter{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:0 0 22px; }
+  .style-chip{
+    border:1px solid var(--line); background:var(--white); color:var(--ink-soft);
+    padding:8px 16px; border-radius:20px; font-size:12.5px; font-weight:600; cursor:pointer;
+    font-family:inherit; transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .style-chip.active{ background:var(--coral); color:var(--white); border-color:var(--coral); }
+  .style-chip:hover:not(.active){ border-color:var(--coral); }
+
+  .lightbox{
+    display:none; position:fixed; inset:0; background:rgba(26,26,46,0.88); z-index:9999;
+    align-items:center; justify-content:center; padding:40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox-viewport{
+    max-width:92%; max-height:92%; overflow:auto; border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4); cursor:zoom-in;
+    scrollbar-width:thin; scrollbar-color:var(--coral) rgba(255,255,255,0.15);
+  }
+  .lightbox-viewport.zoomed{ cursor:zoom-out; }
+  .lightbox-viewport img{ display:block; width:100%; height:auto; transition:width .3s ease; }
+  .lightbox-viewport.zoomed img{ width:230%; }
+  .lightbox-close{
+    position:absolute; top:24px; right:32px; background:rgba(26,26,46,0.5); border:none; color:var(--white);
+    font-size:26px; line-height:1; cursor:pointer; font-family:inherit; z-index:2;
+    width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease;
+  }
+  .lightbox-close:hover{ background:rgba(235,53,111,0.85); }
+
+  /* ---------- OPTIONS (meme box, separees par un simple trait) ---------- */
+  .options-panel{
+    max-width:460px; margin:0 auto; padding-top:26px;
+  }
+  .dim-note{
+    background:var(--blue-light); border:1px solid #cdeef8; border-radius:14px;
+    padding:12px 14px; font-size:12.5px; color:#3a6b7c; margin-bottom:18px; line-height:1.5;
+  }
+  .format-toggle{ display:flex; gap:6px; background:var(--cream); padding:4px; border-radius:30px; margin-bottom:18px; }
+  .format-btn{ flex:1; border:none; background:transparent; padding:9px 10px; border-radius:26px; font-size:13px; font-weight:600; color:var(--ink-soft); cursor:pointer; transition:background .2s ease, color .2s ease; }
+  .format-btn.active{ background:var(--ink); color:var(--white); }
+
+  .field{ margin-bottom:14px; }
+  .field label{ display:block; font-size:12.5px; font-weight:600; margin-bottom:5px; }
+  .field input, .field select, .field textarea{
+    width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--line);
+    font-size:14px; background:var(--cream); font-family:inherit; resize:vertical;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--coral); box-shadow:0 0 0 3px var(--coral-light);
+  }
+  .field-row{ display:flex; gap:10px; }
+  .field-row .field{ flex:1; }
+
+  .checkbox-field{
+    display:flex; align-items:flex-start; gap:10px; background:var(--cream);
+    border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:16px;
+    transition:border-color .2s ease;
+  }
+  .checkbox-field:has(input:checked){ border-color:var(--coral); background:var(--coral-light); }
+  .checkbox-field input{ margin-top:3px; }
+  .checkbox-field .cf-text strong{ font-size:13.5px; }
+  .checkbox-field .cf-text p{ margin:2px 0 0; font-size:12px; color:var(--ink-soft); }
+
+  .price-box{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:14px 0; border-top:1px dashed var(--line); margin-top:6px; margin-bottom:16px;
+  }
+  .price-box .amount{ font-size:24px; font-weight:700; transition:opacity .2s ease; }
+  .price-box .label{ font-size:12px; color:var(--ink-soft); }
+
+  .btn-devis{
+    width:100%; background:var(--coral); color:var(--white); border:none;
+    padding:15px; border-radius:30px; font-size:15px; font-weight:700; cursor:pointer;
+    transition:background .2s ease, transform .15s ease, box-shadow .2s ease;
+    box-shadow:0 10px 26px rgba(235,53,111,0.28);
+  }
+  .btn-devis:hover{ background:var(--coral-dark); transform:translateY(-2px); box-shadow:0 14px 30px rgba(235,53,111,0.34); }
+  .btn-devis:active{ transform:translateY(0) scale(0.98); }
+
+  .opt-block{ display:none; }
+  .opt-block.active{ display:block; }
+
+  .btn-devis:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+  .devis-error{ color:var(--coral-dark); font-size:13px; margin:-6px 0 14px; }
+  .devis-recap{
+    background:var(--blue-light); border:1px solid var(--blue); border-radius:14px;
+    padding:16px 18px; margin-top:16px; font-size:13.5px; line-height:1.7; color:var(--ink);
+  }
+  .devis-recap h4{ font-size:14px; margin:0 0 8px; }
+  .devis-recap table{ width:100%; border-collapse:collapse; }
+  .devis-recap td{ padding:2px 0; vertical-align:top; }
+  .devis-recap td:first-child{ color:var(--ink-soft); white-space:nowrap; padding-right:10px; }
+
+  .custom-cta{
+    max-width:520px; margin:44px auto 0; text-align:center;
+  }
+  .custom-cta p{ font-size:15px; color:var(--ink-soft); margin:0 0 14px; }
+  .btn-custom{
+    display:inline-block; background:transparent; color:var(--coral-dark);
+    border:2px solid var(--coral); padding:13px 28px; border-radius:30px;
+    font-size:14.5px; font-weight:700; cursor:pointer; font-family:inherit;
+    transition:background .2s ease, color .2s ease, transform .15s ease;
+  }
+  .btn-custom:hover{ background:var(--coral); color:var(--white); transform:translateY(-2px); }
+  .btn-custom:active{ transform:translateY(0) scale(0.98); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="https://lespetitspapierspeints.com/logo.svg" alt="Les Petits Papiers"></a>
+  <span class="badge" id="badgeHome">Espace Particuliers</span>
+</header>
+
+<!-- ================= VIEW 1 : HOME ================= -->
+<div id="view-home">
+  <div class="catalogue-banner">
+    <img src="web-particuliers/assets/banniere-catalogues.png" alt="Nos modèles">
+  </div>
+
+  <h1>Choisissez un <em>univers</em></h1>
+  <p class="subtitle">Parcourez le catalogue, et hop, on vous envoie un devis !</p>
+
+  <div class="main-cats">
+    <div class="cat-main" id="cat-enfants" style="background-image:url('https://lespetitspapierspeints.com/images/particuliers-jungle.jpg')">
+      <div class="overlay-grad"></div>
+      <div class="cat-label">Enfants<span>Chambres, jeux, imaginaire</span></div>
+    </div>
+    <div class="cat-main" id="cat-adultes" style="background-image:url('https://lespetitspapierspeints.com/images/home-hero.jpg')">
+      <div class="overlay-grad"></div>
+      <div class="cat-label">Adultes<span>Salon, bureau, déco cosy</span></div>
+    </div>
+  </div>
+
+  <div class="subcats" id="subcats-enfants">
+    <div class="subcats-inner">
+      <div class="subcat-card" data-main="enfants" data-sub="stickers">Les Stickers</div>
+      <div class="subcat-spacer"></div>
+      <div class="subcat-card is-panorama" data-main="enfants" data-sub="panoramas">Panoramas</div>
+    </div>
+  </div>
+
+  <div class="subcats" id="subcats-adultes">
+    <div class="subcats-inner">
+      <div class="subcat-card" data-main="adultes" data-sub="stickers">Les Stickers</div>
+      <div class="subcat-spacer"></div>
+      <div class="subcat-card" data-main="adultes" data-sub="sudiste">Le sudiste</div>
+      <div class="subcat-card" data-main="adultes" data-sub="chouchou">Le chouchou</div>
+      <div class="subcat-card" data-main="adultes" data-sub="cosy">Les cosy</div>
+      <div class="subcat-card" data-main="adultes" data-sub="voyeur">Le voyeur</div>
+      <div class="subcat-card" data-main="adultes" data-sub="voyages">Collection voyages</div>
+      <div class="subcat-card" data-main="adultes" data-sub="main-verte">Collection main verte</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= VIEW 2 : CATALOG ================= -->
+<div id="view-catalog">
+  <button class="back-link" id="backBtn">
+    <svg class="hand-arrow" viewBox="0 0 20 16" width="18" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18,8.7 C13,7.9 7,9.4 2.3,8.2"/>
+      <path d="M7,3.2 C5.2,5.1 3,7 2,8.4 C3.2,9.7 5.6,11.9 7.3,13.6"/>
+    </svg>
+    Retour aux univers
+  </button>
+  <div class="breadcrumb"><b id="breadMain">Enfants</b> / <span id="breadSub">Animaux</span></div>
+
+  <div class="style-filter" id="styleFilter" style="display:none;"></div>
+
+  <div class="catalog-card" id="catalogCard">
+    <div class="model-name" id="modelName">-</div>
+    <div class="model-desc" id="modelDesc"></div>
+
+    <div class="carousel-viewport">
+      <button class="model-nav prev" id="prevModel">&#8249;</button>
+      <div class="carousel-peek peek-prev" id="peekPrev"></div>
+      <div class="carousel-frame" id="carouselFrame"></div>
+      <div class="carousel-peek peek-next" id="peekNext"></div>
+      <button class="model-nav next" id="nextModel">&#8250;</button>
+    </div>
+    <div class="photo-dots" id="photoDots"></div>
+
+    <div class="options-panel">
+
+      <!-- Note de dimension, change selon le public (enfant/adulte) et le type (standard/panorama) -->
+      <div class="dim-note" id="dimNote"></div>
+
+      <!-- Sélecteur de format : uniquement pour les Panoramas -->
+      <div class="format-toggle" id="formatToggle" style="display:none;">
+        <button class="format-btn active" data-format="sticker">Sticker</button>
+        <button class="format-btn" data-format="papier">Papier peint</button>
+      </div>
+
+      <!-- COORDONNÉES : communes aux deux blocs, pour que le devis reparte avec tout ce qu'il faut -->
+      <div class="field-row">
+        <div class="field">
+          <label>Prénom et nom *</label>
+          <input type="text" id="devisNom" placeholder="Ex : Marie Dupont">
+        </div>
+        <div class="field">
+          <label>E-mail *</label>
+          <input type="email" id="devisEmail" placeholder="marie@exemple.fr">
+        </div>
+      </div>
+      <div class="field">
+        <label>Téléphone (optionnel)</label>
+        <input type="tel" id="devisTel" placeholder="06 00 00 00 00">
+      </div>
+
+      <!-- OPTIONS STANDARD (sticker unitaire, dimension fixe) -->
+      <div class="opt-block active" id="opt-standard">
+        <div class="field">
+          <label>Personnaliser avec un prénom (optionnel)</label>
+          <input type="text" id="prenomInput" placeholder="Ex : Mattéo">
+        </div>
+        <div class="field">
+          <label>Notes de personnalisation (optionnel)</label>
+          <textarea rows="2" id="notesStandard" placeholder="Ex : dimension différente, marge de sécurité spécifique..."></textarea>
+        </div>
+        <div class="field">
+          <label>Code promo</label>
+          <input type="text" id="promoStandard" placeholder="Ex : BIENVENUE10">
+        </div>
+        <div class="checkbox-field">
+          <input type="checkbox" id="recolor">
+          <div class="cf-text">
+            <strong>Recoloriable à l'infini (+10€)</strong>
+            <p>Pelliculage tableau blanc : effacez le coloriage et recommencez-le à l'infini.</p>
+          </div>
+        </div>
+        <div class="price-box">
+          <div>
+            <div class="label">À partir de</div>
+            <div class="amount" id="stickerPrice">55 € TTC</div>
+          </div>
+        </div>
+        <button class="btn-devis" id="devisBtnStandard">Recevoir mon devis</button>
+      </div>
+
+      <!-- OPTIONS PANORAMA (sur devis, dimensions libres) -->
+      <div class="opt-block" id="opt-panorama">
+        <div class="field-row">
+          <div class="field">
+            <label>Largeur (cm)</label>
+            <input type="text" id="panoLargeur" placeholder="Ex : 300">
+          </div>
+          <div class="field">
+            <label>Hauteur (cm)</label>
+            <input type="text" id="panoHauteur" placeholder="Ex : 250">
+          </div>
+        </div>
+        <div class="field">
+          <label>Notes de personnalisation (optionnel)</label>
+          <textarea rows="2" id="notesPanorama" placeholder="Ex : prénom, couleurs, contraintes du mur..."></textarea>
+        </div>
+        <div class="field">
+          <label>Code promo</label>
+          <input type="text" id="promoPanorama" placeholder="Ex : BIENVENUE10">
+        </div>
+        <div class="price-box">
+          <div>
+            <div class="label">À partir de</div>
+            <div class="amount">50 €/m²</div>
+          </div>
+        </div>
+        <button class="btn-devis" id="devisBtnPanorama">Recevoir mon devis</button>
+      </div>
+
+      <p class="devis-error" id="devisError" style="display:none;"></p>
+      <div class="devis-recap" id="devisRecap" style="display:none;"></div>
+
+    </div>
+  </div>
+
+  <div class="custom-cta">
+    <p>Vous n'avez pas trouvé LE visuel de vos rêves ?</p>
+    <button class="btn-custom">Créons-le sur-mesure !</button>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox-viewport" id="lightboxViewport">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
+<script>
+const catalogData = {
+  enfants: {
+    label: "Enfants",
+    subs: {
+      "stickers": { label:"Les Stickers", items:[
+        { name:"Château Enchanté", group:"Tout doux", desc:"Sticker mural à colorier château enchanté, XXL et repositionnable, pour transformer la chambre en univers de conte de fées.", images:["web-particuliers/enfants/chouchous/Chateau Enchante-1.png"] },
+        { name:"Chaton Donuts", group:"Tout doux", desc:"Sticker chaton gourmand à colorier, format généreux, à poser sans trace sur le mur de la chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Chaton Donuts-1.png"] },
+        { name:"Fanfan l'Éléphant", group:"Tout doux", desc:"Éléphanteau tout doux à colorier, sticker mural repositionnable idéal pour une chambre de bébé ou de jeune enfant.", images:["web-particuliers/enfants/chouchous/Fanfan-Elephant-1.png"] },
+        { name:"Licorne Endormie", group:"Tout doux", desc:"Licorne endormie à colorier, sticker mural XXL pour chambre de fille, personnalisable avec son prénom.", images:["web-particuliers/enfants/chouchous/Licorne Endormie-1.png", "web-particuliers/enfants/chouchous/Licorne Endormie-2.png"] },
+        { name:"Mimi à la Fenêtre", group:"Tout doux", desc:"Petit chat à la fenêtre à colorier, sticker mural doux et repositionnable pour habiller la chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Mimi a la Fenetre-1.jpeg"] },
+        { name:"Montgolfières", group:"Tout doux", desc:"Envolée de montgolfières à colorier, sticker mural aérien et coloré pour la chambre d'un petit aventurier.", images:["web-particuliers/enfants/chouchous/Montgolfières-1.png", "web-particuliers/enfants/chouchous/Montgolfières-2.png"] },
+        { name:"Nounours Mimi", group:"Tout doux", desc:"Nounours à colorier grandeur nature, sticker mural rassurant et repositionnable pour la chambre de bébé.", images:["web-particuliers/enfants/collec-stickers/Nounours Mimi-1.jpeg"] },
+        { name:"Chaton Malicieux", group:"Animaux", desc:"Chaton malicieux à colorier, sticker mural ludique et sans trace pour la chambre des tout-petits.", images:["web-particuliers/enfants/collec-stickers/Chaton Malicieux-1.png"] },
+        { name:"Girafe", group:"Animaux", desc:"Girafe géante à colorier, sticker mural éducatif pour apprendre en s'amusant dans la chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Girafe-1.png"] },
+        { name:"Lion", group:"Animaux", desc:"Lion majestueux à colorier, sticker mural savane pour une chambre d'enfant pleine d'aventures.", images:["web-particuliers/enfants/collec-stickers/Lion-1.png"] },
+        { name:"Mochard", group:"Animaux", desc:"Personnage Mochard à colorier, sticker mural original et repositionnable pour la chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Mochard-1.png"] },
+        { name:"Perroquet", group:"Animaux", desc:"Perroquet coloré à colorier, sticker mural jungle pour une chambre pleine de vie.", images:["web-particuliers/enfants/collec-stickers/Perroquet-1.png"] },
+        { name:"Singe", group:"Animaux", desc:"Singe joueur à colorier, sticker mural animalier repositionnable pour chambre d'enfant.", images:["web-particuliers/enfants/collec-stickers/Singe-1.png"] },
+        { name:"Pirate !", group:"Aventuriers", desc:"Pirate à colorier grandeur nature, sticker mural d'aventure pour la chambre des petits corsaires.", images:["web-particuliers/enfants/collec-stickers/Pirate-1.png"] },
+        { name:"Trésor Perdu", group:"Aventuriers", desc:"Chasse au trésor à colorier, sticker mural d'aventure pour stimuler l'imaginaire des enfants.", images:["web-particuliers/enfants/collec-stickers/Tresor Perdu-1.jpeg"] },
+        { name:"Trésor Pirate", group:"Aventuriers", desc:"Coffre au trésor à colorier, sticker mural pirate repositionnable pour chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Tresor Pirate-1.png"] },
+        { name:"Ballune", group:"Espace", desc:"Montgolfière céleste à colorier, sticker mural espace pour une chambre enfant qui rêve d'ailleurs.", images:["web-particuliers/enfants/collec-stickers/Ballune-1.png"] },
+        { name:"Cosmorêve", group:"Espace", desc:"Visuel à venir.", placeholder:true, color:"#6C8FC9" },
+        { name:"Sur la Lune", group:"Espace", desc:"Voyage sur la Lune à colorier, sticker mural spatial pour chambre de petit astronaute, personnalisable avec son prénom.", images:["web-particuliers/enfants/collec-stickers/Sur la Lune-1.png"] },
+        { name:"Dottie la Dino", group:"Dinosaures", desc:"Petite dinosaure Dottie à colorier, sticker mural préhistorique tout doux pour chambre enfant.", images:["web-particuliers/enfants/collec-stickers/Dottie la Dino-1.png"] },
+        { name:"Draco", group:"Dinosaures", desc:"Dinosaure Draco à colorier, sticker mural grandeur nature pour chambre de passionné de préhistoire.", images:["web-particuliers/enfants/collec-stickers/Draco-1.png"] },
+        { name:"Florette", group:"Dinosaures", desc:"Dinosaure fleuri Florette à colorier, sticker mural tout doux pour une chambre d'enfant colorée.", images:["web-particuliers/enfants/collec-stickers/Florette-1.png"] },
+        { name:"Alphabet des Animaux", group:"Éducatifs", desc:"Alphabet des animaux à colorier, sticker mural éducatif pour apprendre les lettres en s'amusant, inspiration Montessori.", images:["web-particuliers/enfants/educatifs/Alphabet des Animaux-1.png"] },
+        { name:"Chiffres Fleurs", group:"Éducatifs", desc:"Chiffres et fleurs à colorier, sticker mural éducatif pour apprendre à compter dans la chambre enfant.", images:["web-particuliers/enfants/educatifs/Chiffres Fleurs-1.png"] },
+        { name:"Chiffres Fruits", group:"Éducatifs", desc:"Chiffres et fruits à colorier, sticker mural éducatif ludique pour la chambre des tout-petits.", images:["web-particuliers/enfants/educatifs/Chiffres Fruits-1.png"] },
+        { name:"Roue des Émotions", group:"Éducatifs", desc:"Roue des émotions à colorier, sticker mural éducatif pour aider l'enfant à nommer ses ressentis.", images:["web-particuliers/enfants/educatifs/Roue des Emotions-1.png"] },
+        { name:"Sous la Mer", group:"Éducatifs", desc:"Fonds marins à colorier, sticker mural éducatif pour découvrir la vie sous l'eau en s'amusant.", images:["web-particuliers/enfants/educatifs/Sous la Mer-1.png"] },
+        { name:"Temporalité", group:"Éducatifs", desc:"Frise du temps à colorier, sticker mural éducatif pour apprendre les jours, les mois et les saisons.", images:["web-particuliers/enfants/educatifs/Temporalite-1.png", "web-particuliers/enfants/educatifs/Temporalite-2.jpeg"] },
+        { name:"Café", group:"Immersifs", desc:"Petit café à colorier grandeur nature, sticker mural immersif pour un coin jeu de rôle dans la chambre.", images:["web-particuliers/enfants/immersifs/Cafe-1.jpeg"] },
+        { name:"Chambre", group:"Immersifs", desc:"Décor de chambre à colorier, sticker mural immersif pour transformer un pan de mur en scène à vivre.", images:["web-particuliers/enfants/immersifs/Chambre-1.jpeg"] },
+        { name:"Cuisine", group:"Immersifs", desc:"Cuisine miniature à colorier, sticker mural immersif pour un coin dinette grandeur enfant.", images:["web-particuliers/enfants/immersifs/Cuisine-1.jpeg"] },
+        { name:"Camion", group:"Passion Travaux", desc:"Camion de chantier à colorier, sticker mural pour chambre de petit passionné d'engins.", images:["web-particuliers/enfants/passion-travaux/Camion-1.png", "web-particuliers/enfants/passion-travaux/Camion-2.png"] },
+        { name:"Hélico'", group:"Passion Travaux", desc:"Hélicoptère à colorier, sticker mural aérien pour chambre d'enfant fan de véhicules.", images:["web-particuliers/enfants/passion-travaux/Hélico-1.png"] },
+        { name:"Transvasez !", group:"Passion Travaux", desc:"Chantier à transvaser à colorier, sticker mural ludique pour les petites mains en pleine motricité fine.", images:["web-particuliers/enfants/passion-travaux/Transvasez-1.png"] },
+        { name:"Travaux en Cours", group:"Passion Travaux", desc:"Visuel à venir.", placeholder:true, color:"#E3B15E" },
+      ]},
+      "panoramas": { label:"Panoramas", items:[
+        { name:"La Jungle", desc:"Des visuels livrés en entier, adaptés à vos dimensions. Sur papier peint pré-encollé ou sticker repositionnable.", images:["web-particuliers/enfants/panoramas/La Jungle-1.jpeg"] },
+        { name:"L'Espace", desc:"Des visuels livrés en entier, adaptés à vos dimensions. Sur papier peint pré-encollé ou sticker repositionnable.", images:["web-particuliers/enfants/panoramas/LEspace-1.jpeg", "web-particuliers/enfants/panoramas/LEspace-2.jpeg"] },
+        { name:"Le Système Solaire", desc:"Des visuels livrés en entier, adaptés à vos dimensions. Sur papier peint pré-encollé ou sticker repositionnable.", images:["web-particuliers/enfants/panoramas/Le Système Solaire-1.jpeg", "web-particuliers/enfants/panoramas/Le Système Solaire-2.jpeg"] },
+        { name:"Dinosaures", desc:"Des visuels livrés en entier, adaptés à vos dimensions. Sur papier peint pré-encollé ou sticker repositionnable.", images:["web-particuliers/enfants/panoramas/Dinosaures-1.jpeg"] },
+      ]},
+    }
+  },
+  adultes: {
+    label: "Adultes",
+    subs: {
+      "sudiste": { label:"Le sudiste", items:[
+        { name:"Ô Toulouse", desc:"Fresque murale à colorier de Toulouse, ses monuments et ses rues emblématiques, pour un salon, un bureau ou une salle d'attente qui a du caractère.", images:["web-particuliers/adultes/sudiste/Ô Toulouse-1.png", "web-particuliers/adultes/sudiste/Toulouse-coloriage.jpg"] },
+      ]},
+      "chouchou": { label:"Le chouchou", items:[
+        { name:"Mappemonde", desc:"Mappemonde géante à colorier, sticker mural grand format pour un bureau ou un salon qui donne envie de voyager.", images:["web-particuliers/adultes/chouchou/Mappemonde-2.png"] },
+      ]},
+      "cosy": { label:"Les cosy", items:[
+        { name:"Coin Sieste", desc:"Coin cosy à colorier, sticker mural apaisant pour un salon ou une chambre parentale tout en douceur.", images:["web-particuliers/adultes/cosy/Coin Sieste-1.png"] },
+        { name:"Serre", desc:"Serre botanique à colorier, sticker mural végétal grand format pour un salon, un bureau ou une véranda.", images:["web-particuliers/adultes/cosy/Serre-1.png", "web-particuliers/adultes/cosy/Serre-coloriage.jpg", "web-particuliers/adultes/cosy/Serre-2.png"] },
+        { name:"Étagères", desc:"Étagères en trompe-l'œil à colorier, sticker mural déco pour donner du relief à un salon ou un bureau.", images:["web-particuliers/adultes/intemporel/Etageres-1.png", "web-particuliers/adultes/cosy/Etageres-coloriage.jpg"] },
+      ]},
+      "voyeur": { label:"Le voyeur", items:[
+        { name:"Immeuble Voisin", desc:"Façade d'immeuble à colorier, sticker mural urbain et graphique pour un salon ou un espace de coworking.", images:["web-particuliers/adultes/voyeur/Immeuble Voisin-1.png", "web-particuliers/adultes/voyeur/Immeuble Voisin-coloriage.jpg"] },
+      ]},
+      "voyages": { label:"Collection voyages", items:[
+        { name:"Polynésie", desc:"Lagon de Polynésie à colorier, fresque murale évasion pour un salon, une chambre ou un espace détente.", images:["web-particuliers/adultes/voyages/Polynésie-1.png", "web-particuliers/adultes/voyages/Polynesie-coloriage.jpg"] },
+        { name:"Crique Provençale", desc:"Crique de Provence à colorier, fresque murale méditerranéenne pour une salle à manger ou un salon les pieds dans l'eau.", images:["web-particuliers/adultes/voyages/Crique Provençale-1.png"] },
+        { name:"Mexico City", desc:"Skyline de Mexico à colorier, fresque murale urbaine pour un bureau, un loft ou un salon graphique.", images:["web-particuliers/adultes/voyages/Mexico City-1.png", "web-particuliers/adultes/voyages/Mexico City-2.png"] },
+        { name:"Normandie", desc:"Bord de mer normand à colorier, fresque murale iodée pour une chambre, un salon ou une maison de vacances.", images:["web-particuliers/adultes/voyages/Normandie-1.png", "web-particuliers/adultes/voyages/Normandie-2.png"] },
+        { name:"Sa Pa", desc:"Rizières de Sa Pa à colorier, fresque murale voyage pour un salon ou une salle d'attente dépaysante.", images:["web-particuliers/adultes/voyages/Sa Pa-1.png", "web-particuliers/adultes/voyages/Sa Pa-coloriage.jpg"] },
+        { name:"Rando Air Frais", desc:"Randonnée en montagne à colorier, fresque murale grand air pour un salon, un bureau ou un couloir.", images:["web-particuliers/adultes/voyages/Rando Air Frais-1.png"] },
+        { name:"Souk", desc:"Souk oriental à colorier, fresque murale dépaysante pour un salon, un restaurant ou un espace de vie chaleureux.", images:["web-particuliers/adultes/voyages/Souk-1.png", "web-particuliers/adultes/voyages/Souk-coloriage.jpg"] },
+        { name:"Santorini", desc:"Ruelles de Santorini à colorier, fresque murale méditerranéenne pour un salon ou une salle à manger lumineuse.", images:["web-particuliers/adultes/voyages/Santorini-1.png"] },
+        { name:"Venezia", desc:"Canaux de Venise à colorier, fresque murale romantique pour un salon, une chambre ou un couloir d'entrée.", images:["web-particuliers/adultes/voyages/Venezia-1.png"] },
+      ]},
+      "main-verte": { label:"Collection main verte", items:[
+        { name:"Pause Café", desc:"Pause café végétale à colorier, sticker mural cosy pour une cuisine, un salon ou un coin bureau.", images:["web-particuliers/adultes/main-verte/Pause Cafe-1.png"] },
+        { name:"Serre Ombragée", desc:"Serre ombragée à colorier, sticker mural botanique pour un salon, une véranda ou un espace de détente.", images:["web-particuliers/adultes/main-verte/Serre Ombragee-1.png"] },
+        { name:"Écrin de Verdure", desc:"Écrin de verdure à colorier, sticker mural végétal apaisant pour un salon ou une chambre parentale.", images:["web-particuliers/adultes/main-verte/Ecrin de Verdure-1.png"] },
+        { name:"Jardin d'Hiver", desc:"Jardin d'hiver à colorier, fresque murale botanique grand format pour un salon, une véranda ou un bureau lumineux.", images:["web-particuliers/adultes/main-verte/Jardin dHiver-1.png", "web-particuliers/adultes/main-verte/Jardin dHiver-coloriage.jpg", "web-particuliers/adultes/main-verte/Jardin dHiver-2.png"] },
+        { name:"Jeannette", desc:"Motif fleuri Jeannette à colorier, sticker mural végétal pour une chambre, un salon ou un couloir tout en douceur.", images:["web-particuliers/adultes/fleuri/Jeannette-1.png"] },
+      ]},
+      "stickers": { label:"Les Stickers", items:[
+        { name:"Aster", group:"Géométriques", desc:"Motif géométrique Aster à colorier, sticker mural graphique pour un salon ou un bureau minimaliste.", images:["web-particuliers/adultes/geometriques/Aster-1.png"] },
+        { name:"Cubia", group:"Géométriques", desc:"Motif géométrique Cubia à colorier, sticker mural graphique pour une entrée, un salon ou un espace de travail.", images:["web-particuliers/adultes/geometriques/Cubia-1.png"] },
+        { name:"Dahlia", group:"Géométriques", desc:"Motif floral géométrique Dahlia à colorier, sticker mural graphique pour un salon ou une chambre adulte.", images:["web-particuliers/adultes/geometriques/Dahlia-1.png"] },
+        { name:"Hexane", group:"Géométriques", desc:"Motif hexagonal Hexane à colorier, sticker mural graphique pour un bureau ou un salon contemporain.", images:["web-particuliers/adultes/geometriques/Hexane-1.png"] },
+        { name:"Hexia", group:"Géométriques", desc:"Motif hexagonal Hexia à colorier, sticker mural graphique pour un salon, un couloir ou un espace pro.", images:["web-particuliers/adultes/geometriques/Hexia-1.png"] },
+        { name:"Isora", group:"Géométriques", desc:"Motif géométrique Isora à colorier, sticker mural graphique pour une chambre, un salon ou un bureau.", images:["web-particuliers/adultes/geometriques/Isora-1.png"] },
+        { name:"Aura", group:"Mandalas", desc:"Mandala Aura à colorier, sticker mural apaisant pour méditer et se détendre dans un salon ou une chambre.", images:["web-particuliers/adultes/mandalas/Aura-1.png"] },
+        { name:"Azura", group:"Mandalas", desc:"Mandala Azura à colorier, sticker mural relaxant pour un salon, une chambre ou une salle de yoga.", images:["web-particuliers/adultes/mandalas/Azura-1.png"] },
+        { name:"Lizia", group:"Mandalas", desc:"Mandala Lizia à colorier, sticker mural zen pour une chambre parentale ou un coin détente.", images:["web-particuliers/adultes/mandalas/Lizia-1.png"] },
+        { name:"Lumea", group:"Mandalas", desc:"Mandala Lumea à colorier, sticker mural apaisant pour un salon, un bureau ou une salle d'attente.", images:["web-particuliers/adultes/mandalas/Lumea-1.png"] },
+        { name:"Neria", group:"Mandalas", desc:"Mandala Neria à colorier, sticker mural relaxant pour un espace bien-être, un salon ou une chambre.", images:["web-particuliers/adultes/mandalas/Neria-1.png"] },
+        { name:"Solya", group:"Mandalas", desc:"Mandala Solya à colorier, sticker mural lumineux pour une chambre, un salon ou un espace de méditation.", images:["web-particuliers/adultes/mandalas/Solya-1.png"] },
+        { name:"Venuzia", group:"Mandalas", desc:"Mandala Venuzia à colorier, sticker mural apaisant pour une chambre parentale ou un salon cocooning.", images:["web-particuliers/adultes/mandalas/Venuzia-1.png"] },
+        { name:"Zinia", group:"Mandalas", desc:"Mandala Zinia à colorier, sticker mural zen pour un salon, une chambre ou un cabinet de thérapeute.", images:["web-particuliers/adultes/mandalas/Zinia-1.png"] },
+        { name:"Alba", group:"Abstracts", desc:"Composition abstraite Alba à colorier, sticker mural graphique pour un salon ou un bureau contemporain.", images:["web-particuliers/adultes/abstracts/Alba-1.png"] },
+        { name:"Aroa", group:"Abstracts", desc:"Composition abstraite Aroa à colorier, sticker mural artistique pour une chambre, un salon ou un loft.", images:["web-particuliers/adultes/abstracts/Aroa-1.png"] },
+        { name:"Ezna", group:"Abstracts", desc:"Composition abstraite Ezna à colorier, sticker mural design pour un salon, un bureau ou une entrée.", images:["web-particuliers/adultes/abstracts/Ezna-1.png"] },
+        { name:"Ilyo", group:"Abstracts", desc:"Composition abstraite Ilyo à colorier, sticker mural graphique pour un salon ou un espace créatif.", images:["web-particuliers/adultes/abstracts/Ilyo-1.png", "web-particuliers/adultes/abstracts/Ilyo-2.jpeg"] },
+        { name:"Isee", group:"Abstracts", desc:"Composition abstraite Isee à colorier, sticker mural artistique pour une chambre adulte ou un salon.", images:["web-particuliers/adultes/abstracts/Isee-1.png", "web-particuliers/adultes/abstracts/Isee-2.jpeg"] },
+        { name:"Kaia", group:"Abstracts", desc:"Composition abstraite Kaia à colorier, sticker mural design pour un salon, un bureau ou un loft.", images:["web-particuliers/adultes/abstracts/Kaia-1.png", "web-particuliers/adultes/abstracts/Kaia-2.jpeg"] },
+        { name:"Lior", group:"Abstracts", desc:"Composition abstraite Lior à colorier, sticker mural graphique pour une entrée, un salon ou un bureau.", images:["web-particuliers/adultes/abstracts/Lior-1.png", "web-particuliers/adultes/abstracts/Lior-2.jpeg"] },
+        { name:"Olen", group:"Abstracts", desc:"Composition abstraite Olen à colorier, sticker mural artistique pour un salon ou un espace de travail créatif.", images:["web-particuliers/adultes/abstracts/Olen-1.png", "web-particuliers/adultes/abstracts/Olen-2.jpeg"] },
+        { name:"Oria", group:"Abstracts", desc:"Composition abstraite Oria à colorier, sticker mural design pour une chambre, un salon ou un bureau.", images:["web-particuliers/adultes/abstracts/Oria-1.png", "web-particuliers/adultes/abstracts/Oria-2.jpeg"] },
+        { name:"Orso", group:"Abstracts", desc:"Composition abstraite Orso à colorier, sticker mural graphique pour un salon ou un loft contemporain.", images:["web-particuliers/adultes/abstracts/Orso-1.png", "web-particuliers/adultes/abstracts/Orso-2.jpeg"] },
+        { name:"Romy", group:"Abstracts", desc:"Composition abstraite Romy à colorier, sticker mural artistique pour un salon ou une chambre adulte.", images:["web-particuliers/adultes/abstracts/Romy-1.png"] },
+        { name:"Solune", group:"Abstracts", desc:"Composition abstraite Solune à colorier, sticker mural design pour un bureau, un salon ou une entrée.", images:["web-particuliers/adultes/abstracts/Solune-1.png"] },
+        { name:"Syel", group:"Abstracts", desc:"Composition abstraite Syel à colorier, sticker mural graphique pour un salon ou un espace de travail.", images:["web-particuliers/adultes/abstracts/Syel-1.png"] },
+        { name:"Zephir", group:"Abstracts", desc:"Composition abstraite Zephir à colorier, sticker mural artistique pour un salon ou une chambre adulte.", images:["web-particuliers/adultes/abstracts/Zephir-1.png"] },
+        { name:"Zinae", group:"Abstracts", desc:"Composition abstraite Zinae à colorier, sticker mural design pour un salon, un bureau ou un loft.", images:["web-particuliers/adultes/abstracts/Zinae-1.png"] },
+        { name:"Burger'udit", group:"Cartoons", desc:"Personnage burger déjanté à colorier, sticker mural cartoon pour un restaurant, un salon ou une cuisine gourmande.", images:["web-particuliers/adultes/cartoons/Burgerudit-1.jpeg"] },
+        { name:"Capybaravagé", group:"Cartoons", desc:"Capybara déjanté à colorier, sticker mural cartoon décalé pour un salon, une chambre ado ou un espace fun.", images:["web-particuliers/adultes/cartoons/Capybaravagé-1.png"] },
+        { name:"Catwalk", group:"Cartoons", desc:"Silhouette catwalk à colorier, sticker mural cartoon mode pour un dressing, une chambre ou un salon.", images:["web-particuliers/adultes/cartoons/Catwalk-1.png"] },
+        { name:"Ça Roule", group:"Cartoons", desc:"Personnage Ça Roule à colorier, sticker mural cartoon dynamique pour un salon, un garage ou une chambre ado.", images:["web-particuliers/adultes/cartoons/Ça Roule-1.png"] },
+        { name:"Groovy Man", group:"Cartoons", desc:"Personnage Groovy Man à colorier, sticker mural cartoon rétro pour un salon ou un bureau qui a du style.", images:["web-particuliers/adultes/cartoons/Groovy Man-1.png"] },
+        { name:"Mimi & Butine", group:"Cartoons", desc:"Chat et fleurs Mimi & Butine à colorier, sticker mural cartoon tout doux pour un salon ou une chambre.", images:["web-particuliers/adultes/cartoons/Mimi et Butine-1.jpeg"] },
+        { name:"Musikman", group:"Cartoons", desc:"Personnage Musikman à colorier, sticker mural cartoon musical pour un salon, une chambre ado ou un studio.", images:["web-particuliers/adultes/cartoons/Musikman-1.png"] },
+        { name:"Paillettes en Folie", group:"Cartoons", desc:"Personnage pailleté à colorier, sticker mural cartoon festif pour un salon, une chambre ado ou un dressing.", images:["web-particuliers/adultes/cartoons/Paillettes en Folie-1.png"] },
+        { name:"Pinpin", group:"Cartoons", desc:"Personnage Pinpin à colorier, sticker mural cartoon craquant pour un salon ou une chambre ado.", images:["web-particuliers/adultes/cartoons/Pinpin-1.png"] },
+        { name:"Pizza Trip", group:"Cartoons", desc:"Part de pizza qui prend son envol à colorier, sticker mural cartoon gourmand pour un restaurant, une cuisine ou un salon.", images:["web-particuliers/adultes/cartoons/Pizza Trip-1.png", "web-particuliers/adultes/cartoons/Pizza Trip-coloriage.jpg"] },
+        { name:"Séducteur", group:"Cartoons", desc:"Personnage Séducteur à colorier, sticker mural cartoon plein d'humour pour un salon ou un bureau qui sort de l'ordinaire.", images:["web-particuliers/adultes/cartoons/Séducteur-1.png"] },
+        { name:"Strass Attaque", group:"Cartoons", desc:"Personnage pailleté Strass Attaque à colorier, sticker mural cartoon festif pour un salon ou une chambre ado.", images:["web-particuliers/adultes/cartoons/Strass Attaque-1.png"] },
+        { name:"Turtle Chill", group:"Cartoons", desc:"Tortue détendue à colorier, sticker mural cartoon zen pour un salon, une chambre ou un espace bien-être.", images:["web-particuliers/adultes/cartoons/Turtle Chill-1.png"] },
+        { name:"Vache Olé", group:"Cartoons", desc:"Vache espiègle à colorier, sticker mural cartoon plein d'humour pour une cuisine, un salon ou un restaurant.", images:["web-particuliers/adultes/cartoons/Vache Olé-1.png"] },
+        { name:"We Will Rock You", group:"Cartoons", desc:"Scène rock à colorier, sticker mural cartoon énergique pour un salon, une salle de jeux ou un studio de musique.", images:["web-particuliers/adultes/cartoons/We Will Rock You-1.png"] },
+      ]},
+    }
+  },
+};
+
+// ---------- HOME : accordéon ----------
+const catMain = { enfants: document.getElementById('cat-enfants'), adultes: document.getElementById('cat-adultes') };
+const subcats = { enfants: document.getElementById('subcats-enfants'), adultes: document.getElementById('subcats-adultes') };
+
+Object.keys(catMain).forEach(key => {
+  catMain[key].addEventListener('click', () => {
+    const isOpen = subcats[key].classList.contains('open');
+    Object.keys(subcats).forEach(k => { subcats[k].classList.remove('open'); catMain[k].classList.remove('active'); });
+    if(!isOpen){ subcats[key].classList.add('open'); catMain[key].classList.add('active'); }
+  });
+});
+
+document.querySelectorAll('.subcat-card').forEach(card => {
+  card.addEventListener('click', () => openCatalog(card.dataset.main, card.dataset.sub));
+});
+
+// ---------- CATALOG VIEW ----------
+let currentItems = [];
+let fullItems = [];
+let activeFilter = 'all';
+let currentModel = 0;
+let currentPhoto = 0;
+let isPanorama = false;
+let basePrice = 55;
+let currentMainKey = null;
+let currentSubKey = null;
+
+function renderStyleFilter(subData){
+  const wrap = document.getElementById('styleFilter');
+  const groups = [...new Set(subData.items.map(i => i.group).filter(Boolean))];
+  if(groups.length < 2){ wrap.style.display = 'none'; wrap.innerHTML = ''; return; }
+  wrap.style.display = 'flex';
+  wrap.innerHTML = ['Tous', ...groups].map(g => {
+    const val = (g === 'Tous') ? 'all' : g;
+    return `<button class="style-chip ${activeFilter===val?'active':''}" data-g="${val}">${g}</button>`;
+  }).join('');
+  wrap.querySelectorAll('.style-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.g;
+      currentItems = (activeFilter === 'all') ? fullItems : fullItems.filter(i => i.group === activeFilter);
+      currentModel = 0;
+      renderModel();
+      renderStyleFilter(subData);
+    });
+  });
+}
+
+function openCatalog(mainKey, subKey, itemName){
+  const mainData = catalogData[mainKey];
+  const subData = mainData.subs[subKey];
+  fullItems = subData.items;
+  activeFilter = 'all';
+  currentItems = fullItems;
+  currentModel = itemName ? Math.max(0, fullItems.findIndex(i => i.name === itemName)) : 0;
+  currentPhoto = 0;
+  currentMainKey = mainKey;
+  currentSubKey = subKey;
+  const isCustomDim = (mainKey === 'adultes' && subKey !== 'stickers');
+  isPanorama = (subKey === 'panoramas') || isCustomDim;
+  renderStyleFilter(subData);
+
+  document.getElementById('breadMain').textContent = mainData.label;
+  document.getElementById('breadSub').textContent = subData.label;
+  document.getElementById('dimNote').textContent = (subKey === 'panoramas')
+    ? "Un visuel éducatif ou décoratif vendu comme tel. Adaptable à vos dimensions, à partir de 50€/m²."
+    : isCustomDim
+      ? "Visuel adaptable à vos dimensions, à partir de 50€/m²."
+      : (mainKey === 'enfants'
+          ? "Zone à colorier : 90 × 90 cm. Marge de sécurité de 5 cm incluse sur chaque côté (support total 100 × 100 cm)."
+          : "Format : 100 × 100 cm. Pas de marge de sécurité par défaut, à préciser dans les notes si besoin.");
+
+  document.getElementById('formatToggle').style.display = isPanorama ? 'flex' : 'none';
+  document.getElementById('opt-standard').classList.toggle('active', !isPanorama);
+  document.getElementById('opt-panorama').classList.toggle('active', isPanorama);
+
+  const home = document.getElementById('view-home');
+  const cat = document.getElementById('view-catalog');
+  home.style.opacity = '0';
+  setTimeout(() => {
+    home.style.display = 'none';
+    cat.style.display = 'block';
+    cat.style.opacity = '0';
+    window.scrollTo(0,0);
+    renderModel();
+    requestAnimationFrame(() => { cat.style.opacity = '1'; });
+  }, 200);
+}
+
+function goHome(){
+  const home = document.getElementById('view-home');
+  const cat = document.getElementById('view-catalog');
+  if(cat.style.display === 'none') return;
+  cat.style.opacity = '0';
+  setTimeout(() => {
+    cat.style.display = 'none';
+    home.style.display = 'block';
+    home.style.opacity = '0';
+    requestAnimationFrame(() => { home.style.opacity = '1'; });
+  }, 200);
+}
+document.getElementById('backBtn').addEventListener('click', goHome);
+document.getElementById('badgeHome').addEventListener('click', goHome);
+
+function updateHash(){
+  if(!currentMainKey || !currentItems[currentModel]) return;
+  const item = currentItems[currentModel];
+  const params = new URLSearchParams({ m: currentMainKey, s: currentSubKey, p: item.name });
+  history.replaceState(null, '', '#' + params.toString());
+}
+
+function renderModel(){
+  const item = currentItems[currentModel];
+  currentPhoto = 0;
+
+  document.getElementById('modelName').textContent = item.name;
+  document.getElementById('modelDesc').textContent = item.desc || '';
+
+  const hasMultipleModels = currentItems.length > 1;
+  document.getElementById('prevModel').style.display = hasMultipleModels ? '' : 'none';
+  document.getElementById('nextModel').style.display = hasMultipleModels ? '' : 'none';
+
+  renderPhoto();
+  renderDots();
+  renderPeeks();
+
+  document.getElementById('prenomInput') && (document.getElementById('prenomInput').value = '');
+  document.getElementById('recolor') && (document.getElementById('recolor').checked = false);
+  updatePrice();
+  updateHash();
+
+  ['devisError','devisRecap'].forEach(id => { const el = document.getElementById(id); if(el){ el.style.display = 'none'; } });
+  ['devisBtnStandard','devisBtnPanorama'].forEach(id => {
+    const b = document.getElementById(id);
+    if(b){ b.disabled = false; b.textContent = 'Recevoir mon devis'; }
+  });
+}
+
+function renderPhoto(){
+  const item = currentItems[currentModel];
+  const frame = document.getElementById('carouselFrame');
+
+  if(item.placeholder){
+    frame.innerHTML = `<div class="ph active" style="background:${item.color}">
+      <span>${item.name}</span><small>Visuel à venir</small>
+    </div>`;
+    return;
+  }
+
+  frame.innerHTML = item.images.map((src, i) =>
+    `<img src="${encodeURI(src)}" class="${i===currentPhoto?'active':''}">`
+  ).join('');
+}
+
+function peekHTML(item){
+  if(item.placeholder) return `<div class="ph-mini" style="background:${item.color}"></div>`;
+  return `<img src="${encodeURI(item.images[0])}">`;
+}
+
+function renderPeeks(){
+  const peekPrev = document.getElementById('peekPrev');
+  const peekNext = document.getElementById('peekNext');
+  if(currentItems.length <= 1){ peekPrev.innerHTML = ''; peekNext.innerHTML = ''; return; }
+  const prevItem = currentItems[(currentModel - 1 + currentItems.length) % currentItems.length];
+  const nextItem = currentItems[(currentModel + 1) % currentItems.length];
+  peekPrev.innerHTML = peekHTML(prevItem);
+  peekNext.innerHTML = peekHTML(nextItem);
+}
+
+function renderDots(){
+  const item = currentItems[currentModel];
+  const dotsEl = document.getElementById('photoDots');
+  const count = item.placeholder ? 0 : item.images.length;
+
+  if(count <= 1){ dotsEl.innerHTML = ''; return; }
+
+  dotsEl.innerHTML = item.images.map((_,i) =>
+    `<span class="${i===currentPhoto?'active':''}" data-i="${i}"></span>`
+  ).join('');
+  dotsEl.querySelectorAll('span').forEach(dot => {
+    dot.addEventListener('click', () => { currentPhoto = parseInt(dot.dataset.i); renderPhoto(); renderDots(); });
+  });
+}
+
+function triggerSlide(dir){
+  const frame = document.getElementById('carouselFrame');
+  frame.classList.remove('slide-next','slide-prev');
+  void frame.offsetWidth;
+  frame.classList.add(dir === 1 ? 'slide-next' : 'slide-prev');
+}
+document.getElementById('prevModel').addEventListener('click', () => {
+  currentModel = (currentModel - 1 + currentItems.length) % currentItems.length;
+  renderModel();
+  triggerSlide(-1);
+});
+document.getElementById('nextModel').addEventListener('click', () => {
+  currentModel = (currentModel + 1) % currentItems.length;
+  renderModel();
+  triggerSlide(1);
+});
+
+function updatePrice(){
+  const recolorEl = document.getElementById('recolor');
+  const recolor = recolorEl ? recolorEl.checked : false;
+  const priceEl = document.getElementById('stickerPrice');
+  if(priceEl) priceEl.textContent = (basePrice + (recolor ? 10 : 0)) + " € TTC";
+}
+document.getElementById('recolor').addEventListener('change', updatePrice);
+
+document.querySelectorAll('.format-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.format-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// ---------- ZOOM (tous les visuels sont zoomables) ----------
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxViewport = document.getElementById('lightboxViewport');
+
+document.getElementById('carouselFrame').addEventListener('click', (e) => {
+  if(e.target.tagName === 'IMG'){
+    lightboxImg.src = e.target.src;
+    lightboxViewport.classList.remove('zoomed');
+    lightbox.classList.add('open');
+  }
+});
+function closeLightbox(){ lightbox.classList.remove('open'); lightboxViewport.classList.remove('zoomed'); lightboxImg.src=''; }
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+
+// clic sur l'image : zoome, centré sur le point cliqué, puis on se déplace au scroll/trackpad
+lightboxImg.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if(lightboxViewport.classList.contains('zoomed')){
+    lightboxViewport.classList.remove('zoomed');
+  } else {
+    const rect = lightboxImg.getBoundingClientRect();
+    const xRatio = (e.clientX - rect.left) / rect.width;
+    const yRatio = (e.clientY - rect.top) / rect.height;
+    lightboxViewport.classList.add('zoomed');
+    requestAnimationFrame(() => {
+      lightboxViewport.scrollLeft = lightboxImg.scrollWidth * xRatio - lightboxViewport.clientWidth / 2;
+      lightboxViewport.scrollTop = lightboxImg.scrollHeight * yRatio - lightboxViewport.clientHeight / 2;
+    });
+  }
+});
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+
+// ---------- DEVIS : un seul formulaire (même boîte que /contact/), tagué par produit ----------
+const DEVIS_ENDPOINT = 'https://formspree.io/f/mdavaonj';
+
+function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+function collectDevisData(mode){
+  const item = currentItems[currentModel];
+  const data = {
+    'Type de demande': 'Particulier — devis produit (catalogue)',
+    'Univers': document.getElementById('breadMain').textContent,
+    'Catégorie': document.getElementById('breadSub').textContent,
+    'Produit': item.name,
+    'Nom': document.getElementById('devisNom').value.trim(),
+    'Email': document.getElementById('devisEmail').value.trim(),
+    'Téléphone': document.getElementById('devisTel').value.trim() || '(non renseigné)',
+    'Lien direct vers la fiche': location.href,
+  };
+  if(mode === 'panorama'){
+    const largeur = document.getElementById('panoLargeur').value.trim();
+    const hauteur = document.getElementById('panoHauteur').value.trim();
+    const formatBtn = document.querySelector('.format-btn.active');
+    data['Format'] = formatBtn ? formatBtn.textContent.trim() : 'Sticker';
+    data['Dimensions souhaitées'] = (largeur || hauteur) ? `${largeur || '?'} x ${hauteur || '?'} cm` : '(non renseignées)';
+    data['Notes de personnalisation'] = document.getElementById('notesPanorama').value.trim() || '(aucune)';
+    data['Code promo'] = document.getElementById('promoPanorama').value.trim() || '(aucun)';
+    data['Prix de base'] = document.getElementById('opt-panorama').querySelector('.amount').textContent.trim();
+  } else {
+    data['Format'] = 'Sticker';
+    data['Prénom à intégrer'] = document.getElementById('prenomInput').value.trim() || '(sans personnalisation)';
+    data['Notes de personnalisation'] = document.getElementById('notesStandard').value.trim() || '(aucune)';
+    data['Code promo'] = document.getElementById('promoStandard').value.trim() || '(aucun)';
+    data['Recoloriable à l\'infini (+10€)'] = document.getElementById('recolor').checked ? 'Oui' : 'Non';
+    data['Prix affiché'] = document.getElementById('stickerPrice').textContent.trim();
+  }
+  return data;
+}
+
+function recapHTML(data){
+  const rows = Object.entries(data).map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  return `<h4>Récapitulatif de la demande</h4><table>${rows}</table>`;
+}
+
+async function submitDevis(mode){
+  const errEl = document.getElementById('devisError');
+  const recapEl = document.getElementById('devisRecap');
+  errEl.style.display = 'none';
+  recapEl.style.display = 'none';
+
+  const nom = document.getElementById('devisNom').value.trim();
+  const email = document.getElementById('devisEmail').value.trim();
+  if(!nom || !email){
+    errEl.textContent = 'Merci de renseigner votre prénom, nom et e-mail avant d\'envoyer la demande.';
+    errEl.style.display = 'block';
+    return;
+  }
+  if(!isValidEmail(email)){
+    errEl.textContent = 'Cet e-mail ne semble pas valide, tu peux vérifier ?';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const data = collectDevisData(mode);
+  const btn = document.getElementById(mode === 'panorama' ? 'devisBtnPanorama' : 'devisBtnStandard');
+  const btnLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+
+  const fd = new FormData();
+  fd.append('_subject', `Devis particulier — ${data['Produit']}`);
+  fd.append('_replyto', data['Email']);
+  Object.entries(data).forEach(([k,v]) => fd.append(k, v));
+  fd.append('message', Object.entries(data).map(([k,v]) => `${k} : ${v}`).join('\n'));
+
+  try{
+    const res = await fetch(DEVIS_ENDPOINT, { method:'POST', body:fd, headers:{ 'Accept':'application/json' } });
+    if(!res.ok) throw new Error();
+    recapEl.innerHTML = `<p style="margin:0 0 10px;font-weight:600;">C'est envoyé ! On vous répond sous 48h ouvrées à ${data['Email']}.</p>` + recapHTML(data);
+    recapEl.style.display = 'block';
+    btn.textContent = 'Demande envoyée';
+  }catch(e){
+    errEl.textContent = 'Une erreur s\'est produite. Vous pouvez réessayer ou écrire directement à contact@lespetitspapierspeints.com';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = btnLabel;
+  }
+}
+
+document.getElementById('devisBtnStandard').addEventListener('click', () => submitDevis('standard'));
+document.getElementById('devisBtnPanorama').addEventListener('click', () => submitDevis('panorama'));
+
+// ---------- LIEN DIRECT VERS UNE FICHE : #m=adultes&s=sudiste&p=%C3%94%20Toulouse ----------
+(function openFromHash(){
+  if(!location.hash) return;
+  const params = new URLSearchParams(location.hash.slice(1));
+  const m = params.get('m'), s = params.get('s'), p = params.get('p');
+  if(m && s && catalogData[m] && catalogData[m].subs[s]){
+    openCatalog(m, s, p);
+  }
+})();
+</script>
+
+</body>
+</html>
