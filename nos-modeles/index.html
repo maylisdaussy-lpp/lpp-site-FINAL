@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Parcourez tous nos stickers et fresques muraux à colorier pour enfants et adultes, choisissez vos options de personnalisation et recevez votre devis en quelques clics. Fabriqué en France.">
-<title>Nos modèles à colorier — Les Petits Papiers</title>
+<title>Nos modèles à colorier - Les Petits Papiers</title>
 <link rel="canonical" href="https://lespetitspapierspeints.com/nos-modeles/">
-<meta property="og:title" content="Nos modèles à colorier — Les Petits Papiers">
+<meta property="og:title" content="Nos modèles à colorier - Les Petits Papiers">
 <meta property="og:description" content="Parcourez tous nos stickers et fresques muraux à colorier pour enfants et adultes, choisissez vos options et recevez votre devis en quelques clics.">
 <meta property="og:image" content="https://lespetitspapierspeints.com/images/particuliers-jungle.jpg">
 <link rel="icon" type="image/svg+xml" href="https://lespetitspapierspeints.com/favicon.svg">
@@ -882,14 +882,14 @@ lightboxImg.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
 
 // ---------- DEVIS : un seul formulaire (même boîte que /contact/), tagué par produit ----------
-const DEVIS_ENDPOINT = 'https://formspree.io/f/mdavaonj';
+const DEVIS_ENDPOINT = 'https://formspree.io/f/xqpzvdne';
 
 function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
 
 function collectDevisData(mode){
   const item = currentItems[currentModel];
   const data = {
-    'Type de demande': 'Particulier — devis produit (catalogue)',
+    'Type de demande': 'Particulier - devis produit (catalogue)',
     'Univers': document.getElementById('breadMain').textContent,
     'Catégorie': document.getElementById('breadSub').textContent,
     'Produit': item.name,
@@ -949,7 +949,7 @@ async function submitDevis(mode){
   btn.textContent = 'Envoi en cours...';
 
   const fd = new FormData();
-  fd.append('_subject', `Devis particulier — ${data['Produit']}`);
+  fd.append('_subject', `Devis particulier - ${data['Produit']}`);
   fd.append('_replyto', data['Email']);
   Object.entries(data).forEach(([k,v]) => fd.append(k, v));
   fd.append('message', Object.entries(data).map(([k,v]) => `${k} : ${v}`).join('\n'));
