@@ -186,6 +186,13 @@
     .lead-form button:hover{opacity:.85}
     .lead-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:.5rem}
     .lead-success{display:none;color:rgba(255,255,255,.9);font-size:15px;padding:1rem}
+    .lead-form select{padding:13px 18px;border-radius:50px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:white;font-size:14px;font-family:'Outfit',sans-serif;outline:none;width:100%;-webkit-appearance:none;appearance:none;cursor:pointer}
+    .lead-form select option{color:#1a1a2e}
+    .lead-form .ml-form-fieldRow{margin-bottom:.75rem}
+    .lead-form .ml-form-fieldRow.ml-last-item{margin-bottom:0}
+    .lead-form .ml-form-embedSubmit{margin-top:.75rem}
+    .lead-form .ml-form-embedSubmit .loading{display:none}
+    .lead-success p{margin:0}
 
     /* FOOTER */
     footer{background:var(--pink);padding:4rem 0 2rem;color:rgba(255,255,255,.9)}
@@ -577,14 +584,44 @@
   <section class="lead-section" id="commander">
     <h2>Recevoir le catalogue en PDF</h2>
     <p>Tous nos visuels pour enfants et adultes, les formats, les tarifs et les options de personnalisation, directement dans votre boîte mail.</p>
-    <form class="lead-form" onsubmit="submitLead(event)">
-      <input type="text" placeholder="Le prénom de votre enfant (facultatif)" id="lead-prénom">
-      <input type="email" placeholder="Votre e-mail" id="lead-email" required>
-      <button type="submit">Recevoir le catalogue en PDF</button>
-      <p class="lead-note">Pas de spam. Juste le catalogue, et peut-être quelques idées de temps en temps.</p>
-    </form>
-    <div class="lead-success" id="lead-success">
-      Merci ! Le catalogue arrive dans votre boîte mail. Vérifiez vos spams si vous ne le voyez pas d'ici quelques minutes.
+    <div id="mlb2-42333023" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42333023">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form lead-form" action="https://assets.mailerlite.com/jsonp/1715487/forms/189701982060021173/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Votre e-mail" autocomplete="email" required>
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-catalogue_choix ml-validate-required">
+                    <select class="form-control" name="fields[catalogue_choix]" aria-label="catalogue_choix" aria-required="true" required>
+                      <option value="">Quel catalogue ?</option>
+                      <option>Catalogue enfants</option>
+                      <option>Catalogue adultes</option>
+                      <option>Les deux</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Recevoir le catalogue en PDF</button>
+                <button disabled="disabled" style="display:none" type="button" class="loading"><div class="ml-form-embedSubmitLoad"></div><span class="sr-only">Loading...</span></button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+              <p class="lead-note">Pas de spam. Juste le catalogue, et peut-être quelques idées de temps en temps.</p>
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success lead-success" style="display:none">
+            <div class="ml-form-successContent">
+              <p>Merci ! Le catalogue arrive dans votre boîte mail. Vérifiez vos spams si vous ne le voyez pas d'ici quelques minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -678,38 +715,12 @@
       document.body.style.overflow='';
     }
     document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
-
-    async function submitLead(event){
-      event.preventDefault();
-      const form = event.target;
-      const btn = form.querySelector('button[type="submit"]');
-      const prenom = document.getElementById('lead-prénom').value.trim();
-      const email = document.getElementById('lead-email').value.trim();
-      if(!email){ return; }
-      const btnLabel = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours...';
-      const fd = new FormData();
-      fd.append('_subject', 'Demande catalogue PDF (particulier)');
-      fd.append('_replyto', email);
-      fd.append('Type de demande', 'Demande catalogue PDF (particulier)');
-      fd.append('Prénom enfant', prenom || '(non renseigné)');
-      fd.append('Email', email);
-      try{
-        const res = await fetch('https://formspree.io/f/mdavaonj', { method:'POST', body:fd, headers:{ 'Accept':'application/json' } });
-        if(!res.ok) throw new Error();
-        form.style.display = 'none';
-        document.getElementById('lead-success').style.display = 'block';
-      }catch(e){
-        btn.disabled = false;
-        btn.textContent = btnLabel;
-        alert('Une erreur s\'est produite. Vous pouvez réessayer ou écrire directement à contact@lespetitspapierspeints.com');
-      }
-    }
   </script>
 
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
   <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/takel")</script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+  <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189701982060021173/takel")</script>
 </body>
 </html>
   <script>
