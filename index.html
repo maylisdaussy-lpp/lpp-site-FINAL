@@ -378,14 +378,13 @@
     gtag('config', 'G-7FV756KQ9N');
   </script>
 <style id="hp-particulier-bar">
-.particulier-wrap{display:flex;justify-content:center;margin-top:115px;margin-bottom:2.5rem;padding:0 20px}
-.particulier-pill{display:inline-block;text-align:center;background:var(--white);border:1.5px solid var(--border);padding:20px 40px;border-radius:26px;font-size:14px;line-height:1.8;color:var(--text);font-family:'Outfit',sans-serif;box-shadow:0 8px 22px rgba(196,42,92,.08);animation:pillFloat 5s ease-in-out infinite;transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease}
-.particulier-pill:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(196,42,92,.16)}
-.particulier-pill strong{color:var(--dark);font-weight:600}
-.particulier-pill a{color:var(--pink);font-weight:700;text-decoration:none;margin-left:2px}
-.particulier-pill a:hover{text-decoration:underline}
-@keyframes pillFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-@media(max-width:600px){.particulier-pill{font-size:13px;padding:12px 20px}}
+.hp-topbar{width:100%;margin-top:110px;background:linear-gradient(90deg,var(--pink-light) 0%,var(--blue-light) 100%);border-bottom:1px solid var(--border);padding:15px 20px;text-align:center;font-family:'Outfit',sans-serif;box-sizing:border-box}
+.hp-topbar p{margin:0;font-size:14px;line-height:1.6;color:var(--text)}
+.hp-topbar strong{color:var(--dark);font-weight:600}
+.hp-topbar a{color:var(--pink);font-weight:700;text-decoration:none;margin-left:6px;white-space:nowrap}
+.hp-topbar a:hover{text-decoration:underline}
+@media(max-width:768px){.hp-topbar{margin-top:64px}}
+@media(max-width:600px){.hp-topbar{padding:12px 16px}.hp-topbar p{font-size:13px;line-height:1.5}}
 </style>
 </head>
 <body>
@@ -419,12 +418,28 @@
   </div>
   </div>
 
-  <div class="particulier-wrap">
-    <div class="particulier-pill">
-      Vous êtes un <strong>particulier</strong> ?<br>
-      <a href="/particuliers/">Découvrez nos décorations murales pour la maison →</a>
-    </div>
+  <div class="hp-topbar" id="hp-topbar">
+    <p>Vous êtes un <strong>particulier</strong> ? <a href="/particuliers/">Découvrez nos décorations murales pour la maison →</a></p>
   </div>
+  <script>
+  (function(){
+    var nav = document.querySelector('nav');
+    var bar = document.getElementById('hp-topbar');
+    if(!nav || !bar) return;
+    function syncBarPosition(){
+      bar.style.marginTop = nav.offsetHeight + 'px';
+    }
+    syncBarPosition();
+    window.addEventListener('resize', syncBarPosition);
+    window.addEventListener('load', syncBarPosition);
+    if(window.ResizeObserver){
+      new ResizeObserver(syncBarPosition).observe(nav);
+    }
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(syncBarPosition);
+    }
+  })();
+  </script>
 
   <!-- HERO -->
   <section class="hero">
