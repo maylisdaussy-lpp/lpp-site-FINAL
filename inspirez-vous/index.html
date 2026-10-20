@@ -14,14 +14,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FV756KQ9N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7FV756KQ9N');
-  </script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     @font-face{font-family:'GooddogNew';src:url('/fonts/gooddognew.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
@@ -150,6 +142,7 @@
     .client-logo:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05)}
     @media(max-width:600px){.clients-grid .client-logo:nth-child(2),.clients-grid .client-logo:nth-child(4){margin-top:0}}
   </style>
+  <script src="/cookie-consent.js" defer></script>
 </head>
 <body>
   <nav>
@@ -265,7 +258,7 @@
       </div>
       <div class="idea-card col-4" onclick="lbOpen('/images/inspirez-vous-ecole-5.jpg','Pour les collectivités')">
         <img src="/images/inspirez-vous-ecole-5.jpg" alt="Pour les collectivités" class="img-tall">
-        <div class="idea-card-body"><h3>Pour les collectivités</h3><p>Médiathèques, gymnases, centrès de loisirs.</p></div>
+        <div class="idea-card-body"><h3>Pour les collectivités</h3><p>Médiathèques, gymnases, centres de loisirs.</p></div>
       </div>
     </div>
   </section>
@@ -397,7 +390,7 @@
         <div class="footer-col"><h4>Nos formules</h4><ul><li><a href="/la-vignette/">La Vignette</a></li><li><a href="/le-grand-format/">Le Grand Format</a></li><li><a href="/le-panorama/">Le Panorama</a></li></ul></div>
         <div class="footer-col"><h4>Newsletter</h4><form action="https://formspree.io/f/mdavaonj" method="POST" class="newsletter-form" onsubmit="submitNL(event)"><input type="hidden" name="_subject" value="Newsletter Les Petits Papiers"><div class="newsletter-row"><input type="email" name="email" placeholder="Votre e-mail" required><button type="submit">OK</button></div><p class="nl-success" style="display:none">Inscription confirmée !</p></form></div>
       </div>
-      <div class="footer-bottom"><span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span><a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a></div>
+      <div class="footer-bottom"><span>© 2026 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span><span class="legal-links"><a href="/mentions-legales/">Mentions légales</a> · <a href="/cgu/">CGU</a> · <a href="/politique-de-confidentialite/">Politique de confidentialité</a> · <a href="#" onclick="lppCookies.open();return false">Gérer les cookies</a></span></div>
     </div>
   </footer>
 

@@ -447,14 +447,7 @@
       .engagements-grid .engagement-card:last-child{margin-bottom:0}
     }
   </style>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FV756KQ9N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7FV756KQ9N');
-  </script>
+  <script src="/cookie-consent.js" defer></script>
 </head>
 <body>
 
@@ -730,16 +723,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
-        <a href="https://cdn.prod.website-files.com/698a255da8fbdeadba24ac8a/699ffba27156f8741f9fd3e5_RGPD.pdf" target="_blank">Politique de confidentialité</a>
+        <span>© 2026 Les Petits Papiers · Marque déposée · SIREN 989 138 425</span>
+        <span class="legal-links"><a href="/mentions-legales/">Mentions légales</a> · <a href="/cgu/">CGU</a> · <a href="/politique-de-confidentialite/">Politique de confidentialité</a> · <a href="#" onclick="lppCookies.open();return false">Gérer les cookies</a></span>
       </div>
     </div>
   </footer>
 
-  <script> })
-        .then(r => { if (r.ok) { form.querySelector('.nl-success').style.display = 'block'; form.reset(); } })
-        .catch(() => {});
-    }
+  <script>
       function submitNewsletter(e) {
       e.preventDefault();
       fetch(e.target.action, { method:'POST', body: new FormData(e.target), headers:{'Accept':'application/json'} })
@@ -772,8 +762,6 @@
   </script>
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
   <script>fetch("https://assets.mailerlite.com/jsonp/1715487/forms/189700912719070730/takel")</script>
-</body>
-</html>
   <script>
     function toggleMenu(){
       var b=document.getElementById('nav-burger');
