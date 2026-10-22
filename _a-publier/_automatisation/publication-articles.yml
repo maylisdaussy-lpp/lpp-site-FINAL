@@ -1,0 +1,49 @@
+name: Publication des articles programmés
+
+on:
+  schedule:
+    # Tous les jours à 7 h 40 UTC, soit 8 h 40 à Paris en hiver (9 h 40 en été).
+    # Seuls les articles dont la date du calendrier est arrivée sont publiés.
+    - cron: "40 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: publication-articles
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publier les articles du jour
+        run: python _a-publier/_automatisation/publier_articles.py
+
+      - name: Enregistrer et pousser
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "Publication LPP"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Publication automatique du $(TZ=Europe/Paris date +%d/%m/%Y)"
+            git push
+            echo "published=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "Rien à publier aujourd'hui."
+          fi
+
+      - name: Relancer la construction GitHub Pages
+        if: steps.commit.outputs.published == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Construction Pages non relancée : le push devrait suffire, sinon lancez-la depuis Settings > Pages."
