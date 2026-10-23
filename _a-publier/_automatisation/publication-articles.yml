@@ -46,4 +46,5 @@ jobs:
         if: steps.commit.outputs.published == 'yes'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Construction Pages non relancée : le push devrait suffire, sinon lancez-la depuis Settings > Pages."
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Construction Pages non relancee, le push devrait suffire."
